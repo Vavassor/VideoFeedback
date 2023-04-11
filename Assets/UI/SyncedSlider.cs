@@ -36,6 +36,13 @@ public class SyncedSlider : UdonSharpBehaviour
         ApplyValue();
     }
 
+    public void OnSetValueExternally()
+    {
+        Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        RequestSerialization();
+        ApplyValue();
+    }
+
     private void ApplyValue()
     {
         slider.value = value;

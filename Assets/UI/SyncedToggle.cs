@@ -30,6 +30,13 @@ public class SyncedToggle : UdonSharpBehaviour
         ApplyToggle();
     }
 
+    public void OnSetValueExternally()
+    {
+        Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        RequestSerialization();
+        ApplyToggle();
+    }
+
     private void ApplyToggle()
     {
         toggle.isOn = isOn;
