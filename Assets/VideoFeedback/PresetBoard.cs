@@ -3,6 +3,7 @@
 using System;
 using UdonSharp;
 using UnityEngine;
+using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
 
@@ -25,6 +26,7 @@ public class PresetBoard : UdonSharpBehaviour
     public SyncedSlider hueShiftSlider;
     public SyncedToggle mirrorXToggle;
     public SyncedToggle mirrorYToggle;
+    public InputField presetCodeInputField;
 
     private float brightness;
     private bool clearCamera;
@@ -32,12 +34,67 @@ public class PresetBoard : UdonSharpBehaviour
     private bool mirrorX;
     private bool mirrorY;
 
+    private const int codeSizeBytes = 11;
     private const string base64Digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+    private const string defaultPresetCode = "P4AAAAAAAAABAAA=";
+
+    public void OnClickGeneratePresetCode()
+    {
+        brightness = brightnessSlider.value;
+        clearCamera = clearCameraToggle.isOn;
+        hueShift = hueShiftSlider.value;
+        mirrorX = mirrorXToggle.isOn;
+        mirrorY = mirrorYToggle.isOn;
+
+        presetCodeInputField.text = SerializePreset();
+    }
+
+    public void OnClickLoadPresetCode()
+    {
+        var didDeserializeSucceed = DeserializePreset(presetCodeInputField.text.Trim());
+        if (didDeserializeSucceed)
+        {
+            ApplyPreset();
+        }
+    }
 
     public void OnClickResetAllButton()
     {
-        DeserializePreset("P4AAAAAAAAABAAA=");
+        DeserializePreset(defaultPresetCode);
+        ApplyPreset();
+    }
 
+    public string SerializePreset()
+    {
+        byte[] bytes = new byte[codeSizeBytes];
+        WriteSingle(brightness, bytes, 0);
+        WriteSingle(hueShift, bytes, 4);
+        WriteBool(clearCamera, bytes, 8);
+        WriteBool(mirrorX, bytes, 9);
+        WriteBool(mirrorY, bytes, 10);
+        return ToBase64String(bytes);
+    }
+
+    public bool DeserializePreset(string text)
+    {
+        var bytes = FromBase64String(text);
+
+        if (bytes.Length != codeSizeBytes)
+        {
+            return false;
+        }
+
+        brightness = ReadSingle(bytes, 0);
+        hueShift = ReadSingle(bytes, 4);
+        clearCamera = ReadBool(bytes, 8);
+        mirrorX = ReadBool(bytes, 9);
+        mirrorY = ReadBool(bytes, 10);
+
+        return true;
+    }
+
+    private void ApplyPreset()
+    {
         brightnessSlider.value = brightness;
         brightnessSlider.SendCustomEvent("OnSetValueExternally");
 
@@ -54,38 +111,17 @@ public class PresetBoard : UdonSharpBehaviour
         mirrorYToggle.SendCustomEvent("OnSetValueExternally");
     }
 
-    public string SerializePreset()
-    {
-        byte[] bytes = new byte[11];
-        WriteSingle(brightness, bytes, 0);
-        WriteSingle(hueShift, bytes, 4);
-        WriteBool(clearCamera, bytes, 8);
-        WriteBool(mirrorX, bytes, 9);
-        WriteBool(mirrorY, bytes, 10);
-        return ToBase64String(bytes);
-    }
-
-    public void DeserializePreset(string text)
-    {
-        var bytes = FromBase64String(text);
-        brightness = ReadSingle(bytes, 0);
-        hueShift = ReadSingle(bytes, 4);
-        clearCamera = ReadBool(bytes, 8);
-        mirrorX = ReadBool(bytes, 9);
-        mirrorY = ReadBool(bytes, 10);
-    }
-
     private byte Base64ToSextet(char c)
     {
-        return (byte) (c > 64 && c < 91
+        return (byte) (c >= 'A' && c <= 'Z'
           ? c - 65
-          : c > 96 && c < 123
+          : c >= 'a' && c <= 'z'
           ? c - 71
-          : c > 47 && c < 58
+          : c >= '0' && c <= '9'
           ? c + 4
-          : c == 43
+          : c == '+'
           ? 62
-          : c == 47
+          : c == '/'
           ? 63
           : 0);
     }
@@ -117,11 +153,13 @@ public class PresetBoard : UdonSharpBehaviour
             var writeIndex = (i * 3) / 4;
             bytes[writeIndex] = (byte) ((c0 << 2) | ((c1 & 0x30) >> 4));
 
+            // If the last two characters aren't padding.
             if (i + 2 < textLength)
             {
                 var c2 = Base64ToSextet(text[i + 2]);
                 bytes[writeIndex + 1] = (byte)(((c1 & 0xf) << 4) | ((c2 & 0x3c) >> 2));
 
+                // If the last character isn't padding.
                 if (i + 3 < textLength)
                 {
                     var c3 = Base64ToSextet(text[i + 3]);
