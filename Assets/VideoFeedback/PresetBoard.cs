@@ -1,4 +1,5 @@
-﻿
+﻿// The read and write functions are from UNet by Xytabich. https://github.com/Xytabich/UNet
+// For licensing see /licenses/LICENSE-unet.txt
 using System;
 using UdonSharp;
 using UnityEngine;
@@ -31,27 +32,29 @@ public class PresetBoard : UdonSharpBehaviour
     private bool mirrorX;
     private bool mirrorY;
 
-    private const string hexDigits = "0123456789ABCDEF";
+    private const string base64Digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
     public void OnClickResetAllButton()
     {
-        brightnessSlider.value = 1.0f;
+        DeserializePreset("P4AAAAAAAAABAAA=");
+
+        brightnessSlider.value = brightness;
         brightnessSlider.SendCustomEvent("OnSetValueExternally");
 
-        clearCameraToggle.isOn = true;
+        clearCameraToggle.isOn = clearCamera;
         clearCameraToggle.SendCustomEvent("OnSetValueExternally");
 
-        hueShiftSlider.value = 0.0f;
+        hueShiftSlider.value = hueShift;
         hueShiftSlider.SendCustomEvent("OnSetValueExternally");
 
-        mirrorXToggle.isOn = false;
+        mirrorXToggle.isOn = mirrorX;
         mirrorXToggle.SendCustomEvent("OnSetValueExternally");
 
-        mirrorYToggle.isOn = false;
+        mirrorYToggle.isOn = mirrorY;
         mirrorYToggle.SendCustomEvent("OnSetValueExternally");
     }
 
-    public string Serialize()
+    public string SerializePreset()
     {
         byte[] bytes = new byte[11];
         WriteSingle(brightness, bytes, 0);
@@ -59,12 +62,12 @@ public class PresetBoard : UdonSharpBehaviour
         WriteBool(clearCamera, bytes, 8);
         WriteBool(mirrorX, bytes, 9);
         WriteBool(mirrorY, bytes, 10);
-        return ToBase16String(bytes);
+        return ToBase64String(bytes);
     }
 
-    public void Deserialize(string text)
+    public void DeserializePreset(string text)
     {
-        var bytes = FromBase16String(text);
+        var bytes = FromBase64String(text);
         brightness = ReadSingle(bytes, 0);
         hueShift = ReadSingle(bytes, 4);
         clearCamera = ReadBool(bytes, 8);
@@ -72,31 +75,106 @@ public class PresetBoard : UdonSharpBehaviour
         mirrorY = ReadBool(bytes, 10);
     }
 
-    // This will give junk bytes when given a non-hexadecimal string.
-    public byte[] FromBase16String(string text)
+    private byte Base64ToSextet(char c)
     {
-        byte[] result = new byte[text.Length / 2];
-
-        for (var i = 0; i < result.Length; i++)
-        {
-            var c0 = text[2 * i];
-            var c1 = text[2 * i + 1];
-            var b0 = (byte) ((c0 >= '0' && c0 <= '9') ? c0 - '0' : c0 - 'A' + 10);
-            var b1 = (byte) ((c1 >= '0' && c1 <= '9') ? c1 - '0' : c1 - 'A' + 10);
-            result[i] = (byte) ((b0 << 4) | b1);
-        }
-
-        return result;
+        return (byte) (c > 64 && c < 91
+          ? c - 65
+          : c > 96 && c < 123
+          ? c - 71
+          : c > 47 && c < 58
+          ? c + 4
+          : c == 43
+          ? 62
+          : c == 47
+          ? 63
+          : 0);
     }
 
-    public string ToBase16String(byte[] bytes)
+    public byte[] FromBase64String(string text)
+    {
+        int byteCount = (text.Length * 3) / 4;
+        int textLength = text.Length;
+
+        // Trim padding characters.
+        for (var i = text.Length - 1; i >= 0; i--)
+        {
+            if(text[i] != '=')
+            {
+                break;
+            }
+
+            textLength--;
+            byteCount--;
+        }
+
+        byte[] bytes = new byte[byteCount];
+
+        for (var i = 0; i < textLength; i += 4)
+        {
+            var c0 = Base64ToSextet(text[i]);
+            var c1 = Base64ToSextet(text[i + 1]);
+
+            var writeIndex = (i * 3) / 4;
+            bytes[writeIndex] = (byte) ((c0 << 2) | ((c1 & 0x30) >> 4));
+
+            if (i + 2 < textLength)
+            {
+                var c2 = Base64ToSextet(text[i + 2]);
+                bytes[writeIndex + 1] = (byte)(((c1 & 0xf) << 4) | ((c2 & 0x3c) >> 2));
+
+                if (i + 3 < textLength)
+                {
+                    var c3 = Base64ToSextet(text[i + 3]);
+                    bytes[writeIndex + 2] = (byte)(((c2 & 0x3) << 6) | c3);
+                }
+            }
+        }
+
+        return bytes;
+    }
+
+    public string ToBase64String(byte[] bytes)
     {
         string result = string.Empty;
+        var caseIndex = 0;
 
-        foreach(var b in bytes)
+        for (var i = 0; i < bytes.Length; caseIndex++)
         {
-            result += hexDigits[(b & 0xf0) >> 4];
-            result += hexDigits[b & 0xf];
+            var currentByte = bytes[i];
+            var nextByte = i < bytes.Length - 1 ? bytes[i + 1] : (byte) 0;
+
+            switch (caseIndex % 4)
+            {
+                case 0:
+                {
+                    result += base64Digits[(currentByte & 0xfc) >> 2];
+                    break;
+                }
+                case 1:
+                {
+                    result += base64Digits[((currentByte & 0x3) << 4) | ((nextByte & 0xf0) >> 4)];
+                    i++;
+                    break;
+                }
+                case 2:
+                {
+                    result += base64Digits[((currentByte & 0xf) << 2) | ((nextByte & 0xc0) >> 6)];
+                    i++;
+                    break;
+                }
+                case 3:
+                {
+                    result += base64Digits[currentByte & 0x3f];
+                    i++;
+                    break;
+                }
+            }
+        }
+
+        // Pad to a multiple of 4.
+        for (var i = 0; i < result.Length % 4; i++)
+        {
+            result += "=";
         }
 
         return result;
