@@ -35,9 +35,9 @@ public class PresetBoard : UdonSharpBehaviour
     private bool mirrorY;
 
     private const string codeId = "VF";
-    private const int codeSizeBytes = 15;
+    private const int codeSizeBytes = 13;
     private const ushort currentVersion = 1;
-    private const string defaultPresetCode = "VkYAAT+AAAAAAAAAAQAA";
+    private const string defaultPresetCode = "VkYAAT+AAAAAAAAAAQ==";
 
     public void OnClickGeneratePresetCode()
     {
@@ -73,10 +73,13 @@ public class PresetBoard : UdonSharpBehaviour
         WriteUInt16(currentVersion, bytes, 2);
         WriteSingle(brightness, bytes, 4);
         WriteSingle(hueShift, bytes, 8);
-        WriteBool(clearCamera, bytes, 12);
-        WriteBool(mirrorX, bytes, 13);
-        WriteBool(mirrorY, bytes, 14);
+        bytes[12] = (byte) ((ToInt(mirrorX) << 2) | (ToInt(mirrorY) << 1) | ToInt(clearCamera));
         return Convert.ToBase64String(bytes);
+    }
+
+    private int ToInt(bool value)
+    {
+        return value ? 1 : 0;
     }
 
     public bool DeserializePreset(string text)
@@ -99,9 +102,11 @@ public class PresetBoard : UdonSharpBehaviour
 
         brightness = ReadSingle(bytes, 4);
         hueShift = ReadSingle(bytes, 8);
-        clearCamera = ReadBool(bytes, 12);
-        mirrorX = ReadBool(bytes, 13);
-        mirrorY = ReadBool(bytes, 14);
+
+        var flags = bytes[12];
+        clearCamera = (flags & 1) > 0;
+        mirrorX = (flags & 2) > 0;
+        mirrorY = (flags & 4) > 0;
 
         return true;
     }
