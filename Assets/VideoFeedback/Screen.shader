@@ -10,7 +10,6 @@
     SubShader
     {
         Tags { "Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Transparent" }
-        Tags { "RenderType" = "Opaque" }
         LOD 100
 
         ZWrite Off
@@ -67,7 +66,7 @@
 
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
-                return priorColor;
+                return col;
             }
             ENDCG
         }
