@@ -21,6 +21,8 @@ public class PresetBoard : UdonSharpBehaviour
     private const uint FLOAT_EXP_MASK = 0x7F800000;
     private const uint FLOAT_FRAC_MASK = 0x007FFFFF;
 
+    public string selectedOptionPresetCode;
+
     public SyncedSlider brightnessSlider;
     public SyncedToggle clearCameraToggle;
     public SyncedSlider hueShiftSlider;
@@ -57,6 +59,12 @@ public class PresetBoard : UdonSharpBehaviour
         {
             ApplyPreset();
         }
+    }
+
+    public void OnClickPresetOptionButton()
+    {
+        DeserializePreset(selectedOptionPresetCode);
+        ApplyPreset();
     }
 
     public void OnClickResetAllButton()
