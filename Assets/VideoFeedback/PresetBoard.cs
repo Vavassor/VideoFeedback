@@ -34,9 +34,10 @@ public class PresetBoard : UdonSharpBehaviour
     private bool mirrorX;
     private bool mirrorY;
 
-    private const int codeSizeBytes = 11;
-    private const string base64Digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-    private const string defaultPresetCode = "P4AAAAAAAAABAAA=";
+    private const string codeId = "VF";
+    private const int codeSizeBytes = 15;
+    private const ushort currentVersion = 1;
+    private const string defaultPresetCode = "VkYAAT+AAAAAAAAAAQAA";
 
     public void OnClickGeneratePresetCode()
     {
@@ -67,28 +68,40 @@ public class PresetBoard : UdonSharpBehaviour
     public string SerializePreset()
     {
         byte[] bytes = new byte[codeSizeBytes];
-        WriteSingle(brightness, bytes, 0);
-        WriteSingle(hueShift, bytes, 4);
-        WriteBool(clearCamera, bytes, 8);
-        WriteBool(mirrorX, bytes, 9);
-        WriteBool(mirrorY, bytes, 10);
-        return ToBase64String(bytes);
+        WriteSByte((sbyte) codeId[0], bytes, 0);
+        WriteSByte((sbyte) codeId[1], bytes, 1);
+        WriteUInt16(currentVersion, bytes, 2);
+        WriteSingle(brightness, bytes, 4);
+        WriteSingle(hueShift, bytes, 8);
+        WriteBool(clearCamera, bytes, 12);
+        WriteBool(mirrorX, bytes, 13);
+        WriteBool(mirrorY, bytes, 14);
+        return Convert.ToBase64String(bytes);
     }
 
     public bool DeserializePreset(string text)
     {
-        var bytes = FromBase64String(text);
+        var bytes = Convert.FromBase64String(text);
 
         if (bytes.Length != codeSizeBytes)
         {
             return false;
         }
 
-        brightness = ReadSingle(bytes, 0);
-        hueShift = ReadSingle(bytes, 4);
-        clearCamera = ReadBool(bytes, 8);
-        mirrorX = ReadBool(bytes, 9);
-        mirrorY = ReadBool(bytes, 10);
+        var id0 = ReadSByte(bytes, 0);
+        var id1 = ReadSByte(bytes, 1);
+        var version = ReadUInt16(bytes, 2);
+
+        if (id0 == codeId[0] && id1 == codeId[1] && version != currentVersion)
+        {
+            return false;
+        }
+
+        brightness = ReadSingle(bytes, 4);
+        hueShift = ReadSingle(bytes, 8);
+        clearCamera = ReadBool(bytes, 12);
+        mirrorX = ReadBool(bytes, 13);
+        mirrorY = ReadBool(bytes, 14);
 
         return true;
     }
@@ -111,116 +124,14 @@ public class PresetBoard : UdonSharpBehaviour
         mirrorYToggle.SendCustomEvent("OnSetValueExternally");
     }
 
-    private byte Base64ToSextet(char c)
-    {
-        return (byte) (c >= 'A' && c <= 'Z'
-          ? c - 65
-          : c >= 'a' && c <= 'z'
-          ? c - 71
-          : c >= '0' && c <= '9'
-          ? c + 4
-          : c == '+'
-          ? 62
-          : c == '/'
-          ? 63
-          : 0);
-    }
-
-    public byte[] FromBase64String(string text)
-    {
-        int byteCount = (text.Length * 3) / 4;
-        int textLength = text.Length;
-
-        // Trim padding characters.
-        for (var i = text.Length - 1; i >= 0; i--)
-        {
-            if(text[i] != '=')
-            {
-                break;
-            }
-
-            textLength--;
-            byteCount--;
-        }
-
-        byte[] bytes = new byte[byteCount];
-
-        for (var i = 0; i < textLength; i += 4)
-        {
-            var c0 = Base64ToSextet(text[i]);
-            var c1 = Base64ToSextet(text[i + 1]);
-
-            var writeIndex = (i * 3) / 4;
-            bytes[writeIndex] = (byte) ((c0 << 2) | ((c1 & 0x30) >> 4));
-
-            // If the last two characters aren't padding.
-            if (i + 2 < textLength)
-            {
-                var c2 = Base64ToSextet(text[i + 2]);
-                bytes[writeIndex + 1] = (byte)(((c1 & 0xf) << 4) | ((c2 & 0x3c) >> 2));
-
-                // If the last character isn't padding.
-                if (i + 3 < textLength)
-                {
-                    var c3 = Base64ToSextet(text[i + 3]);
-                    bytes[writeIndex + 2] = (byte)(((c2 & 0x3) << 6) | c3);
-                }
-            }
-        }
-
-        return bytes;
-    }
-
-    public string ToBase64String(byte[] bytes)
-    {
-        string result = string.Empty;
-        var caseIndex = 0;
-
-        for (var i = 0; i < bytes.Length; caseIndex++)
-        {
-            var currentByte = bytes[i];
-            var nextByte = i < bytes.Length - 1 ? bytes[i + 1] : (byte) 0;
-
-            switch (caseIndex % 4)
-            {
-                case 0:
-                {
-                    result += base64Digits[(currentByte & 0xfc) >> 2];
-                    break;
-                }
-                case 1:
-                {
-                    result += base64Digits[((currentByte & 0x3) << 4) | ((nextByte & 0xf0) >> 4)];
-                    i++;
-                    break;
-                }
-                case 2:
-                {
-                    result += base64Digits[((currentByte & 0xf) << 2) | ((nextByte & 0xc0) >> 6)];
-                    i++;
-                    break;
-                }
-                case 3:
-                {
-                    result += base64Digits[currentByte & 0x3f];
-                    i++;
-                    break;
-                }
-            }
-        }
-
-        // Pad to a multiple of 4.
-        for (var i = 0; i < result.Length % 4; i++)
-        {
-            result += "=";
-        }
-
-        return result;
-    }
-
     public bool ReadBool(byte[] buffer, int index)
     {
         return buffer[index] == 1;
+    }
+
+    public ushort ReadUInt16(byte[] buffer, int index)
+    {
+        return Convert.ToUInt16(buffer[index] << BIT8 | buffer[index + 1]);
     }
 
     public uint ReadUInt32(byte[] buffer, int index)
@@ -234,6 +145,13 @@ public class PresetBoard : UdonSharpBehaviour
         index++;
         value |= (uint)buffer[index];
         return value;
+    }
+
+    public sbyte ReadSByte(byte[] buffer, int index)
+    {
+        int value = buffer[index];
+        if (value >= 0x80) value = value - 256;
+        return Convert.ToSByte(value);
     }
 
     public float ReadSingle(byte[] buffer, int index)
@@ -272,6 +190,15 @@ public class PresetBoard : UdonSharpBehaviour
         return 1;
     }
 
+    public int WriteUInt16(ushort value, byte[] buffer, int index)
+    {
+        int tmp = Convert.ToInt32(value);
+        buffer[index] = (byte)(tmp >> BIT8);
+        index++;
+        buffer[index] = (byte)(tmp & 0xFF);
+        return 2;
+    }
+
     public int WriteUInt32(uint value, byte[] buffer, int index)
     {
         buffer[index] = (byte)((value >> BIT24) & 255u);
@@ -282,6 +209,12 @@ public class PresetBoard : UdonSharpBehaviour
         index++;
         buffer[index] = (byte)(value & 255u);
         return 4;
+    }
+
+    public int WriteSByte(sbyte value, byte[] buffer, int index)
+    {
+        buffer[index] = (byte)(value < 0 ? (value + 256) : value);
+        return 1;
     }
 
     public int WriteSingle(float value, byte[] buffer, int index)
