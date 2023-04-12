@@ -10,6 +10,7 @@
     SubShader
     {
         Tags { "Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Transparent" }
+        Tags { "RenderType" = "Opaque" }
         LOD 100
 
         ZWrite Off
@@ -62,7 +63,7 @@
                 priorColor.rgb = hsvToRgb(hsv) * _Brightness;
 
                 fixed4 currentColor = tex2D(_MainTex, i.uv);
-                fixed4 col = lerp(priorColor, currentColor, 0.5);
+                fixed4 col = fixed4(lerp(priorColor.rgb, currentColor.rgb, 0.5), currentColor.a);
 
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
