@@ -28,11 +28,13 @@ public class PresetBoard : UdonSharpBehaviour
     public SyncedSlider hueShiftSlider;
     public SyncedToggle mirrorXToggle;
     public SyncedToggle mirrorYToggle;
+    public SyncedToggle orthographicProjectionToggle;
     public InputField presetCodeInputField;
 
     private float brightness;
     private bool clearCamera;
     private float hueShift;
+    private bool isProjectionOrthographic;
     private bool mirrorX;
     private bool mirrorY;
 
@@ -46,6 +48,7 @@ public class PresetBoard : UdonSharpBehaviour
         brightness = brightnessSlider.value;
         clearCamera = clearCameraToggle.isOn;
         hueShift = hueShiftSlider.value;
+        isProjectionOrthographic = orthographicProjectionToggle.isOn;
         mirrorX = mirrorXToggle.isOn;
         mirrorY = mirrorYToggle.isOn;
 
@@ -81,7 +84,7 @@ public class PresetBoard : UdonSharpBehaviour
         WriteUInt16(currentVersion, bytes, 2);
         WriteSingle(brightness, bytes, 4);
         WriteSingle(hueShift, bytes, 8);
-        bytes[12] = (byte) ((ToInt(mirrorX) << 2) | (ToInt(mirrorY) << 1) | ToInt(clearCamera));
+        bytes[12] = (byte) ((ToInt(mirrorX) << 3) | (ToInt(mirrorY) << 2) | (ToInt(isProjectionOrthographic) << 1) | ToInt(clearCamera));
         return Convert.ToBase64String(bytes);
     }
 
@@ -113,8 +116,9 @@ public class PresetBoard : UdonSharpBehaviour
 
         var flags = bytes[12];
         clearCamera = (flags & 1) > 0;
-        mirrorX = (flags & 2) > 0;
+        isProjectionOrthographic = (flags & 2) > 0;
         mirrorY = (flags & 4) > 0;
+        mirrorX = (flags & 8) > 0;
 
         return true;
     }
@@ -122,19 +126,22 @@ public class PresetBoard : UdonSharpBehaviour
     private void ApplyPreset()
     {
         brightnessSlider.value = brightness;
-        brightnessSlider.SendCustomEvent("OnSetValueExternally");
+        brightnessSlider.OnSetValueExternally();
 
         clearCameraToggle.isOn = clearCamera;
-        clearCameraToggle.SendCustomEvent("OnSetValueExternally");
+        clearCameraToggle.OnSetValueExternally();
 
         hueShiftSlider.value = hueShift;
-        hueShiftSlider.SendCustomEvent("OnSetValueExternally");
+        hueShiftSlider.OnSetValueExternally();
+
+        orthographicProjectionToggle.isOn = isProjectionOrthographic;
+        orthographicProjectionToggle.OnSetValueExternally();
 
         mirrorXToggle.isOn = mirrorX;
-        mirrorXToggle.SendCustomEvent("OnSetValueExternally");
+        mirrorXToggle.OnSetValueExternally();
 
         mirrorYToggle.isOn = mirrorY;
-        mirrorYToggle.SendCustomEvent("OnSetValueExternally");
+        mirrorYToggle.OnSetValueExternally();
     }
 
     public bool ReadBool(byte[] buffer, int index)

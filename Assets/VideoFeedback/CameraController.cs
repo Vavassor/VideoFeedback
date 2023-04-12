@@ -7,6 +7,7 @@ using VRC.Udon;
 public class CameraController : UdonSharpBehaviour
 {
     public SyncedToggle cameraClearToggle;
+    public SyncedToggle orthographicProjectionToggle;
     public RenderTexture video0;
     public RenderTexture video1;
 
@@ -15,6 +16,11 @@ public class CameraController : UdonSharpBehaviour
     public void OnChangeCameraClear()
     {
         cameraComponent.clearFlags = cameraClearToggle.isOn ? CameraClearFlags.SolidColor : CameraClearFlags.Nothing;
+    }
+
+    public void OnChangeOrthographicProjection()
+    {
+        cameraComponent.orthographic = orthographicProjectionToggle.isOn;
     }
 
     void Start()
