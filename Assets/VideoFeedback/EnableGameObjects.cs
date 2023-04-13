@@ -10,6 +10,11 @@ public class EnableGameObjects : UdonSharpBehaviour
 
     override public void OnPlayerTriggerEnter(VRCPlayerApi playerApi)
     {
+        if (!playerApi.isLocal)
+        {
+            return;
+        }
+
         foreach (var obj in gameObjects)
         {
             obj.SetActive(true);
@@ -27,6 +32,11 @@ public class EnableGameObjects : UdonSharpBehaviour
 
     override public void OnPlayerTriggerExit(VRCPlayerApi playerApi)
     {
+        if (!playerApi.isLocal)
+        {
+            return;
+        }
+
         foreach (var obj in gameObjects)
         {
             obj.SetActive(false);

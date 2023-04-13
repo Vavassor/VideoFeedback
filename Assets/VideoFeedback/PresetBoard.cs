@@ -24,6 +24,7 @@ public class PresetBoard : UdonSharpBehaviour
     public string selectedOptionPresetCode;
 
     public SyncedSlider brightnessSlider;
+    public VRC_Pickup cameraPickup;
     public SyncedToggle clearCameraToggle;
     public SyncedSlider hueShiftSlider;
     public SyncedToggle mirrorXToggle;
@@ -31,7 +32,10 @@ public class PresetBoard : UdonSharpBehaviour
     public SyncedToggle orthographicProjectionToggle;
     public InputField presetCodeInputField;
 
+    // Data to be saved in a preset code.
     private float brightness;
+    private Vector3 cameraPosition;
+    private Quaternion cameraRotation;
     private bool clearCamera;
     private float hueShift;
     private bool isProjectionOrthographic;
@@ -39,13 +43,15 @@ public class PresetBoard : UdonSharpBehaviour
     private bool mirrorY;
 
     private const string codeId = "VF";
-    private const int codeSizeBytes = 13;
+    private const int codeSizeBytes = 33;
     private const ushort currentVersion = 1;
-    private const string defaultPresetCode = "VkYAAT+AAAAAAAAAAQ==";
+    private const string defaultPresetCode = "VkYAAb0KHgA/2jBUP0akl5X3O/qs2hshP0yKHEEmgbkD";
 
     public void OnClickGeneratePresetCode()
     {
         brightness = brightnessSlider.value;
+        cameraPosition = cameraPickup.transform.position;
+        cameraRotation = cameraPickup.transform.rotation;
         clearCamera = clearCameraToggle.isOn;
         hueShift = hueShiftSlider.value;
         isProjectionOrthographic = orthographicProjectionToggle.isOn;
@@ -82,9 +88,11 @@ public class PresetBoard : UdonSharpBehaviour
         WriteSByte((sbyte) codeId[0], bytes, 0);
         WriteSByte((sbyte) codeId[1], bytes, 1);
         WriteUInt16(currentVersion, bytes, 2);
-        WriteSingle(brightness, bytes, 4);
-        WriteSingle(hueShift, bytes, 8);
-        bytes[12] = (byte) ((ToInt(mirrorX) << 3) | (ToInt(mirrorY) << 2) | (ToInt(isProjectionOrthographic) << 1) | ToInt(clearCamera));
+        WriteVector3(cameraPosition, bytes, 4);
+        WriteHalfQuaternion(cameraRotation, bytes, 16);
+        WriteSingle(brightness, bytes, 24);
+        WriteSingle(hueShift, bytes, 28);
+        bytes[32] = (byte) ((ToInt(mirrorX) << 3) | (ToInt(mirrorY) << 2) | (ToInt(isProjectionOrthographic) << 1) | ToInt(clearCamera));
         return Convert.ToBase64String(bytes);
     }
 
@@ -111,10 +119,12 @@ public class PresetBoard : UdonSharpBehaviour
             return false;
         }
 
-        brightness = ReadSingle(bytes, 4);
-        hueShift = ReadSingle(bytes, 8);
+        cameraPosition = ReadVector3(bytes, 4);
+        cameraRotation = ReadHalfQuaternion(bytes, 16);
+        brightness = ReadSingle(bytes, 24);
+        hueShift = ReadSingle(bytes, 28);
 
-        var flags = bytes[12];
+        var flags = bytes[32];
         clearCamera = (flags & 1) > 0;
         isProjectionOrthographic = (flags & 2) > 0;
         mirrorY = (flags & 4) > 0;
@@ -127,6 +137,9 @@ public class PresetBoard : UdonSharpBehaviour
     {
         brightnessSlider.value = brightness;
         brightnessSlider.OnSetValueExternally();
+
+        Networking.SetOwner(Networking.LocalPlayer, cameraPickup.gameObject);
+        cameraPickup.transform.SetPositionAndRotation(cameraPosition, cameraRotation);
 
         clearCameraToggle.isOn = clearCamera;
         clearCameraToggle.OnSetValueExternally();
@@ -149,22 +162,22 @@ public class PresetBoard : UdonSharpBehaviour
         return buffer[index] == 1;
     }
 
-    public ushort ReadUInt16(byte[] buffer, int index)
+    public float ReadHalf(byte[] buffer, int index)
     {
-        return Convert.ToUInt16(buffer[index] << BIT8 | buffer[index + 1]);
+        return Mathf.HalfToFloat(ReadUInt16(buffer, index));
     }
 
-    public uint ReadUInt32(byte[] buffer, int index)
+    public Quaternion ReadHalfQuaternion(byte[] buffer, int index)
     {
-        uint value = 0;
-        value |= (uint)buffer[index] << BIT24;
-        index++;
-        value |= (uint)buffer[index] << BIT16;
-        index++;
-        value |= (uint)buffer[index] << BIT8;
-        index++;
-        value |= (uint)buffer[index];
-        return value;
+        float x = ReadHalf(buffer, index);
+        index += 2;
+        float y = ReadHalf(buffer, index);
+        index += 2;
+        float z = ReadHalf(buffer, index);
+        index += 2;
+        float w = ReadHalf(buffer, index);
+
+        return new Quaternion(x, y, z, w);
     }
 
     public sbyte ReadSByte(byte[] buffer, int index)
@@ -203,6 +216,35 @@ public class PresetBoard : UdonSharpBehaviour
         return result;
     }
 
+    public ushort ReadUInt16(byte[] buffer, int index)
+    {
+        return Convert.ToUInt16(buffer[index] << BIT8 | buffer[index + 1]);
+    }
+
+    public uint ReadUInt32(byte[] buffer, int index)
+    {
+        uint value = 0;
+        value |= (uint)buffer[index] << BIT24;
+        index++;
+        value |= (uint)buffer[index] << BIT16;
+        index++;
+        value |= (uint)buffer[index] << BIT8;
+        index++;
+        value |= (uint)buffer[index];
+        return value;
+    }
+
+    public Vector3 ReadVector3(byte[] buffer, int index)
+    {
+        float x = ReadSingle(buffer, index);
+        index += 4;
+        float y = ReadSingle(buffer, index);
+        index += 4;
+        float z = ReadSingle(buffer, index);
+
+        return new Vector3(x, y, z);
+    }
+
     public int WriteBool(bool value, byte[] buffer, int index)
     {
         if (value) buffer[index] = 1;
@@ -210,25 +252,21 @@ public class PresetBoard : UdonSharpBehaviour
         return 1;
     }
 
-    public int WriteUInt16(ushort value, byte[] buffer, int index)
+    public int WriteHalf(float value, byte[] buffer, int index)
     {
-        int tmp = Convert.ToInt32(value);
-        buffer[index] = (byte)(tmp >> BIT8);
-        index++;
-        buffer[index] = (byte)(tmp & 0xFF);
-        return 2;
+        return WriteUInt16(Mathf.FloatToHalf(value), buffer, index);
     }
 
-    public int WriteUInt32(uint value, byte[] buffer, int index)
+    public int WriteHalfQuaternion(Quaternion value, byte[] buffer, int index)
     {
-        buffer[index] = (byte)((value >> BIT24) & 255u);
-        index++;
-        buffer[index] = (byte)((value >> BIT16) & 255u);
-        index++;
-        buffer[index] = (byte)((value >> BIT8) & 255u);
-        index++;
-        buffer[index] = (byte)(value & 255u);
-        return 4;
+        WriteHalf(value.x, buffer, index);
+        index += 2;
+        WriteHalf(value.y, buffer, index);
+        index += 2;
+        WriteHalf(value.z, buffer, index);
+        index += 2;
+        WriteHalf(value.w, buffer, index);
+        return 8;
     }
 
     public int WriteSByte(sbyte value, byte[] buffer, int index)
@@ -286,5 +324,36 @@ public class PresetBoard : UdonSharpBehaviour
             tmp |= Convert.ToUInt32(value * (2 << 22)) & FLOAT_FRAC_MASK;
         }
         return WriteUInt32(tmp, buffer, index);
+    }
+
+    public int WriteUInt16(ushort value, byte[] buffer, int index)
+    {
+        int tmp = Convert.ToInt32(value);
+        buffer[index] = (byte)(tmp >> BIT8);
+        index++;
+        buffer[index] = (byte)(tmp & 0xFF);
+        return 2;
+    }
+
+    public int WriteUInt32(uint value, byte[] buffer, int index)
+    {
+        buffer[index] = (byte)((value >> BIT24) & 255u);
+        index++;
+        buffer[index] = (byte)((value >> BIT16) & 255u);
+        index++;
+        buffer[index] = (byte)((value >> BIT8) & 255u);
+        index++;
+        buffer[index] = (byte)(value & 255u);
+        return 4;
+    }
+
+    public int WriteVector3(Vector3 value, byte[] buffer, int index)
+    {
+        WriteSingle(value.x, buffer, index);
+        index += 4;
+        WriteSingle(value.y, buffer, index);
+        index += 4;
+        WriteSingle(value.z, buffer, index);
+        return 12;
     }
 }
