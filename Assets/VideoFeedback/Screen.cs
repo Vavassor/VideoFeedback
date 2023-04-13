@@ -9,6 +9,7 @@ public class Screen : UdonSharpBehaviour
     public Material material;
     public SyncedSlider brightnessSlider;
     public SyncedSlider hueShiftSlider;
+    public SyncedToggle invertColorToggle;
     public SyncedToggle mirrorXToggle;
     public SyncedToggle mirrorYToggle;
     public float screenScaleX = 4.0f;
@@ -31,6 +32,11 @@ public class Screen : UdonSharpBehaviour
     public void OnChangeHueShift()
     {
         material.SetFloat("_HueShift", hueShiftSlider.value);
+    }
+
+    public void OnChangeInvertColor()
+    {
+        material.SetFloat("_InvertColor", invertColorToggle.isOn ? 1.0f : 0.0f);
     }
 
     public void OnChangeMirrorX()

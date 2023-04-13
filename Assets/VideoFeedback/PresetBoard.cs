@@ -27,6 +27,7 @@ public class PresetBoard : UdonSharpBehaviour
     public VRC_Pickup cameraPickup;
     public SyncedToggle clearCameraToggle;
     public SyncedSlider hueShiftSlider;
+    public SyncedToggle invertColorToggle;
     public SyncedToggle mirrorXToggle;
     public SyncedToggle mirrorYToggle;
     public SyncedToggle orthographicProjectionToggle;
@@ -38,6 +39,7 @@ public class PresetBoard : UdonSharpBehaviour
     private Quaternion cameraRotation;
     private bool clearCamera;
     private float hueShift;
+    private bool invertColor;
     private bool isProjectionOrthographic;
     private bool mirrorX;
     private bool mirrorY;
@@ -54,6 +56,7 @@ public class PresetBoard : UdonSharpBehaviour
         cameraRotation = cameraPickup.transform.rotation;
         clearCamera = clearCameraToggle.isOn;
         hueShift = hueShiftSlider.value;
+        invertColor = invertColorToggle.isOn;
         isProjectionOrthographic = orthographicProjectionToggle.isOn;
         mirrorX = mirrorXToggle.isOn;
         mirrorY = mirrorYToggle.isOn;
@@ -92,7 +95,7 @@ public class PresetBoard : UdonSharpBehaviour
         WriteHalfQuaternion(cameraRotation, bytes, 16);
         WriteSingle(brightness, bytes, 24);
         WriteSingle(hueShift, bytes, 28);
-        bytes[32] = (byte) ((ToInt(mirrorX) << 3) | (ToInt(mirrorY) << 2) | (ToInt(isProjectionOrthographic) << 1) | ToInt(clearCamera));
+        bytes[32] = (byte) ((ToInt(invertColor) << 4) | (ToInt(mirrorX) << 3) | (ToInt(mirrorY) << 2) | (ToInt(isProjectionOrthographic) << 1) | ToInt(clearCamera));
         return Convert.ToBase64String(bytes);
     }
 
@@ -125,10 +128,11 @@ public class PresetBoard : UdonSharpBehaviour
         hueShift = ReadSingle(bytes, 28);
 
         var flags = bytes[32];
-        clearCamera = (flags & 1) > 0;
-        isProjectionOrthographic = (flags & 2) > 0;
-        mirrorY = (flags & 4) > 0;
-        mirrorX = (flags & 8) > 0;
+        clearCamera = (flags & 0x01) > 0;
+        isProjectionOrthographic = (flags & 0x02) > 0;
+        mirrorY = (flags & 0x04) > 0;
+        mirrorX = (flags & 0x08) > 0;
+        invertColor = (flags & 0x10) > 0;
 
         return true;
     }
@@ -146,6 +150,9 @@ public class PresetBoard : UdonSharpBehaviour
 
         hueShiftSlider.value = hueShift;
         hueShiftSlider.OnSetValueExternally();
+
+        invertColorToggle.isOn = invertColor;
+        invertColorToggle.OnSetValueExternally();
 
         orthographicProjectionToggle.isOn = isProjectionOrthographic;
         orthographicProjectionToggle.OnSetValueExternally();

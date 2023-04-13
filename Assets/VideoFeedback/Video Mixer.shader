@@ -4,6 +4,7 @@
     {
         _Brightness("Brightness", float) = 1
         _HueShift("Hue Shift", float) = 0
+        _InvertColor("Invert Color", float) = 0
         _MainTex("Texture", 2D) = "white" {}
         _PriorTexture("Prior Texture", 2D) = "white" {}
     }
@@ -23,6 +24,7 @@
             #include "ColorConversion.cginc"
 
             half _Brightness;
+            half _InvertColor;
             half _HueShift;
             sampler2D _MainTex;
             float4 _MainTex_ST;
@@ -36,7 +38,12 @@
                 priorColor.rgb = hsvToRgb(hsv) * _Brightness;
 
                 fixed4 currentColor = tex2D(_MainTex, IN.localTexcoord);
-                fixed4 col = fixed4(lerp(priorColor.rgb, currentColor.rgb, 0.5), currentColor.a);
+                fixed4 col = fixed4(lerp(currentColor.rgb, priorColor.rgb, currentColor.a), currentColor.a);
+
+                if (_InvertColor != 0.0)
+                {
+                    col.rgb = 1.0 - col.rgb;
+                }
 
                 return col;
             }
