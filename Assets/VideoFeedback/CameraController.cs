@@ -7,6 +7,7 @@ using VRC.Udon;
 public class CameraController : UdonSharpBehaviour
 {
     public SyncedToggle cameraClearToggle;
+    public CustomRenderTexture videoMixed;
     public SyncedToggle orthographicProjectionToggle;
     public RenderTexture video0;
     public RenderTexture video1;
@@ -26,10 +27,13 @@ public class CameraController : UdonSharpBehaviour
     void Start()
     {
         cameraComponent = GetComponent<Camera>();
+
+        videoMixed.Initialize();
     }
 
     void Update()
     {
         VRCGraphics.Blit(video0, video1);
+        videoMixed.Update();
     }
 }
