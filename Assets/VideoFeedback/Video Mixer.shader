@@ -31,9 +31,11 @@
             sampler2D _PriorTexture;
 
             fixed4 frag(v2f_customrendertexture IN) : COLOR
-            {                
+            {
                 fixed4 priorColor = tex2D(_PriorTexture, IN.localTexcoord);
                 float3 hsv = rgbToHsv(priorColor.rgb);
+                // To wrap negative numbers, normally you'd use (n % m + m) % m.
+                // Because n is smaller than a couple cycles, we can get away with (n + m) % m.
                 hsv.x = (hsv.x + _HueShift + 360.0) % 360.0;
                 priorColor.rgb = hsvToRgb(hsv) * _Brightness;
 
