@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Video Mixer
-  m_Shader: {fileID: 4800000, guid: ff2b868c0d1a43b4dbfe0d2169b488c9, type: 3}
+  m_Name: Logo
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 8400000, guid: fe13457fe69734042bc04725d21fcd13, type: 2}
+        m_Texture: {fileID: 2800000, guid: 8df71c9c225b4dd4b8a6b06aa364bd2f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -55,12 +55,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _PriorTexture:
-        m_Texture: {fileID: 8400000, guid: 09cb7dc75f6032242b4b518d5703736f, type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Brightness: 1.1643002
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -68,8 +63,6 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _HueShift: 10.406671
-    - _InvertColor: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
