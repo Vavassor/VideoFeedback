@@ -7,6 +7,8 @@ using VRC.Udon;
 public class CameraController : UdonSharpBehaviour
 {
     public SyncedToggle cameraClearToggle;
+    public Camera0Controller cameraController;
+    public CustomRenderTexture videoGradientMapped;
     public CustomRenderTexture videoMixed;
     public SyncedToggle orthographicProjectionToggle;
 
@@ -20,17 +22,20 @@ public class CameraController : UdonSharpBehaviour
     public void OnChangeOrthographicProjection()
     {
         cameraComponent.orthographic = orthographicProjectionToggle.isOn;
+        cameraController.OnChangeOrthographicProjection();
     }
 
     void Start()
     {
         cameraComponent = GetComponent<Camera>();
 
+        videoGradientMapped.Initialize();
         videoMixed.Initialize();
     }
 
     void Update()
     {
+        videoGradientMapped.Update();
         videoMixed.Update();
     }
 }

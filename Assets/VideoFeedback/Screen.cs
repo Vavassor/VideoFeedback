@@ -6,9 +6,11 @@ using VRC.Udon;
 
 public class Screen : UdonSharpBehaviour
 {
-    public Material material;
+    public Material videoMixerMaterial;
+    public Material gradientMappingMaterial;
     public SyncedSlider brightnessSlider;
     public SyncedSlider chromaticDistortionSlider;
+    public SyncedToggle gradientMappingToggle;
     public SyncedSlider hueShiftSlider;
     public SyncedToggle invertColorToggle;
     public SyncedToggle mirrorXToggle;
@@ -27,22 +29,27 @@ public class Screen : UdonSharpBehaviour
 
     public void OnChangeBrightness()
     {
-        material.SetFloat("_Brightness", brightnessSlider.value);
+        videoMixerMaterial.SetFloat("_Brightness", brightnessSlider.value);
     }
 
     public void OnChangeChromaticDistortion()
     {
-        material.SetFloat("_ChromaticDistortion", chromaticDistortionSlider.value);
+        videoMixerMaterial.SetFloat("_ChromaticDistortion", chromaticDistortionSlider.value);
+    }
+
+    public void OnChangeGradientMapping()
+    {
+        gradientMappingMaterial.SetFloat("_UseGradientMapping", gradientMappingToggle.isOn ? 1.0f : 0.0f);
     }
 
     public void OnChangeHueShift()
     {
-        material.SetFloat("_HueShift", hueShiftSlider.value);
+        videoMixerMaterial.SetFloat("_HueShift", hueShiftSlider.value);
     }
 
     public void OnChangeInvertColor()
     {
-        material.SetFloat("_InvertColor", invertColorToggle.isOn ? 1.0f : 0.0f);
+        videoMixerMaterial.SetFloat("_InvertColor", invertColorToggle.isOn ? 1.0f : 0.0f);
     }
 
     public void OnChangeMirrorX()

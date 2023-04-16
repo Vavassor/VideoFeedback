@@ -1,0 +1,58 @@
+﻿Shader "Custom/Gradient Mapping"
+{
+    Properties
+    {
+        [Header(Main Maps)] _Video0Texture("Video 0 Texture", 2D) = "white" {}
+        _Video1Texture("Video 1 Texture", 2D) = "white" {}
+        [Header(Gradient Mapping)] _UseGradientMapping("Use Gradient Mapping", float) = 0.0
+        _GradientStop0Color("Gradient Stop 0 Color", Color) = (0,0,0,1)
+        _GradientStop1Color("Gradient Stop 1 Color", Color) = (1,1,1,1)
+    }
+    SubShader
+    {
+        Lighting Off
+        Blend One Zero
+
+        Pass
+        {
+            CGPROGRAM
+            #include "UnityCustomRenderTexture.cginc"
+            #pragma vertex CustomRenderTextureVertexShader
+            #pragma fragment frag
+            #pragma target 3.0
+
+            #include "ColorConversion.cginc"
+
+            sampler2D _Video0Texture;
+            sampler2D _Video1Texture;
+
+            half _UseGradientMapping;
+            fixed4 _GradientStop0Color;
+            fixed4 _GradientStop1Color;
+
+            inline fixed4 blendOver(fixed4 s, fixed4 t)
+            {
+                float a0 = s.a + (1.0 - s.a) * t.a;
+                float3 color = (s.a * s.rgb + (1.0 - s.a) * t.a * t.rgb) / a0;
+                return fixed4(color, a0);
+            }
+
+            fixed4 frag(v2f_customrendertexture IN) : COLOR
+            {
+                fixed4 currentColor = tex2D(_Video0Texture, IN.localTexcoord);
+                fixed4 priorColor = tex2D(_Video1Texture, IN.localTexcoord);
+
+                if (_UseGradientMapping != 0.0)
+                {
+                    float3 value = rgbToValue(currentColor.rgb);
+                    currentColor.rgb = lerp(_GradientStop0Color.rgb, _GradientStop1Color.rgb, value);
+                }
+
+                fixed4 col = blendOver(currentColor, priorColor);
+
+                return col;
+            }
+            ENDCG
+        }
+    }
+}

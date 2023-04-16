@@ -62,4 +62,9 @@ float3 rgbToHsv(float3 rgb)
     return float3(h, s, xMax);
 }
 
+float rgbToValue(float3 rgb)
+{
+    return max(max(rgb.r, rgb.g), rgb.b);
+}
+
 #endif // COLOR_CONVERSION_H_

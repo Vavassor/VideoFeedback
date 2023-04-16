@@ -2,14 +2,14 @@
 {
     Properties
     {
-        _Brightness("Brightness", float) = 1
-        _ChromaticAberrationFalloff("Chromatic Aberattion Falloff", Range(0, 1)) = 0.65
-        _ChromaticAberrationSize("Chromatic Aberattion Size", Range(0, 1)) = 0.9
-        _ChromaticDistortion("Chromatic Distortion", float) = 0.01
+        [Header(Main Maps)] _MainTex("Texture", 2D) = "white" {}
+        [Header(Color Filters)] _Brightness("Brightness", float) = 1
         _HueShift("Hue Shift", float) = 0
         _InvertColor("Invert Color", float) = 0
-        _MainTex("Texture", 2D) = "white" {}
-        _WaveDistortion("WaveDistortion", Range(-0.04, 0.04)) = 0.0
+        [Header(Chromatic Aberration)] _ChromaticDistortion("Chromatic Distortion", float) = 0.01
+        _ChromaticAberrationFalloff("Chromatic Aberattion Falloff", Range(0, 1)) = 0.65
+        _ChromaticAberrationSize("Chromatic Aberattion Size", Range(0, 1)) = 0.9
+        [Header(Distortion)] _WaveDistortion("WaveDistortion", Range(-0.04, 0.04)) = 0.0
     }
     SubShader
     {
@@ -26,24 +26,27 @@
 
             #include "ColorConversion.cginc"
 
-            half _Brightness;
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
+
             half _ChromaticAberrationFalloff;
             half _ChromaticAberrationSize;
             half _ChromaticDistortion;
-            half _InvertColor;
+            
+            half _Brightness;
             half _HueShift;
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
+            half _InvertColor;
+            
             half _WaveDistortion;
 
-            inline fixed4 getColorWithChromaticAberration(float2 uv)
+            inline fixed4 getColorWithChromaticAberration(sampler2D samp, float2 uv)
             {
                 float2 fromCenter = uv - float2(0.5, 0.5);
                 float falloff = 1.0 - smoothstep(_ChromaticAberrationSize, _ChromaticAberrationSize - _ChromaticAberrationFalloff, length(fromCenter));
                 float offset = fromCenter * falloff * _ChromaticDistortion;
-                fixed4 center = tex2D(_MainTex, uv);
-                fixed r = tex2D(_MainTex, uv + offset).x;
-                fixed b = tex2D(_MainTex, uv - offset).z;
+                fixed4 center = tex2D(samp, uv);
+                fixed r = tex2D(samp, uv + offset).x;
+                fixed b = tex2D(samp, uv - offset).z;
                 return fixed4(r, center.g, b, center.a);
             }
 
@@ -52,7 +55,7 @@
                 float2 distortedTexcoord = IN.localTexcoord;
                 distortedTexcoord.y += _WaveDistortion * sin(15.708 * IN.localTexcoord.x);
 
-                fixed4 currentColor = getColorWithChromaticAberration(distortedTexcoord);
+                fixed4 currentColor = getColorWithChromaticAberration(_MainTex, distortedTexcoord);
                 float3 hsv = rgbToHsv(currentColor.rgb);
 
                 // To wrap negative numbers, normally you'd use (n % m + m) % m.
