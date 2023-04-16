@@ -9,14 +9,12 @@ public class CameraController : UdonSharpBehaviour
     public SyncedToggle cameraClearToggle;
     public CustomRenderTexture videoMixed;
     public SyncedToggle orthographicProjectionToggle;
-    public RenderTexture video0;
-    public RenderTexture video1;
 
     private Camera cameraComponent;
 
     public void OnChangeCameraClear()
     {
-        cameraComponent.clearFlags = cameraClearToggle.isOn ? CameraClearFlags.SolidColor : CameraClearFlags.Nothing;
+        cameraComponent.clearFlags = cameraClearToggle.isOn ? CameraClearFlags.SolidColor : CameraClearFlags.Depth;
     }
 
     public void OnChangeOrthographicProjection()
@@ -33,7 +31,6 @@ public class CameraController : UdonSharpBehaviour
 
     void Update()
     {
-        VRCGraphics.Blit(video0, video1);
         videoMixed.Update();
     }
 }

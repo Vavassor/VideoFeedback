@@ -8,6 +8,7 @@ public class Screen : UdonSharpBehaviour
 {
     public Material material;
     public SyncedSlider brightnessSlider;
+    public SyncedSlider chromaticDistortionSlider;
     public SyncedSlider hueShiftSlider;
     public SyncedToggle invertColorToggle;
     public SyncedToggle mirrorXToggle;
@@ -27,6 +28,11 @@ public class Screen : UdonSharpBehaviour
     public void OnChangeBrightness()
     {
         material.SetFloat("_Brightness", brightnessSlider.value);
+    }
+
+    public void OnChangeChromaticDistortion()
+    {
+        material.SetFloat("_ChromaticDistortion", chromaticDistortionSlider.value);
     }
 
     public void OnChangeHueShift()
