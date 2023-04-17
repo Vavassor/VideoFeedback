@@ -54,8 +54,9 @@ public class PresetBoard : UdonSharpBehaviour
 
     private const string codeId = "VF";
     private const int codeSizeBytes = 37;
-    private const ushort currentVersion = 1;
-    private const string defaultPresetCode = "VkYAAb0KHgE/2jBVP0aklpX4O/qs2hsgOmRJNAAA0c1zRAcvAw==";
+    private const int headerSizeBytes = 4;
+    private const ushort currentVersion = 2;
+    private const string defaultPresetCode = "VkYAAr0KHgE/2jBVP0aklpX4O/qs2hsgOmRJNAAA0c1zRAcvAw==";
 
     public void OnClickGeneratePresetCode()
     {
@@ -128,7 +129,7 @@ public class PresetBoard : UdonSharpBehaviour
     {
         var bytes = Convert.FromBase64String(text);
 
-        if (bytes.Length != codeSizeBytes)
+        if (bytes.Length < headerSizeBytes)
         {
             return false;
         }
@@ -137,7 +138,17 @@ public class PresetBoard : UdonSharpBehaviour
         var id1 = ReadSByte(bytes, 1);
         var version = ReadUInt16(bytes, 2);
 
-        if (id0 == codeId[0] && id1 == codeId[1] && version != currentVersion)
+        if (id0 != codeId[0] || id1 != codeId[1] || version > currentVersion)
+        {
+            return false;
+        }
+
+        if (version < currentVersion)
+        {
+            bytes = MigrateVersions(bytes, version);
+        }
+
+        if (bytes.Length != codeSizeBytes)
         {
             return false;
         }
@@ -418,5 +429,39 @@ public class PresetBoard : UdonSharpBehaviour
         index += 4;
         WriteSingle(value.z, buffer, index);
         return 12;
+    }
+
+    private byte[] MigrateVersions(byte[] bytes, int version)
+    {
+        if (version == 1)
+        {
+            bytes = MigrateVersion1To2(bytes);
+            version = 2;
+        }
+
+        return bytes;
+    }
+
+    private byte[] MigrateVersion1To2(byte[] bytes)
+    {
+        byte[] newBytes = new byte[codeSizeBytes];
+
+        WriteSByte((sbyte) codeId[0], bytes, 0);
+        WriteSByte((sbyte) codeId[1], bytes, 1);
+        WriteUInt16(2, bytes, 2);
+        CopyBytes(bytes, 4, newBytes, 4, 20);
+        WriteHalf(ReadSingle(bytes, 24), newBytes, 24);
+        WriteHalf(ReadSingle(bytes, 28), newBytes, 26);
+        newBytes[36] = bytes[32];
+
+        return newBytes;
+    }
+
+    private void CopyBytes(byte[] from, int fromIndex, byte[] to, int toIndex, int size)
+    {
+        for (var i = 0; i < size; i++)
+        {
+            to[toIndex + i] = from[fromIndex + i];
+        }
     }
 }
