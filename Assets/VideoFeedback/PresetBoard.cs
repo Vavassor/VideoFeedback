@@ -57,6 +57,8 @@ public class PresetBoard : UdonSharpBehaviour
     private const int headerSizeBytes = 4;
     private const ushort currentVersion = 2;
     private const string defaultPresetCode = "VkYAAr0KHgE/2jBVP0aklpX4O/qs2hsgOmRJNAAA0c1zRAcvAw==";
+    private Color defaultStop0Color = new Color(0.4470588f, 0.8078431f, 0.8196079f);
+    private Color defaultStop1Color = new Color(0.1844448f, 0.02889f, 0.27f);
 
     public void OnClickGeneratePresetCode()
     {
@@ -452,6 +454,8 @@ public class PresetBoard : UdonSharpBehaviour
         CopyBytes(bytes, 4, newBytes, 4, 20);
         WriteHalf(ReadSingle(bytes, 24), newBytes, 24);
         WriteHalf(ReadSingle(bytes, 28), newBytes, 26);
+        WriteOpaqueColor(defaultStop0Color, newBytes, 30);
+        WriteOpaqueColor(defaultStop1Color, newBytes, 33);
         newBytes[36] = bytes[32];
 
         return newBytes;
