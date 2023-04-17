@@ -38,6 +38,36 @@ public class ColorButton : UdonSharpBehaviour
         UpdateColor();
     }
 
+    public void OnDisableButton()
+    {
+        button.interactable = false;
+    }
+
+    public void OnEnableButton()
+    {
+        button.interactable = true;
+    }
+
+    public void OnSetValueExternally()
+    {
+        Color.RGBToHSV(color, out float hue, out float saturation, out float value);
+
+        hueSlider.value = hue;
+        hueSlider.OnSetValueExternally();
+
+        saturationSlider.value = saturation;
+        saturationSlider.OnSetValueExternally();
+
+        valueSlider.value = value;
+        valueSlider.OnSetValueExternally();
+    }
+
+    public void OnGetColor()
+    {
+        var pickedColor = Color.HSVToRGB(hueSlider.value, saturationSlider.value, valueSlider.value);
+        color = pickedColor;
+    }
+
     private void UpdateColor()
     {
         var pickedColor = Color.HSVToRGB(hueSlider.value, saturationSlider.value, valueSlider.value);

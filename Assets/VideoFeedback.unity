@@ -595,7 +595,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 57240207}
   changeSliderEventName: OnChangeBrightness
-  value: 1
+  value: 0.7989824
   target: {fileID: 1664888923}
 --- !u!1 &84812332
 GameObject:
@@ -1290,7 +1290,11 @@ MonoBehaviour:
   selectedOptionPresetCode: 
   brightnessSlider: {fileID: 57240208}
   cameraPickup: {fileID: 589861406}
+  chromaticDistortionSlider: {fileID: 1417255969}
   clearCameraToggle: {fileID: 1908938354}
+  gradientMappingStop0ColorButton: {fileID: 661124139}
+  gradientMappingStop1ColorButton: {fileID: 613154960}
+  gradientMappingToggle: {fileID: 939526248}
   hueShiftSlider: {fileID: 155708284}
   invertColorToggle: {fileID: 139799697}
   mirrorXToggle: {fileID: 720999768}
@@ -1719,7 +1723,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 139799696}
-  enableGameObjects: []
   isOn: 0
   target: {fileID: 1664888923}
   changeToggleEventName: OnChangeInvertColor
@@ -1932,7 +1935,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 155708283}
   changeSliderEventName: OnChangeHueShift
-  value: 0
+  value: 10.40667
   target: {fileID: 1664888923}
 --- !u!1 &161345965
 GameObject:
@@ -2245,7 +2248,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 179272468}
-  enableGameObjects: []
   isOn: 0
   target: {fileID: 1664888923}
   changeToggleEventName: OnChangeMirrorY
@@ -5757,6 +5759,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 8548828919884418081, guid: fe48398a14a01cd4ba74a5aca047a30d,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8548828919884418093, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
       propertyPath: target
@@ -6497,7 +6504,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 720999767}
-  enableGameObjects: []
   isOn: 0
   target: {fileID: 1664888923}
   changeToggleEventName: OnChangeMirrorX
@@ -6950,7 +6956,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 757593139}
-  enableGameObjects: []
   isOn: 1
   target: {fileID: 1664888923}
   changeToggleEventName: OnChangeClearCamera
@@ -7197,7 +7202,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 800632626}
-  enableGameObjects: []
   isOn: 1
   target: {fileID: 1664888923}
   changeToggleEventName: OnChangeClearCamera
@@ -7691,6 +7695,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 181
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548828919884418081, guid: fe48398a14a01cd4ba74a5aca047a30d,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548828919884418093, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
@@ -8546,8 +8555,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 939526247}
-  enableGameObjects:
-  - {fileID: 1333282358}
   isOn: 0
   target: {fileID: 1664888923}
   changeToggleEventName: OnChangeGradientMapping
@@ -11207,7 +11214,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1268363422}
-  enableGameObjects: []
   isOn: 1
   target: {fileID: 163922842}
   changeToggleEventName: OnChangeOrthographicProjection
@@ -11514,7 +11520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1333282359
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15481,7 +15487,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1908938353}
-  enableGameObjects: []
   isOn: 1
   target: {fileID: 163922842}
   changeToggleEventName: OnChangeCameraClear

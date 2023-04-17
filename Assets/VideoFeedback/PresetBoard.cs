@@ -25,7 +25,11 @@ public class PresetBoard : UdonSharpBehaviour
 
     public SyncedSlider brightnessSlider;
     public VRC_Pickup cameraPickup;
+    public SyncedSlider chromaticDistortionSlider;
     public SyncedToggle clearCameraToggle;
+    public ColorButton gradientMappingStop0ColorButton;
+    public ColorButton gradientMappingStop1ColorButton;
+    public SyncedToggle gradientMappingToggle;
     public SyncedSlider hueShiftSlider;
     public SyncedToggle invertColorToggle;
     public SyncedToggle mirrorXToggle;
@@ -37,17 +41,21 @@ public class PresetBoard : UdonSharpBehaviour
     private float brightness;
     private Vector3 cameraPosition;
     private Quaternion cameraRotation;
+    private float chromaticDistortion;
+    private Color gradientMappingStop0Color;
+    private Color gradientMappingStop1Color;
     private bool clearCamera;
     private float hueShift;
     private bool invertColor;
     private bool isProjectionOrthographic;
     private bool mirrorX;
     private bool mirrorY;
+    private bool useGradientMapping;
 
     private const string codeId = "VF";
-    private const int codeSizeBytes = 33;
+    private const int codeSizeBytes = 37;
     private const ushort currentVersion = 1;
-    private const string defaultPresetCode = "VkYAAb0KHgA/2jBUP0akl5X3O/qs2hshP0yKHEEmgbkD";
+    private const string defaultPresetCode = "VkYAAb0KHgE/2jBVP0aklpX4O/qs2hsgOmRJNAAA0c1zRAcvAw==";
 
     public void OnClickGeneratePresetCode()
     {
@@ -55,11 +63,20 @@ public class PresetBoard : UdonSharpBehaviour
         cameraPosition = cameraPickup.transform.position;
         cameraRotation = cameraPickup.transform.rotation;
         clearCamera = clearCameraToggle.isOn;
+        chromaticDistortion = chromaticDistortionSlider.value;
+
+        gradientMappingStop0ColorButton.OnGetColor();
+        gradientMappingStop0Color = gradientMappingStop0ColorButton.color;
+
+        gradientMappingStop1ColorButton.OnGetColor();
+        gradientMappingStop1Color = gradientMappingStop1ColorButton.color;
+
         hueShift = hueShiftSlider.value;
         invertColor = invertColorToggle.isOn;
         isProjectionOrthographic = orthographicProjectionToggle.isOn;
         mirrorX = mirrorXToggle.isOn;
         mirrorY = mirrorYToggle.isOn;
+        useGradientMapping = gradientMappingToggle.isOn;
 
         presetCodeInputField.text = SerializePreset();
     }
@@ -93,9 +110,12 @@ public class PresetBoard : UdonSharpBehaviour
         WriteUInt16(currentVersion, bytes, 2);
         WriteVector3(cameraPosition, bytes, 4);
         WriteHalfQuaternion(cameraRotation, bytes, 16);
-        WriteSingle(brightness, bytes, 24);
-        WriteSingle(hueShift, bytes, 28);
-        bytes[32] = (byte) ((ToInt(invertColor) << 4) | (ToInt(mirrorX) << 3) | (ToInt(mirrorY) << 2) | (ToInt(isProjectionOrthographic) << 1) | ToInt(clearCamera));
+        WriteHalf(brightness, bytes, 24);
+        WriteHalf(hueShift, bytes, 26);
+        WriteHalf(chromaticDistortion, bytes, 28);
+        WriteOpaqueColor(gradientMappingStop0Color, bytes, 30);
+        WriteOpaqueColor(gradientMappingStop1Color, bytes, 33);
+        bytes[36] = (byte) ((ToInt(useGradientMapping) << 5) | (ToInt(invertColor) << 4) | (ToInt(mirrorX) << 3) | (ToInt(mirrorY) << 2) | (ToInt(isProjectionOrthographic) << 1) | ToInt(clearCamera));
         return Convert.ToBase64String(bytes);
     }
 
@@ -124,15 +144,19 @@ public class PresetBoard : UdonSharpBehaviour
 
         cameraPosition = ReadVector3(bytes, 4);
         cameraRotation = ReadHalfQuaternion(bytes, 16);
-        brightness = ReadSingle(bytes, 24);
-        hueShift = ReadSingle(bytes, 28);
+        brightness = ReadHalf(bytes, 24);
+        hueShift = ReadHalf(bytes, 26);
+        chromaticDistortion = ReadHalf(bytes, 28);
+        gradientMappingStop0Color = ReadOpaqueColor(bytes, 30);
+        gradientMappingStop1Color = ReadOpaqueColor(bytes, 33);
 
-        var flags = bytes[32];
+        var flags = bytes[36];
         clearCamera = (flags & 0x01) > 0;
         isProjectionOrthographic = (flags & 0x02) > 0;
         mirrorY = (flags & 0x04) > 0;
         mirrorX = (flags & 0x08) > 0;
         invertColor = (flags & 0x10) > 0;
+        useGradientMapping = (flags & 0x20) > 0;
 
         return true;
     }
@@ -145,8 +169,17 @@ public class PresetBoard : UdonSharpBehaviour
         Networking.SetOwner(Networking.LocalPlayer, cameraPickup.gameObject);
         cameraPickup.transform.SetPositionAndRotation(cameraPosition, cameraRotation);
 
+        chromaticDistortionSlider.value = chromaticDistortion;
+        chromaticDistortionSlider.OnSetValueExternally();
+
         clearCameraToggle.isOn = clearCamera;
         clearCameraToggle.OnSetValueExternally();
+
+        gradientMappingStop0ColorButton.color = gradientMappingStop0Color;
+        gradientMappingStop0ColorButton.OnSetValueExternally();
+
+        gradientMappingStop1ColorButton.color = gradientMappingStop1Color;
+        gradientMappingStop1ColorButton.OnSetValueExternally();
 
         hueShiftSlider.value = hueShift;
         hueShiftSlider.OnSetValueExternally();
@@ -162,6 +195,9 @@ public class PresetBoard : UdonSharpBehaviour
 
         mirrorYToggle.isOn = mirrorY;
         mirrorYToggle.OnSetValueExternally();
+
+        gradientMappingToggle.isOn = useGradientMapping;
+        gradientMappingToggle.OnSetValueExternally();
     }
 
     public bool ReadBool(byte[] buffer, int index)
@@ -185,6 +221,16 @@ public class PresetBoard : UdonSharpBehaviour
         float w = ReadHalf(buffer, index);
 
         return new Quaternion(x, y, z, w);
+    }
+
+    public Color ReadOpaqueColor(byte[] buffer, int index)
+    {
+        float b = buffer[index] / 255.0f;
+        index++;
+        float g = buffer[index] / 255.0f;
+        index++;
+        float r = buffer[index] / 255.0f;
+        return new Color(r, g, b);
     }
 
     public sbyte ReadSByte(byte[] buffer, int index)
@@ -274,6 +320,16 @@ public class PresetBoard : UdonSharpBehaviour
         index += 2;
         WriteHalf(value.w, buffer, index);
         return 8;
+    }
+
+    public int WriteOpaqueColor(Color color, byte[] buffer, int index)
+    {
+        buffer[index] = (byte) (255.0f * color.b);
+        index++;
+        buffer[index] = (byte) (255.0f * color.g);
+        index++;
+        buffer[index] = (byte) (255.0f * color.r);
+        return 3;
     }
 
     public int WriteSByte(sbyte value, byte[] buffer, int index)

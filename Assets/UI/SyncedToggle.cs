@@ -8,7 +8,6 @@ using VRC.Udon;
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class SyncedToggle : UdonSharpBehaviour
 {
-    public GameObject[] enableGameObjects;
     [UdonSynced]
     public bool isOn;
     public GameObject target;
@@ -45,11 +44,6 @@ public class SyncedToggle : UdonSharpBehaviour
         foreach (var targetBehaviour in targetBehaviours)
         {
             targetBehaviour.SendCustomEvent(changeToggleEventName);
-        }
-
-        foreach (var obj in enableGameObjects)
-        {
-            obj.SetActive(isOn);
         }
     }
 
