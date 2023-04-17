@@ -595,8 +595,8 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 57240207}
   changeSliderEventName: OnChangeBrightness
-  value: 0.7989824
   target: {fileID: 1664888923}
+  value: 0.7989824
 --- !u!1 &84812332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,8 +1935,8 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 155708283}
   changeSliderEventName: OnChangeHueShift
-  value: 10.40667
   target: {fileID: 1664888923}
+  value: 10.40667
 --- !u!1 &161345965
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,8 +2015,8 @@ Camera:
   m_GameObject: {fileID: 163922842}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2097,9 +2097,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 163922845}
-  cameraClearToggle: {fileID: 1908938354}
-  cameraController: {fileID: 1719878938}
+  camera0Controller: {fileID: 1719878938}
   videoGradientMapped: {fileID: 8600000, guid: 6307d5f6af1ad2a4992edbe0398a0af0, type: 2}
+  videoGradientMapped1: {fileID: 8400000, guid: 391ff128b81de4541982001129d072d3,
+    type: 2}
   videoMixed: {fileID: 8600000, guid: 691e7b05c5f6d61429034051f4931f4a, type: 2}
   orthographicProjectionToggle: {fileID: 1268363423}
 --- !u!1 &179272465
@@ -12046,8 +12047,8 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1417255968}
   changeSliderEventName: OnChangeChromaticDistortion
-  value: 0
   target: {fileID: 1664888923}
+  value: 0
 --- !u!114 &1417255970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13807,6 +13808,7 @@ MonoBehaviour:
   videoMixerMaterial: {fileID: 2100000, guid: e9c9700536a149a47a6dbd026115b3e1, type: 2}
   gradientMappingMaterial: {fileID: 2100000, guid: 81751d02911ea8e4e90853446f10cc74,
     type: 2}
+  cameraClearToggle: {fileID: 1908938354}
   gradientStop0ColorButton: {fileID: 661124139}
   gradientStop1ColorButton: {fileID: 613154960}
   brightnessSlider: {fileID: 57240208}
@@ -15542,7 +15544,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1908938353}
   isOn: 1
-  target: {fileID: 163922842}
+  target: {fileID: 1664888923}
   changeToggleEventName: OnChangeCameraClear
 --- !u!1 &1932870273
 GameObject:

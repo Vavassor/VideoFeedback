@@ -8,6 +8,7 @@ public class Screen : UdonSharpBehaviour
 {
     public Material videoMixerMaterial;
     public Material gradientMappingMaterial;
+    public SyncedToggle cameraClearToggle;
     public ColorButton gradientStop0ColorButton;
     public ColorButton gradientStop1ColorButton;
     public SyncedSlider brightnessSlider;
@@ -32,6 +33,11 @@ public class Screen : UdonSharpBehaviour
     public void OnChangeBrightness()
     {
         videoMixerMaterial.SetFloat("_Brightness", brightnessSlider.value);
+    }
+
+    public void OnChangeCameraClear()
+    {
+        gradientMappingMaterial.SetFloat("_ShouldClearColor", cameraClearToggle.isOn ? 1.0f : 0.0f);
     }
 
     public void OnChangeChromaticDistortion()

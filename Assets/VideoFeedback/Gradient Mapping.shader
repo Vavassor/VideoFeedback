@@ -4,9 +4,11 @@
     {
         [Header(Main Maps)] _Video0Texture("Video 0 Texture", 2D) = "white" {}
         _Video1Texture("Video 1 Texture", 2D) = "white" {}
+        _GradientMapped1Texture("Gradient Mapped 1 Texture", 2D) = "white" {}
         [Header(Gradient Mapping)] _UseGradientMapping("Use Gradient Mapping", float) = 0.0
         _GradientStop0Color("Gradient Stop 0 Color", Color) = (0,0,0,1)
         _GradientStop1Color("Gradient Stop 1 Color", Color) = (1,1,1,1)
+        [Header(Camera Settings)] _ShouldClearColor("Should Clear Color", float) = 0.0
     }
     SubShader
     {
@@ -25,7 +27,9 @@
 
             sampler2D _Video0Texture;
             sampler2D _Video1Texture;
+            sampler2D _GradientMapped1Texture;
 
+            half _ShouldClearColor;
             half _UseGradientMapping;
             fixed4 _GradientStop0Color;
             fixed4 _GradientStop1Color;
@@ -49,6 +53,11 @@
                 }
 
                 fixed4 col = blendOver(currentColor, priorColor);
+
+                if (_ShouldClearColor == 0.0)
+                {
+                    col = blendOver(col, tex2D(_GradientMapped1Texture, IN.localTexcoord));
+                }
 
                 return col;
             }

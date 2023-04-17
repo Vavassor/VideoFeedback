@@ -6,23 +6,18 @@ using VRC.Udon;
 
 public class CameraController : UdonSharpBehaviour
 {
-    public SyncedToggle cameraClearToggle;
-    public Camera0Controller cameraController;
+    public Camera0Controller camera0Controller;
     public CustomRenderTexture videoGradientMapped;
+    public RenderTexture videoGradientMapped1;
     public CustomRenderTexture videoMixed;
     public SyncedToggle orthographicProjectionToggle;
 
     private Camera cameraComponent;
 
-    public void OnChangeCameraClear()
-    {
-        cameraComponent.clearFlags = cameraClearToggle.isOn ? CameraClearFlags.SolidColor : CameraClearFlags.Depth;
-    }
-
     public void OnChangeOrthographicProjection()
     {
         cameraComponent.orthographic = orthographicProjectionToggle.isOn;
-        cameraController.OnChangeOrthographicProjection();
+        camera0Controller.OnChangeOrthographicProjection();
     }
 
     void Start()
@@ -36,6 +31,8 @@ public class CameraController : UdonSharpBehaviour
     void Update()
     {
         videoGradientMapped.Update();
+        VRCGraphics.Blit(videoGradientMapped, videoGradientMapped1);
+
         videoMixed.Update();
     }
 }
