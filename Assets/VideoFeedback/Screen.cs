@@ -8,6 +8,8 @@ public class Screen : UdonSharpBehaviour
 {
     public Material videoMixerMaterial;
     public Material gradientMappingMaterial;
+    public ColorButton gradientStop0ColorButton;
+    public ColorButton gradientStop1ColorButton;
     public SyncedSlider brightnessSlider;
     public SyncedSlider chromaticDistortionSlider;
     public SyncedToggle gradientMappingToggle;
@@ -40,6 +42,16 @@ public class Screen : UdonSharpBehaviour
     public void OnChangeGradientMapping()
     {
         gradientMappingMaterial.SetFloat("_UseGradientMapping", gradientMappingToggle.isOn ? 1.0f : 0.0f);
+    }
+
+    public void OnChangeGradientStop0Color()
+    {
+        gradientMappingMaterial.SetColor("_GradientStop0Color", gradientStop0ColorButton.color);
+    }
+
+    public void OnChangeGradientStop1Color()
+    {
+        gradientMappingMaterial.SetColor("_GradientStop1Color", gradientStop1ColorButton.color);
     }
 
     public void OnChangeHueShift()
