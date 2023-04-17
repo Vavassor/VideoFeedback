@@ -9,17 +9,17 @@ using VRC.Udon;
 public class SyncedSlider : UdonSharpBehaviour
 {
     public string changeSliderEventName = "OnChangeSlider";
+    public GameObject target;
     [UdonSynced]
     public float value;
 
+    private bool isInitialized;
     private Slider slider;
-    public GameObject target;
     private UdonBehaviour[] targetBehaviours;
 
     void Start()
     {
-        slider = GetComponent<Slider>();
-        targetBehaviours = (UdonBehaviour[]) target.GetComponents(typeof(UdonBehaviour));
+        Initialize();
     }
 
     public override void OnDeserialization()
@@ -38,6 +38,7 @@ public class SyncedSlider : UdonSharpBehaviour
 
     public void OnSetValueExternally()
     {
+        Initialize();
         Networking.SetOwner(Networking.LocalPlayer, gameObject);
         RequestSerialization();
         ApplyValue();
@@ -51,5 +52,18 @@ public class SyncedSlider : UdonSharpBehaviour
         {
             targetBehaviour.SendCustomEvent(changeSliderEventName);
         }
+    }
+
+    private void Initialize()
+    {
+        if (isInitialized)
+        {
+            return;
+        }
+
+        slider = GetComponent<Slider>();
+        targetBehaviours = (UdonBehaviour[])target.GetComponents(typeof(UdonBehaviour));
+
+        isInitialized = true;
     }
 }

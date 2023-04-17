@@ -41,19 +41,7 @@ public class Screen : UdonSharpBehaviour
 
     public void OnChangeGradientMapping()
     {
-        var isEnabled = gradientMappingToggle.isOn;
-        gradientMappingMaterial.SetFloat("_UseGradientMapping", isEnabled ? 1.0f : 0.0f);
-
-        if (isEnabled)
-        {
-            gradientStop0ColorButton.OnEnableButton();
-            gradientStop1ColorButton.OnEnableButton();
-        }
-        else
-        {
-            gradientStop0ColorButton.OnDisableButton();
-            gradientStop1ColorButton.OnDisableButton();
-        }
+        gradientMappingMaterial.SetFloat("_UseGradientMapping", gradientMappingToggle.isOn ? 1.0f : 0.0f);
     }
 
     public void OnChangeGradientStop0Color()
