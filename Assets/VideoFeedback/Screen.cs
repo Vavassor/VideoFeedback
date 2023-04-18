@@ -13,9 +13,11 @@ public class Screen : UdonSharpBehaviour
     public ColorButton gradientStop1ColorButton;
     public SyncedSlider brightnessSlider;
     public SyncedSlider chromaticDistortionSlider;
+    public SyncedSlider edgeBrightnessSlider;
     public SyncedToggle gradientMappingToggle;
     public SyncedSlider hueShiftSlider;
     public SyncedToggle invertColorToggle;
+    public SyncedSlider mirrorTileCountSlider;
     public SyncedToggle mirrorXToggle;
     public SyncedToggle mirrorYToggle;
     public float screenScaleX = 4.0f;
@@ -45,6 +47,11 @@ public class Screen : UdonSharpBehaviour
         videoMixerMaterial.SetFloat("_ChromaticDistortion", chromaticDistortionSlider.value);
     }
 
+    public void OnChangeEdgeBrightness()
+    {
+        videoMixerMaterial.SetFloat("_EdgeBrightness", edgeBrightnessSlider.value);
+    }
+
     public void OnChangeGradientMapping()
     {
         gradientMappingMaterial.SetFloat("_UseGradientMapping", gradientMappingToggle.isOn ? 1.0f : 0.0f);
@@ -68,6 +75,11 @@ public class Screen : UdonSharpBehaviour
     public void OnChangeInvertColor()
     {
         videoMixerMaterial.SetFloat("_InvertColor", invertColorToggle.isOn ? 1.0f : 0.0f);
+    }
+
+    public void OnChangeMirrorTileCount()
+    {
+        videoMixerMaterial.SetFloat("_MirrorTileCount", mirrorTileCountSlider.value);
     }
 
     public void OnChangeMirrorX()
