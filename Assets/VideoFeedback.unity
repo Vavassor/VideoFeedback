@@ -6693,9 +6693,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Mirror Y
-
-'
+  m_Text: Flip Vertically
 --- !u!222 &729281279
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9079,7 +9077,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mirror X
+  m_Text: Flip Horizontally
 --- !u!222 &965858622
 CanvasRenderer:
   m_ObjectHideFlags: 0

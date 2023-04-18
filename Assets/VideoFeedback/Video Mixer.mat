@@ -73,12 +73,15 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _EdgeBrightness: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HueShift: 10.40625
     - _InvertColor: 0
     - _Metallic: 0
+    - _MirrorTileCount: 1
+    - _MirrorXYCount: 1
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
