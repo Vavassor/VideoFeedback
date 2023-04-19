@@ -6,11 +6,11 @@
         [Header(Color Filters)] _Brightness("Brightness", float) = 1
         _HueShift("Hue Shift", float) = 0
         _InvertColor("Invert Color", float) = 0
-        [Header(Chromatic Aberration)] _ChromaticDistortion("Chromatic Distortion", float) = 0.01
+        [Header(Chromatic Aberration)] _ChromaticDistortion("Chromatic Distortion", Range(0, 0.4)) = 0.01
         _ChromaticAberrationFalloff("Chromatic Aberattion Falloff", Range(0, 1)) = 0.65
         _ChromaticAberrationSize("Chromatic Aberattion Size", Range(0, 1)) = 0.9
         [Header(Distortion)] _MirrorTileCount("Mirror Tiles", float) = 1.0
-        _WaveDistortion("WaveDistortion", Range(-0.24, 0.24)) = 0.0
+        // _WaveDistortion("WaveDistortion", Range(-0.24, 0.24)) = 0.0
         [Header(Post Processing)] _EdgeBrightness("Edge Brightness", Range(0, 1)) = 0.0
     }
     SubShader
@@ -41,7 +41,7 @@
             half _InvertColor;
 
             half _MirrorTileCount;
-            half _WaveDistortion;
+            // half _WaveDistortion;
 
             half _EdgeBrightness;
 
@@ -68,7 +68,7 @@
             fixed4 frag(v2f_customrendertexture IN) : COLOR
             {
                 float2 distortedTexcoord = abs(2.0 * frac(_MirrorTileCount * 0.5 * IN.localTexcoord + 0.5) - 1.0);
-                distortedTexcoord.y += _WaveDistortion * sin(15.708 * IN.localTexcoord.x);
+                // distortedTexcoord.y += _WaveDistortion * sin(15.708 * IN.localTexcoord.x);
 
                 fixed4 center = tex2D(_MainTex, distortedTexcoord);
                 fixed4 colorWithCa = getColorWithChromaticAberration(_MainTex, distortedTexcoord, center);

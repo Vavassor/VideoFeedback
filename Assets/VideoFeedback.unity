@@ -1540,11 +1540,13 @@ MonoBehaviour:
   cameraPickup: {fileID: 589861406}
   chromaticDistortionSlider: {fileID: 1417255969}
   clearCameraToggle: {fileID: 1908938354}
+  edgeBrightnessSlider: {fileID: 1727977611}
   gradientMappingStop0ColorButton: {fileID: 661124139}
   gradientMappingStop1ColorButton: {fileID: 613154960}
   gradientMappingToggle: {fileID: 939526248}
   hueShiftSlider: {fileID: 155708284}
   invertColorToggle: {fileID: 139799697}
+  mirrorTileCountSlider: {fileID: 1501746650}
   mirrorXToggle: {fileID: 720999768}
   mirrorYToggle: {fileID: 179272469}
   orthographicProjectionToggle: {fileID: 1268363423}
@@ -19923,6 +19925,11 @@ PrefabInstance:
       objectReference: {fileID: 1664888923}
     - target: {fileID: 1893809163696350185, guid: 67263039395284a4a96c54b70887e2b4,
         type: 3}
+      propertyPath: changeToggleEventName
+      value: OnChangeMirrorY
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893809163696350185, guid: 67263039395284a4a96c54b70887e2b4,
+        type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 1893809163696350185, guid: 67263039395284a4a96c54b70887e2b4,
@@ -20056,10 +20063,20 @@ PrefabInstance:
       propertyPath: m_Text
       value: Chromatic Distortion
       objectReference: {fileID: 0}
+    - target: {fileID: 4097664517780806551, guid: 2c5d22a487a0bd3419806feb78df3108,
+        type: 3}
+      propertyPath: m_Name
+      value: Chromatic Distortion Label
+      objectReference: {fileID: 0}
     - target: {fileID: 4097664517920607172, guid: 2c5d22a487a0bd3419806feb78df3108,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097664518423923648, guid: 2c5d22a487a0bd3419806feb78df3108,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4097664518423923651, guid: 2c5d22a487a0bd3419806feb78df3108,
         type: 3}
@@ -20077,6 +20094,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4097664518423923651, guid: 2c5d22a487a0bd3419806feb78df3108,
         type: 3}
+    - target: {fileID: 4097664518423923708, guid: 2c5d22a487a0bd3419806feb78df3108,
+        type: 3}
+      propertyPath: m_Name
+      value: Chromatic Distortion Slider
+      objectReference: {fileID: 0}
     - target: {fileID: 5785386743162650933, guid: 2c5d22a487a0bd3419806feb78df3108,
         type: 3}
       propertyPath: m_Name
