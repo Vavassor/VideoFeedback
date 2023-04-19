@@ -56,21 +56,11 @@ public class ColorButton : UdonSharpBehaviour
         modal.interactable = true;
     }
 
-    public void OnDisableButton()
-    {
-        button.interactable = false;
-    }
-
     public void OnDismiss()
     {
         modal.alpha = 0.0f;
         modal.blocksRaycasts = false;
         modal.interactable = false;
-    }
-
-    public void OnEnableButton()
-    {
-        button.interactable = true;
     }
 
     public void OnSetValueExternally()
