@@ -38,6 +38,7 @@ public class PresetBoard : UdonSharpBehaviour
     public SyncedToggle mirrorYToggle;
     public SyncedToggle orthographicProjectionToggle;
     public InputField presetCodeInputField;
+    public GameObject loadPresetCodeError;
 
     // Data to be saved in a preset code.
     private float brightness;
@@ -92,10 +93,16 @@ public class PresetBoard : UdonSharpBehaviour
 
     public void OnClickLoadPresetCode()
     {
-        var didDeserializeSucceed = DeserializePreset(presetCodeInputField.text.Trim());
+        loadPresetCodeError.SetActive(false);
+
+        var didDeserializeSucceed = DeserializePreset(StripWhitespace(presetCodeInputField.text));
         if (didDeserializeSucceed)
         {
             ApplyPreset();
+        }
+        else
+        {
+            loadPresetCodeError.SetActive(true);
         }
     }
 
@@ -135,8 +142,18 @@ public class PresetBoard : UdonSharpBehaviour
         return value ? 1 : 0;
     }
 
+    private string StripWhitespace(string text)
+    {
+        return string.Join("", text.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
+    }
+
     public bool DeserializePreset(string text)
     {
+        if (text.Length % 4 != 0)
+        {
+            return false;
+        }
+
         var bytes = Convert.FromBase64String(text);
 
         if (bytes.Length < headerSizeBytes)
