@@ -67,6 +67,8 @@ public class PresetBoard : UdonSharpBehaviour
 
     public void OnClickGeneratePresetCode()
     {
+        loadPresetCodeError.SetActive(false);
+
         brightness = brightnessSlider.value;
         cameraPosition = cameraPickup.transform.position;
         cameraRotation = cameraPickup.transform.rotation;
@@ -452,7 +454,7 @@ public class PresetBoard : UdonSharpBehaviour
 
     public int WriteUnorm(float value, byte[] buffer, int index)
     {
-        buffer[index] = (byte) (value / 255.0f);
+        buffer[index] = (byte) (255.0f * value);
         return 1;
     }
 

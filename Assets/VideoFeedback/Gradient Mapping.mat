@@ -79,7 +79,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _ShouldClearColor: 1
+    - _ShouldClearColor: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -89,5 +89,5 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GradientStop0Color: {r: 0, g: 0, b: 0, a: 1}
-    - _GradientStop1Color: {r: 0, g: 0, b: 0, a: 1}
+    - _GradientStop0Color: {r: 0.44313726, g: 0.80392146, b: 0.81960785, a: 1}
+    - _GradientStop1Color: {r: 0.18431377, g: 0.027450977, b: 0.26666668, a: 1}
