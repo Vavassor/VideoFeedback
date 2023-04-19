@@ -13,7 +13,10 @@ public class ColorButton : UdonSharpBehaviour
     public CanvasGroup modal;
     public SyncedSlider saturationSlider;
     public SyncedSlider valueSlider;
+    // The object to notify for events.
     public GameObject target;
+    // Show the modal within this UI element. Usually a Canvas, CanvasGroup, or Panel.
+    public GameObject modalContainer;
     
     private Button button;
     private UdonBehaviour[] targetBehaviours;
@@ -22,6 +25,13 @@ public class ColorButton : UdonSharpBehaviour
     {
         button = GetComponent<Button>();
         targetBehaviours = (UdonBehaviour[]) target.GetComponents(typeof(UdonBehaviour));
+        
+        if (modalContainer != null)
+        {
+            // To ensure the modal shows on top of everything else, place it last after other UI.
+            // elements. Setting its parent makes it the last element within that group of elements.
+            modal.transform.SetParent(modalContainer.transform);
+        }
     }
 
     public void OnChangeHue()

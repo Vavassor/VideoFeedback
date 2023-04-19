@@ -20,4 +20,9 @@ public class ResizeMenu : UdonSharpBehaviour
     {
         transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
     }
+
+    public void OnClickResizeQuarter()
+    {
+        transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+    }
 }
