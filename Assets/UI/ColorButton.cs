@@ -10,6 +10,7 @@ public class ColorButton : UdonSharpBehaviour
     public string changeEventName = "OnChangeColor";
     public Color color;
     public SyncedSlider hueSlider;
+    public CanvasGroup modal;
     public SyncedSlider saturationSlider;
     public SyncedSlider valueSlider;
     public GameObject target;
@@ -38,9 +39,23 @@ public class ColorButton : UdonSharpBehaviour
         UpdateColor();
     }
 
+    public void OnClickButton()
+    {
+        modal.alpha = 1.0f;
+        modal.blocksRaycasts = true;
+        modal.interactable = true;
+    }
+
     public void OnDisableButton()
     {
         button.interactable = false;
+    }
+
+    public void OnDismiss()
+    {
+        modal.alpha = 0.0f;
+        modal.blocksRaycasts = false;
+        modal.interactable = false;
     }
 
     public void OnEnableButton()

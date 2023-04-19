@@ -61,7 +61,7 @@ public class PresetBoard : UdonSharpBehaviour
     private const int codeSizeBytes = 39;
     private const int headerSizeBytes = 4;
     private const ushort currentVersion = 2;
-    private const string defaultPresetCode = "VkYAAr0KHgA/2jBUP0akl5X3O/qs2hshOmRJNAAAAAAAAAAAAAED";
+    private const string defaultPresetCode = "VkYAAr0KHgA/2jBUP0akl5X3O/qs2hshOmRJNAAA0cxxRAYvAAED";
     private Color defaultStop0Color = new Color(0.4470588f, 0.8078431f, 0.8196079f);
     private Color defaultStop1Color = new Color(0.1844448f, 0.02889f, 0.27f);
 
