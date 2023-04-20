@@ -12,12 +12,14 @@ public class ColorButton : UdonSharpBehaviour
     public SyncedSlider hueSlider;
     public CanvasGroup modal;
     public SyncedSlider saturationSlider;
+    public Material saturationSliderMaterial;
     public SyncedSlider valueSlider;
+    public Material valueSliderMaterial;
     // The object to notify for events.
     public GameObject target;
     // Show the modal within this UI element. Usually a Canvas, CanvasGroup, or Panel.
     public GameObject modalContainer;
-    
+
     private Button button;
     private UdonBehaviour[] targetBehaviours;
 
@@ -85,9 +87,17 @@ public class ColorButton : UdonSharpBehaviour
 
     private void UpdateColor()
     {
-        var pickedColor = Color.HSVToRGB(hueSlider.value, saturationSlider.value, valueSlider.value);
+        var hue = hueSlider.value;
+        var saturation = saturationSlider.value;
+        var value = valueSlider.value;
+
+        var pickedColor = Color.HSVToRGB(hue, saturation, value);
         button.image.color = pickedColor;
         color = pickedColor;
+
+        saturationSliderMaterial.SetColor("_Stop0Color", Color.HSVToRGB(hue, 0.0f, value));
+        saturationSliderMaterial.SetColor("_Stop1Color", Color.HSVToRGB(hue, 1.0f, value));
+        valueSliderMaterial.SetColor("_Stop1Color", Color.HSVToRGB(hue, saturation, 1.0f));
 
         foreach (var targetBehaviour in targetBehaviours)
         {

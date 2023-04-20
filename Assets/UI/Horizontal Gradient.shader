@@ -1,4 +1,4 @@
-﻿Shader "Unlit/Gradient Preview"
+﻿Shader "Unlit/Horizontal Gradient"
 {
     Properties
     {
