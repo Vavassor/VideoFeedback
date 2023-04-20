@@ -1,0 +1,59 @@
+{
+    "aboutSection": {
+        "aboutSectionHeading": "Video Feedback",
+        "aboutSectionText": "Pointing a camera at a screen showing its own video feed looks like this.\n\nYou might've seen it in the music video for September by Earth, Wind & Fire."
+    },
+    "adjustColorMenu": {
+        "brightnessAdjustSliderLabel": "Brightness Adjust",
+        "hueAdjustSliderLabel": "Hue Adjust",
+        "invertColorToggleLabel": "Invert Color"
+    },
+    "cameraMenu": {
+        "cameraMenuHeading": "Camera",
+        "clearCameraToggleLabel": "Clear Camera",
+        "orthographicProjectionToggleLabel": "Orthographic Projection"
+    },
+    "contactSection": {
+        "contactSectionHeading": "Contact",
+        "sourceCodeMessage": "World creators, you can use anything here for your world, too! The source code and assets are available at {{ sourceCodeUrl }}"
+    },
+    "effectsMenu": {
+        "chromaticDistortionSliderLabel": "Chromatic Distortion",
+        "edgeBrightnessSliderLabel": "Edge Brightness",
+        "effectsMenuHeading": "Effects",
+        "gradientMappingToggleLabel": "Gradient Mapping",
+        "hueSliderLabel": "Hue",
+        "mirrorTileCountSliderLabel": "Mirror Tiles",
+        "saturationSliderLabel": "Saturation",
+        "valueSliderLabel": "Value"
+    },
+    "photosensitiveWarning": {
+        "photosensitiveWarningHeading": "Photosensitive Warning",
+        "photosensitiveWarningText": "Effects here cause flashes of light that could trigger seizures in people with visual sensitivities.\n\nThe visuals are unpredictable and it's not possible to avoid the risk."
+    },
+    "presetsMenu": {
+        "presetsMenuHeading": "Presets"
+    },
+    "respawnMenu": {
+        "respawnMenuHeading": "Respawn",
+        "respawnCameraButtonLabel": "Respawn Camera",
+        "respawnLightsButtonLabel": "Respawn Lights",
+        "respawnToysButtonLabel": "Respawn Toys",
+        "respawnMenusButtonLabel": "Respawn Menus"
+    },
+    "saveAndLoadPresetsMenu": {
+        "generatePresetCodeButtonLabel": "Generate Preset Code",
+        "loadPresetCodeButtonLabel": "Load Preset Code",
+        "presetCodeTextFieldLabel": "Preset Code",
+        "resetAllButtonLabel": "Reset All To Default",
+        "saveAndLoadPresetsHeading": "Save And Load Presets"
+    },
+    "screenMenu": {
+        "flipHorizontallyToggleLabel": "Flip Horizontally",
+        "flipVericallyToggleLabel": "Flip Vertically",
+        "screenMenuHeading": "Screen"
+    },
+    "streamMonitor": {
+        "streamMonitorInstructions": "Point your stream camera here."
+    }
+}
