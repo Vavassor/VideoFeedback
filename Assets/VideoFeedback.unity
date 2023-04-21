@@ -503,7 +503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &23777456
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5549,8 +5549,8 @@ MonoBehaviour:
     Type: {fileID: 412417131}
     Foldout: 1
   buildInfo:
-    CachedBuildTarget: 13
-    NewBuildTarget: 13
+    CachedBuildTarget: 19
+    NewBuildTarget: 19
 --- !u!4 &412417125
 Transform:
   m_ObjectHideFlags: 1
@@ -9224,7 +9224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &697471936
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13472,7 +13472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1093876246
 Light:
   m_ObjectHideFlags: 0
@@ -13961,6 +13961,7 @@ GameObject:
   - component: {fileID: 1111075128}
   - component: {fileID: 1111075127}
   - component: {fileID: 1111075125}
+  - component: {fileID: 1111075126}
   m_Layer: 0
   m_Name: Adjust Color Canvas
   m_TagString: Untagged
@@ -13980,6 +13981,19 @@ MonoBehaviour:
   m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1111075126
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111075124}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 360, y: 500, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1111075127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14811,7 +14825,7 @@ PrefabInstance:
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.size
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
@@ -15092,42 +15106,42 @@ PrefabInstance:
         type: 3}
       propertyPath: DynamicMaterials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 023aac1bccf9a204ebaefd7b88db41ca, type: 2}
+      objectReference: {fileID: 2100000, guid: 3b155d60e6154bb46966fe8bc67dccdf, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: af9f977bbfcac1549ada38e01eb2ce8b, type: 2}
+      objectReference: {fileID: 2100000, guid: 962b581ac16aaa44aa248604b07b22a1, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 3b155d60e6154bb46966fe8bc67dccdf, type: 2}
+      objectReference: {fileID: 2100000, guid: af9f977bbfcac1549ada38e01eb2ce8b, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 962b581ac16aaa44aa248604b07b22a1, type: 2}
+      objectReference: {fileID: 2100000, guid: eba05f28d49452e4a8c7e77cc4473e2e, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[4]
       value: 
-      objectReference: {fileID: 2100000, guid: eba05f28d49452e4a8c7e77cc4473e2e, type: 2}
+      objectReference: {fileID: 2100000, guid: 0e817fbc46c9fe24086c24813d917962, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[5]
       value: 
-      objectReference: {fileID: 2100000, guid: 0e817fbc46c9fe24086c24813d917962, type: 2}
+      objectReference: {fileID: 2100000, guid: 9d06a30a28855a14a88046202267b67d, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[6]
       value: 
-      objectReference: {fileID: 2100000, guid: 9d06a30a28855a14a88046202267b67d, type: 2}
+      objectReference: {fileID: 2100000, guid: e5462149339b71141a676a1b84a5c07c, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[7]
       value: 
-      objectReference: {fileID: 2100000, guid: e5462149339b71141a676a1b84a5c07c, type: 2}
+      objectReference: {fileID: 2100000, guid: 023aac1bccf9a204ebaefd7b88db41ca, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[8]
@@ -18364,6 +18378,7 @@ GameObject:
   - component: {fileID: 1526980807}
   - component: {fileID: 1526980806}
   - component: {fileID: 1526980810}
+  - component: {fileID: 1526980811}
   m_Layer: 0
   m_Name: Effects Canvas
   m_TagString: Untagged
@@ -18463,6 +18478,19 @@ MonoBehaviour:
   m_Script: {fileID: -1533785930, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1526980811
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526980805}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 360, y: 540, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1529505215
 GameObject:
   m_ObjectHideFlags: 0
@@ -18854,7 +18882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1548985425
 Light:
   m_ObjectHideFlags: 0
@@ -20030,7 +20058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1683141421
 SphereCollider:
   m_ObjectHideFlags: 0
