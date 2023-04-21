@@ -1,8 +1,4 @@
 {
-    "aboutSection": {
-        "aboutSectionHeading": "Video Feedback",
-        "aboutSectionText": "Pointing a camera at a screen showing its own video feed looks like this.\n\nYou might've seen it in the music video for September by Earth, Wind & Fire."
-    },
     "adjustColorMenu": {
         "brightnessAdjustSliderLabel": "Brightness Adjust",
         "hueAdjustSliderLabel": "Hue Adjust",
@@ -16,6 +12,10 @@
     "contactSection": {
         "contactSectionHeading": "Contact",
         "sourceCodeMessage": "World creators, you can use anything here for your world, too! The source code and assets are available at {{ sourceCodeUrl }}"
+    },
+    "directionsSection": {
+        "directionsSectionHeading": "Directions",
+        "directionsText": "Just try stuff!\n\nIf it sucks, hit the Reset All To Default button."
     },
     "effectsMenu": {
         "chromaticDistortionSliderLabel": "Chromatic Distortion",
