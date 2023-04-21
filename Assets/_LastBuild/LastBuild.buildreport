@@ -1,15 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!668709126 &-8662315051793319695
-BuiltAssetBundleInfoSet:
-  bundleInfos:
-  - bundleName: scene-android-videofeedback.vrcw
-    bundleArchiveFile: 2
-    packagedFileIndices: 0000000001000000
-  - bundleName: VideoFeedback
-    bundleArchiveFile: 5
-    packagedFileIndices: 04000000
---- !u!1126 &-206727748177470590
+--- !u!1126 &-6886128945276707843
 PackedAssets:
   m_File: 4
   m_ShortPath: CAB-772455bfbb4bbb3d6d53dea1b44dedbf
@@ -27,6 +18,11 @@ PackedAssets:
     offset: 4200
     sourceAssetGUID: 00000000000000000000000000000000
     buildTimeAssetPath: 'Built-in AssetBundleManifest: AssetBundleManifest'
+--- !u!641289076 &-1389220068735944115
+AudioBuildInfo:
+  m_IsAudioDisabled: 0
+  m_AudioClipCount: 0
+  m_AudioMixerCount: 0
 --- !u!1125 &1
 BuildReport:
   m_ObjectHideFlags: 0
@@ -37,16 +33,16 @@ BuildReport:
   m_Summary:
     buildStartTime:
       serializedVersion: 2
-      ticks: 638176191601061885
+      ticks: 638176354923424209
     buildGUID: 00000000000000000000000000000000
     platformName: Android
     platformGroupName: Android
     options: 16
     assetBundleOptions: 32
     outputPath: C:/Users/Coper/AppData/Local/Temp/DefaultCompany/VideoFeedback/scene-android-videofeedback.vrcw
-    crc: 464356627
-    totalSize: 3698508
-    totalTimeTicks: 241001491
+    crc: 787654167
+    totalSize: 3720450
+    totalTimeTicks: 168447045
     totalErrors: 0
     totalWarnings: 2
     buildType: 1
@@ -55,15 +51,15 @@ BuildReport:
   - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/scene-android-videofeedback.vrcw/BuildPlayer-VideoFeedback
     role: Scene
     id: 0
-    totalSize: 462680
+    totalSize: 463552
   - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/scene-android-videofeedback.vrcw/BuildPlayer-VideoFeedback.sharedAssets
     role: SharedAssets
     id: 1
-    totalSize: 13106520
+    totalSize: 13114824
   - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/scene-android-videofeedback.vrcw
     role: AssetBundle
     id: 2
-    totalSize: 3693226
+    totalSize: 3715169
   - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/scene-android-videofeedback.vrcw.manifest
     role: AssetBundleTextManifest
     id: 3
@@ -75,30 +71,30 @@ BuildReport:
   - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/VideoFeedback
     role: ManifestAssetBundle
     id: 5
-    totalSize: 1049
+    totalSize: 1048
   - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/VideoFeedback.manifest
     role: AssetBundleTextManifest
     id: 6
     totalSize: 160
   m_BuildSteps:
   - stepName: Build Asset Bundles
-    durationTicks: 241001491
+    durationTicks: 168447045
     depth: 0
     messages: []
   - stepName: Calculate asset bundles to be built
-    durationTicks: 2832536
+    durationTicks: 598256
     depth: 1
     messages: []
   - stepName: Compile scripts
-    durationTicks: 54526727
+    durationTicks: 57096281
     depth: 1
     messages: []
   - stepName: Build player
-    durationTicks: 125715429
+    durationTicks: 55072255
     depth: 1
     messages: []
   - stepName: Prepare assets for target platform
-    durationTicks: 1484327
+    durationTicks: 1535161
     depth: 2
     messages:
     - type: 2
@@ -110,41 +106,36 @@ BuildReport:
         performance severely. You can change the mobile quality settings in 'Project
         Settings -> Quality Settings'.
   - stepName: Building scenes
-    durationTicks: 74787564
+    durationTicks: 13212487
     depth: 2
     messages: []
   - stepName: Building scene Assets/VideoFeedback.unity
-    durationTicks: 74761140
+    durationTicks: 13188809
     depth: 3
     messages: []
   - stepName: Writing asset files
-    durationTicks: 11847032
+    durationTicks: 2236642
     depth: 2
     messages: []
   - stepName: Packaging assets - archive:/BuildPlayer-VideoFeedback/BuildPlayer-VideoFeedback.sharedAssets
-    durationTicks: 11790559
+    durationTicks: 2184603
     depth: 3
     messages: []
   - stepName: Creating compressed player package
-    durationTicks: 20746739
+    durationTicks: 22468840
     depth: 2
     messages: []
   - stepName: Postprocess built player
-    durationTicks: 39323
+    durationTicks: 50928
     depth: 2
     messages: []
   m_Appendices:
-  - {fileID: -8662315051793319695}
-  - {fileID: 8151243850757634458}
-  - {fileID: 6562006319328745837}
-  - {fileID: 4893621314685580767}
-  - {fileID: -206727748177470590}
---- !u!641289076 &4893621314685580767
-AudioBuildInfo:
-  m_IsAudioDisabled: 0
-  m_AudioClipCount: 0
-  m_AudioMixerCount: 0
---- !u!382020655 &6562006319328745837
+  - {fileID: 8785524330579858739}
+  - {fileID: 7448996374081380534}
+  - {fileID: 5286105995273827307}
+  - {fileID: -1389220068735944115}
+  - {fileID: -6886128945276707843}
+--- !u!382020655 &5286105995273827307
 PluginBuildInfo:
   m_RuntimePlugins:
   - Unity.Burst.Unsafe
@@ -222,11 +213,11 @@ PluginBuildInfo:
   - Unity.Plastic.Antlr3.Runtime
   - Serilog.Sinks.Unity3D
   - lz4x64Plastic
---- !u!1126 &8151243850757634458
+--- !u!1126 &7448996374081380534
 PackedAssets:
   m_File: 1
   m_ShortPath: BuildPlayer-VideoFeedback.sharedAssets
-  m_Overhead: 119631
+  m_Overhead: 119639
   m_Contents:
   - fileID: 1
     classID: 150
@@ -278,1232 +269,1232 @@ PackedAssets:
     buildTimeAssetPath: Assets/VideoFeedback/Camera.mat
   - fileID: 9
     classID: 21
-    packedSize: 552
+    packedSize: 688
     offset: 126032
     sourceAssetGUID: af9f977bbfcac1549ada38e01eb2ce8b
     buildTimeAssetPath: Assets/VideoFeedback/Dark Plastic.mat
   - fileID: 10
     classID: 21
     packedSize: 780
-    offset: 126584
+    offset: 126720
     sourceAssetGUID: 81751d02911ea8e4e90853446f10cc74
     buildTimeAssetPath: Assets/VideoFeedback/Gradient Mapping.mat
   - fileID: 11
     classID: 21
     packedSize: 596
-    offset: 127368
+    offset: 127504
     sourceAssetGUID: 5aa21e4a2da180445bc241fc1053e101
     buildTimeAssetPath: Assets/VideoFeedback/Gradient Preview.mat
   - fileID: 12
     classID: 21
     packedSize: 700
-    offset: 127968
+    offset: 128104
     sourceAssetGUID: 023aac1bccf9a204ebaefd7b88db41ca
     buildTimeAssetPath: Assets/VideoFeedback/Light Bulb.mat
   - fileID: 13
     classID: 21
     packedSize: 520
-    offset: 128672
+    offset: 128808
     sourceAssetGUID: 3b155d60e6154bb46966fe8bc67dccdf
     buildTimeAssetPath: Assets/VideoFeedback/Logo.mat
   - fileID: 14
     classID: 21
     packedSize: 504
-    offset: 129192
+    offset: 129328
     sourceAssetGUID: 5b6c15fa551626f4f97fe341e6232a89
     buildTimeAssetPath: Assets/VideoFeedback/Point Light A.mat
   - fileID: 15
     classID: 21
     packedSize: 492
-    offset: 129696
+    offset: 129832
     sourceAssetGUID: 8be830a9502f30147801cc7022ac9fa2
     buildTimeAssetPath: Assets/VideoFeedback/Point Light B.mat
   - fileID: 16
     classID: 21
     packedSize: 488
-    offset: 130192
+    offset: 130328
     sourceAssetGUID: e5462149339b71141a676a1b84a5c07c
     buildTimeAssetPath: Assets/VideoFeedback/Pure Black.mat
   - fileID: 17
     classID: 21
     packedSize: 700
-    offset: 130680
+    offset: 130816
     sourceAssetGUID: 25500f0d5a2df8848a8f78a613e8b88c
     buildTimeAssetPath: Assets/VideoFeedback/Sprite.mat
   - fileID: 18
     classID: 21
     packedSize: 524
-    offset: 131384
+    offset: 131520
     sourceAssetGUID: eba05f28d49452e4a8c7e77cc4473e2e
     buildTimeAssetPath: Assets/VideoFeedback/Static.mat
   - fileID: 19
     classID: 21
     packedSize: 540
-    offset: 131912
+    offset: 132048
     sourceAssetGUID: 9d06a30a28855a14a88046202267b67d
     buildTimeAssetPath: Assets/VideoFeedback/Tetragonal Trapezohedron.mat
   - fileID: 20
     classID: 21
     packedSize: 916
-    offset: 132456
+    offset: 132592
     sourceAssetGUID: e9c9700536a149a47a6dbd026115b3e1
     buildTimeAssetPath: Assets/VideoFeedback/Video Mixer.mat
   - fileID: 21
     classID: 21
     packedSize: 544
-    offset: 133376
+    offset: 133512
     sourceAssetGUID: 0e817fbc46c9fe24086c24813d917962
     buildTimeAssetPath: Assets/VideoFeedback/Video Screen Uniform Opaque.mat
   - fileID: 22
     classID: 21
     packedSize: 536
-    offset: 133920
+    offset: 134056
     sourceAssetGUID: dd7d5867e041ec44b971dfc73d405b19
     buildTimeAssetPath: Assets/VideoFeedback/Video Screen Uniform.mat
   - fileID: 23
     classID: 21
     packedSize: 136
-    offset: 134456
+    offset: 134592
     sourceAssetGUID: c02b74cb2d914c042904bd38941e809e
     buildTimeAssetPath: Assets/VideoFeedback/apercu-bold.ttf
   - fileID: 24
     classID: 21
     packedSize: 136
-    offset: 134592
+    offset: 134728
     sourceAssetGUID: edab5d6c615a8904fbbecbaf3bae3779
     buildTimeAssetPath: Assets/VideoFeedback/Fugue-Regular.ttf
   - fileID: 25
     classID: 28
     packedSize: 5564
-    offset: 134728
+    offset: 134864
     sourceAssetGUID: 0000000000000000f000000000000000
     buildTimeAssetPath: Resources/unity_builtin_extra
   - fileID: 26
     classID: 28
     packedSize: 5568
-    offset: 140296
+    offset: 140432
     sourceAssetGUID: 0000000000000000f000000000000000
     buildTimeAssetPath: Resources/unity_builtin_extra
   - fileID: 27
     classID: 28
     packedSize: 21944
-    offset: 145864
+    offset: 146000
     sourceAssetGUID: 0000000000000000f000000000000000
     buildTimeAssetPath: Resources/unity_builtin_extra
   - fileID: 28
     classID: 28
     packedSize: 5564
-    offset: 167808
+    offset: 167944
     sourceAssetGUID: 0000000000000000f000000000000000
     buildTimeAssetPath: Resources/unity_builtin_extra
   - fileID: 29
     classID: 28
     packedSize: 4204
-    offset: 173376
+    offset: 173512
     sourceAssetGUID: 02c0a84bd64c6f044954d8bde9b46ec8
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_28.png
   - fileID: 30
     classID: 28
     packedSize: 4204
-    offset: 177584
+    offset: 177720
     sourceAssetGUID: 09f6c01f98a3ded4daf1afc52a3c260f
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_26.png
   - fileID: 31
     classID: 28
     packedSize: 4204
-    offset: 181792
+    offset: 181928
     sourceAssetGUID: 0a79c155edf9b2d429d4736abee5acdb
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_35.png
   - fileID: 32
     classID: 28
     packedSize: 388936
-    offset: 186000
+    offset: 186136
     sourceAssetGUID: 0b538f6328be6b547a8254a6b2b27dd2
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_03-06-42.283_1920x1080.png
   - fileID: 33
     classID: 28
     packedSize: 388936
-    offset: 574936
+    offset: 575072
     sourceAssetGUID: 0e844fd13d5ee1e44952da5cb92c9201
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-40-39.304_1920x1080.png
   - fileID: 34
     classID: 28
     packedSize: 65644
-    offset: 963872
+    offset: 964008
     sourceAssetGUID: 0f8fa14b3731cda4e947062e734d5e1e
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_1.png
   - fileID: 35
     classID: 28
     packedSize: 4204
-    offset: 1029520
+    offset: 1029656
     sourceAssetGUID: 0fa10b21877c61b4db40ba5708815f81
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_30.png
   - fileID: 36
     classID: 28
     packedSize: 1128
-    offset: 1033728
+    offset: 1033864
     sourceAssetGUID: 10f88007a1ca981419e2a381e88f0cc9
     buildTimeAssetPath: Assets/VideoFeedback/Camera.png
   - fileID: 37
     classID: 28
     packedSize: 4204
-    offset: 1034856
+    offset: 1034992
     sourceAssetGUID: 119591e0bb084e848835d237546b3882
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_61.png
   - fileID: 38
     classID: 28
     packedSize: 4204
-    offset: 1039064
+    offset: 1039200
     sourceAssetGUID: 1378a33cdd085d64c9da863d2484ff21
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_47.png
   - fileID: 39
     classID: 28
     packedSize: 4204
-    offset: 1043272
+    offset: 1043408
     sourceAssetGUID: 153f7d6dfbe713d4884df0f1e243ba92
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_16.png
   - fileID: 40
     classID: 28
     packedSize: 4204
-    offset: 1047480
+    offset: 1047616
     sourceAssetGUID: 15e54aa23a938444389469d53765d741
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_44.png
   - fileID: 41
     classID: 28
     packedSize: 4204
-    offset: 1051688
+    offset: 1051824
     sourceAssetGUID: 1a9ce5640cde5934aae0022f020464a6
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_40.png
   - fileID: 42
     classID: 28
     packedSize: 65644
-    offset: 1055896
+    offset: 1056032
     sourceAssetGUID: 1abfe0e165ca1e9428b455ffc9a2d9ef
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_2.png
   - fileID: 43
     classID: 28
     packedSize: 4204
-    offset: 1121544
+    offset: 1121680
     sourceAssetGUID: 1d6958e30e40a254dbe5a54c573eeb3c
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_37.png
   - fileID: 44
     classID: 28
-    packedSize: 228
-    offset: 1125752
-    sourceAssetGUID: 208820d69ad9a1245849bb60b25d196d
-    buildTimeAssetPath: Assets/VideoFeedback/Tick.png
+    packedSize: 124
+    offset: 1125888
+    sourceAssetGUID: 200f222d3f6889547a2b47b034b334b6
+    buildTimeAssetPath: Assets/VideoFeedback/Dark Plastic.png
   - fileID: 45
     classID: 28
-    packedSize: 4204
-    offset: 1125984
-    sourceAssetGUID: 2ee161d8945169243b5698fec114e1b7
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_15.png
+    packedSize: 228
+    offset: 1126016
+    sourceAssetGUID: 208820d69ad9a1245849bb60b25d196d
+    buildTimeAssetPath: Assets/VideoFeedback/Tick.png
   - fileID: 46
     classID: 28
     packedSize: 4204
-    offset: 1130192
-    sourceAssetGUID: 319b8e66db3faa4438cf6982e9c89b2f
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_34.png
+    offset: 1126248
+    sourceAssetGUID: 2ee161d8945169243b5698fec114e1b7
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_15.png
   - fileID: 47
     classID: 28
-    packedSize: 388936
-    offset: 1134400
-    sourceAssetGUID: 31d96ca3ae723054eb167f31c57d7780
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-38-26.924_1920x1080.png
+    packedSize: 4204
+    offset: 1130456
+    sourceAssetGUID: 319b8e66db3faa4438cf6982e9c89b2f
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_34.png
   - fileID: 48
     classID: 28
-    packedSize: 4204
-    offset: 1523336
-    sourceAssetGUID: 32c6a5f7143b86c44bd5cdee2ff3f8ad
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_24.png
+    packedSize: 388936
+    offset: 1134664
+    sourceAssetGUID: 31d96ca3ae723054eb167f31c57d7780
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-38-26.924_1920x1080.png
   - fileID: 49
     classID: 28
-    packedSize: 1128
-    offset: 1527544
-    sourceAssetGUID: 351039fab387e7145acc0e496f3001cf
-    buildTimeAssetPath: Assets/VideoFeedback/Reset.png
+    packedSize: 4204
+    offset: 1523600
+    sourceAssetGUID: 32c6a5f7143b86c44bd5cdee2ff3f8ad
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_24.png
   - fileID: 50
     classID: 28
-    packedSize: 4204
-    offset: 1528672
-    sourceAssetGUID: 351e95d0e20a54849bd4ce5f9b498934
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_36.png
+    packedSize: 1128
+    offset: 1527808
+    sourceAssetGUID: 351039fab387e7145acc0e496f3001cf
+    buildTimeAssetPath: Assets/VideoFeedback/Reset.png
   - fileID: 51
     classID: 28
-    packedSize: 1398248
-    offset: 1532880
-    sourceAssetGUID: 367cac099a38bd140a1af354169761bc
-    buildTimeAssetPath: Assets/VideoFeedback/Lightmap-0_comp_light.exr
+    packedSize: 4204
+    offset: 1528936
+    sourceAssetGUID: 351e95d0e20a54849bd4ce5f9b498934
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_36.png
   - fileID: 52
     classID: 28
-    packedSize: 4204
-    offset: 2931128
-    sourceAssetGUID: 373f9bf6b0841af4ebf26d25e4a3f4e2
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_3.png
+    packedSize: 1398248
+    offset: 1533144
+    sourceAssetGUID: 367cac099a38bd140a1af354169761bc
+    buildTimeAssetPath: Assets/VideoFeedback/Lightmap-0_comp_light.exr
   - fileID: 53
     classID: 28
-    packedSize: 43816
-    offset: 2935336
-    sourceAssetGUID: 384de585410784542a082fcbfa615fa2
-    buildTimeAssetPath: Assets/VideoFeedback/Noise White 256.png
+    packedSize: 4204
+    offset: 2931392
+    sourceAssetGUID: 373f9bf6b0841af4ebf26d25e4a3f4e2
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_3.png
   - fileID: 54
     classID: 28
-    packedSize: 1398244
-    offset: 2979152
-    sourceAssetGUID: 397c1f972d752c6458063951342ff46a
-    buildTimeAssetPath: Assets/VideoFeedback/Lightmap-0_comp_dir.png
+    packedSize: 43816
+    offset: 2935600
+    sourceAssetGUID: 384de585410784542a082fcbfa615fa2
+    buildTimeAssetPath: Assets/VideoFeedback/Noise White 256.png
   - fileID: 55
     classID: 28
-    packedSize: 4204
-    offset: 4377400
-    sourceAssetGUID: 3ac02e7e783571c468f9c086d2384ba7
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_7.png
+    packedSize: 1398244
+    offset: 2979416
+    sourceAssetGUID: 397c1f972d752c6458063951342ff46a
+    buildTimeAssetPath: Assets/VideoFeedback/Lightmap-0_comp_dir.png
   - fileID: 56
     classID: 28
-    packedSize: 388936
-    offset: 4381608
-    sourceAssetGUID: 3aed7aafe747eaf41bc56b9f62cef8ed
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-39-45.232_1920x1080.png
+    packedSize: 4204
+    offset: 4377664
+    sourceAssetGUID: 3ac02e7e783571c468f9c086d2384ba7
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_7.png
   - fileID: 57
     classID: 28
-    packedSize: 1136
-    offset: 4770544
-    sourceAssetGUID: 3b675466bfad0ef419551483144a2f09
-    buildTimeAssetPath: Assets/VideoFeedback/Button Primary.png
+    packedSize: 388936
+    offset: 4381872
+    sourceAssetGUID: 3aed7aafe747eaf41bc56b9f62cef8ed
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-39-45.232_1920x1080.png
   - fileID: 58
     classID: 28
-    packedSize: 4204
-    offset: 4771680
-    sourceAssetGUID: 3c2f1fb7e4b66e74191b7c328ada52d9
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_1.png
+    packedSize: 1136
+    offset: 4770808
+    sourceAssetGUID: 3b675466bfad0ef419551483144a2f09
+    buildTimeAssetPath: Assets/VideoFeedback/Button Primary.png
   - fileID: 59
     classID: 28
-    packedSize: 388936
-    offset: 4775888
-    sourceAssetGUID: 3e221058c21ac554a80d5aeeff03402e
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-58-01.208_1920x1080.png
+    packedSize: 4204
+    offset: 4771944
+    sourceAssetGUID: 3c2f1fb7e4b66e74191b7c328ada52d9
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_1.png
   - fileID: 60
     classID: 28
-    packedSize: 4204
-    offset: 5164824
-    sourceAssetGUID: 3f7c3687170b90e4a8d2ee6b142670f4
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_49.png
+    packedSize: 388936
+    offset: 4776152
+    sourceAssetGUID: 3e221058c21ac554a80d5aeeff03402e
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-58-01.208_1920x1080.png
   - fileID: 61
     classID: 28
     packedSize: 4204
-    offset: 5169032
-    sourceAssetGUID: 404fa8def46b1c447817e1ebdaa7144e
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_60.png
+    offset: 5165088
+    sourceAssetGUID: 3f7c3687170b90e4a8d2ee6b142670f4
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_49.png
   - fileID: 62
     classID: 28
-    packedSize: 1132
-    offset: 5173240
-    sourceAssetGUID: 413a0f3a50719c041855617d66304e2d
-    buildTimeAssetPath: Assets/VideoFeedback/Input Field.png
+    packedSize: 4204
+    offset: 5169296
+    sourceAssetGUID: 404fa8def46b1c447817e1ebdaa7144e
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_60.png
   - fileID: 63
     classID: 28
-    packedSize: 388936
-    offset: 5174376
-    sourceAssetGUID: 467ceddc200e70b49bab5d25c0cc1ab4
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-36-30.168_1920x1080.png
+    packedSize: 1132
+    offset: 5173504
+    sourceAssetGUID: 413a0f3a50719c041855617d66304e2d
+    buildTimeAssetPath: Assets/VideoFeedback/Input Field.png
   - fileID: 64
     classID: 28
-    packedSize: 4204
-    offset: 5563312
-    sourceAssetGUID: 4a11d65ce13d5f542a0ff136cc2f3fba
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_63.png
+    packedSize: 388936
+    offset: 5174640
+    sourceAssetGUID: 467ceddc200e70b49bab5d25c0cc1ab4
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-36-30.168_1920x1080.png
   - fileID: 65
     classID: 28
-    packedSize: 388936
-    offset: 5567520
-    sourceAssetGUID: 4cb1285c3e5c03648b554bd536f3c07e
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-53-29.255_1920x1080.png
+    packedSize: 4204
+    offset: 5563576
+    sourceAssetGUID: 4a11d65ce13d5f542a0ff136cc2f3fba
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_63.png
   - fileID: 66
     classID: 28
-    packedSize: 4204
-    offset: 5956456
-    sourceAssetGUID: 50b54341495978843a6f85583ed4417d
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_0.png
+    packedSize: 388936
+    offset: 5567784
+    sourceAssetGUID: 4cb1285c3e5c03648b554bd536f3c07e
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-53-29.255_1920x1080.png
   - fileID: 67
     classID: 28
-    packedSize: 388936
-    offset: 5960664
-    sourceAssetGUID: 53f3d6bf714223241b1ca0bafcf74d5b
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-31-05.878_1920x1080.png
+    packedSize: 4204
+    offset: 5956720
+    sourceAssetGUID: 50b54341495978843a6f85583ed4417d
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_0.png
   - fileID: 68
     classID: 28
-    packedSize: 4204
-    offset: 6349600
-    sourceAssetGUID: 547dbd5f858c74047ba3f213e4408307
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_39.png
+    packedSize: 388936
+    offset: 5960928
+    sourceAssetGUID: 53f3d6bf714223241b1ca0bafcf74d5b
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-31-05.878_1920x1080.png
   - fileID: 69
     classID: 28
-    packedSize: 1132
-    offset: 6353808
-    sourceAssetGUID: 550f695a9bed5d44394f6a7c60d1cea5
-    buildTimeAssetPath: Assets/VideoFeedback/Checkmark.png
+    packedSize: 4204
+    offset: 6349864
+    sourceAssetGUID: 547dbd5f858c74047ba3f213e4408307
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_39.png
   - fileID: 70
     classID: 28
-    packedSize: 388936
-    offset: 6354944
-    sourceAssetGUID: 551cc22e56390a2478639d1f13b209dd
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-34-14.128_1920x1080.png
+    packedSize: 1132
+    offset: 6354072
+    sourceAssetGUID: 550f695a9bed5d44394f6a7c60d1cea5
+    buildTimeAssetPath: Assets/VideoFeedback/Checkmark.png
   - fileID: 71
     classID: 28
-    packedSize: 4204
-    offset: 6743880
-    sourceAssetGUID: 5e542d0126a2c7848b66bffc428905fd
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_55.png
+    packedSize: 388936
+    offset: 6355208
+    sourceAssetGUID: 551cc22e56390a2478639d1f13b209dd
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-34-14.128_1920x1080.png
   - fileID: 72
     classID: 28
-    packedSize: 1136
-    offset: 6748088
-    sourceAssetGUID: 5ff748131defe5641be2f9cb3d1bba7b
-    buildTimeAssetPath: Assets/VideoFeedback/Button Border.png
+    packedSize: 4204
+    offset: 6744144
+    sourceAssetGUID: 5e542d0126a2c7848b66bffc428905fd
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_55.png
   - fileID: 73
     classID: 28
-    packedSize: 65644
-    offset: 6749224
-    sourceAssetGUID: 6017f374382d64245a0a4aab668e6f38
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_0.png
+    packedSize: 1136
+    offset: 6748352
+    sourceAssetGUID: 5ff748131defe5641be2f9cb3d1bba7b
+    buildTimeAssetPath: Assets/VideoFeedback/Button Border.png
   - fileID: 74
     classID: 28
-    packedSize: 140
-    offset: 6814872
-    sourceAssetGUID: 605544863cd469a459e8c54928e7310b
-    buildTimeAssetPath: Assets/VideoFeedback/Palette.png
+    packedSize: 65644
+    offset: 6749488
+    sourceAssetGUID: 6017f374382d64245a0a4aab668e6f38
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_0.png
   - fileID: 75
     classID: 28
-    packedSize: 1128
-    offset: 6815016
-    sourceAssetGUID: 64d534e5f083dea438e5a4183b849439
-    buildTimeAssetPath: Assets/VideoFeedback/Pyramid.png
+    packedSize: 140
+    offset: 6815136
+    sourceAssetGUID: 605544863cd469a459e8c54928e7310b
+    buildTimeAssetPath: Assets/VideoFeedback/Palette.png
   - fileID: 76
     classID: 28
-    packedSize: 4204
-    offset: 6816144
-    sourceAssetGUID: 68613e6a221be1a4b9f31d7fa1c2d1bf
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_13.png
+    packedSize: 1128
+    offset: 6815280
+    sourceAssetGUID: 64d534e5f083dea438e5a4183b849439
+    buildTimeAssetPath: Assets/VideoFeedback/Pyramid.png
   - fileID: 77
     classID: 28
     packedSize: 4204
-    offset: 6820352
-    sourceAssetGUID: 6b0a189df0bd4d5448eaefb4e673ace8
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_31.png
+    offset: 6816408
+    sourceAssetGUID: 68613e6a221be1a4b9f31d7fa1c2d1bf
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_13.png
   - fileID: 78
     classID: 28
     packedSize: 4204
-    offset: 6824560
-    sourceAssetGUID: 6dda07f1420a968449cf4c6620c44d9f
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_20.png
+    offset: 6820616
+    sourceAssetGUID: 6b0a189df0bd4d5448eaefb4e673ace8
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_31.png
   - fileID: 79
     classID: 28
     packedSize: 4204
-    offset: 6828768
-    sourceAssetGUID: 6fa5cf178eaaa5f42b820f636bb6e0bd
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_4.png
+    offset: 6824824
+    sourceAssetGUID: 6dda07f1420a968449cf4c6620c44d9f
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_20.png
   - fileID: 80
     classID: 28
-    packedSize: 388936
-    offset: 6832976
-    sourceAssetGUID: 6fabd907b715f3e45ad8e10da8162bf1
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-46-30.148_1920x1080.png
+    packedSize: 4204
+    offset: 6829032
+    sourceAssetGUID: 6fa5cf178eaaa5f42b820f636bb6e0bd
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_4.png
   - fileID: 81
     classID: 28
-    packedSize: 65644
-    offset: 7221912
-    sourceAssetGUID: 70d0a1182b29d6347ac70374c3593bba
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_7.png
+    packedSize: 388936
+    offset: 6833240
+    sourceAssetGUID: 6fabd907b715f3e45ad8e10da8162bf1
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-46-30.148_1920x1080.png
   - fileID: 82
     classID: 28
-    packedSize: 4204
-    offset: 7287560
-    sourceAssetGUID: 70f23eaf7d8ae9147aa542d20e93733b
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_56.png
+    packedSize: 65644
+    offset: 7222176
+    sourceAssetGUID: 70d0a1182b29d6347ac70374c3593bba
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_7.png
   - fileID: 83
     classID: 28
     packedSize: 4204
-    offset: 7291768
-    sourceAssetGUID: 71583cfd8899717428d5b1a95fa39cda
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_9.png
+    offset: 7287824
+    sourceAssetGUID: 70f23eaf7d8ae9147aa542d20e93733b
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_56.png
   - fileID: 84
     classID: 28
     packedSize: 4204
-    offset: 7295976
-    sourceAssetGUID: 71bc1b6b66e8b784b972199b7e90204e
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_43.png
+    offset: 7292032
+    sourceAssetGUID: 71583cfd8899717428d5b1a95fa39cda
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_9.png
   - fileID: 85
     classID: 28
     packedSize: 4204
-    offset: 7300184
-    sourceAssetGUID: 729a3ae164bcb3b4380459386adcf331
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_19.png
+    offset: 7296240
+    sourceAssetGUID: 71bc1b6b66e8b784b972199b7e90204e
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_43.png
   - fileID: 86
     classID: 28
-    packedSize: 268904
-    offset: 7304392
-    sourceAssetGUID: 73ec4ae984a0a0f44a2be737e41a6f2f
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/SMAA/AreaTex.tga
+    packedSize: 4204
+    offset: 7300448
+    sourceAssetGUID: 729a3ae164bcb3b4380459386adcf331
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_19.png
   - fileID: 87
     classID: 28
-    packedSize: 388936
-    offset: 7573296
-    sourceAssetGUID: 73f90d9ec2ed6724fa52ccebcc5a7d66
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-26-36.769_1920x1080.png
+    packedSize: 268904
+    offset: 7304656
+    sourceAssetGUID: 73ec4ae984a0a0f44a2be737e41a6f2f
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/SMAA/AreaTex.tga
   - fileID: 88
     classID: 28
     packedSize: 388936
-    offset: 7962232
-    sourceAssetGUID: 748b6a637b163ea41a61520c5cd1025d
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-02-12.341_1920x1080.png
+    offset: 7573560
+    sourceAssetGUID: 73f90d9ec2ed6724fa52ccebcc5a7d66
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-26-36.769_1920x1080.png
   - fileID: 89
     classID: 28
-    packedSize: 4204
-    offset: 8351168
-    sourceAssetGUID: 74aca53eb7273624baffc2bf5e5cc173
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_18.png
+    packedSize: 388936
+    offset: 7962496
+    sourceAssetGUID: 748b6a637b163ea41a61520c5cd1025d
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-02-12.341_1920x1080.png
   - fileID: 90
     classID: 28
     packedSize: 4204
-    offset: 8355376
-    sourceAssetGUID: 771903fe7b4674445829e52e91cff019
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_11.png
+    offset: 8351432
+    sourceAssetGUID: 74aca53eb7273624baffc2bf5e5cc173
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_18.png
   - fileID: 91
     classID: 28
     packedSize: 4204
-    offset: 8359584
-    sourceAssetGUID: 79b86f3419b87f3429164a956da8cfab
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_6.png
+    offset: 8355640
+    sourceAssetGUID: 771903fe7b4674445829e52e91cff019
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_11.png
   - fileID: 92
     classID: 28
-    packedSize: 1128
-    offset: 8363792
-    sourceAssetGUID: 83e5daa993b577d41a67e9b167371b99
-    buildTimeAssetPath: Assets/VideoFeedback/Light.png
+    packedSize: 4204
+    offset: 8359848
+    sourceAssetGUID: 79b86f3419b87f3429164a956da8cfab
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_6.png
   - fileID: 93
     classID: 28
-    packedSize: 4204
-    offset: 8364920
-    sourceAssetGUID: 85a45a6d8b2ffb84987d2b028ecfb220
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_58.png
+    packedSize: 1128
+    offset: 8364056
+    sourceAssetGUID: 83e5daa993b577d41a67e9b167371b99
+    buildTimeAssetPath: Assets/VideoFeedback/Light.png
   - fileID: 94
     classID: 28
-    packedSize: 388936
-    offset: 8369128
-    sourceAssetGUID: 871146886ce94f84c838f6983e5ecc1e
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-35-32.470_1920x1080.png
+    packedSize: 4204
+    offset: 8365184
+    sourceAssetGUID: 85a45a6d8b2ffb84987d2b028ecfb220
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_58.png
   - fileID: 95
     classID: 28
-    packedSize: 4204
-    offset: 8758064
-    sourceAssetGUID: 87a5e40cc271ea648b583616f6ebe7fe
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_32.png
+    packedSize: 388936
+    offset: 8369392
+    sourceAssetGUID: 871146886ce94f84c838f6983e5ecc1e
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-35-32.470_1920x1080.png
   - fileID: 96
     classID: 28
-    packedSize: 4208
-    offset: 8762272
-    sourceAssetGUID: 8b1b887ce0453814795204548220642b
-    buildTimeAssetPath: Assets/VideoFeedback/Alignment Mark.png
+    packedSize: 4204
+    offset: 8758328
+    sourceAssetGUID: 87a5e40cc271ea648b583616f6ebe7fe
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_32.png
   - fileID: 97
     classID: 28
-    packedSize: 4204
-    offset: 8766480
-    sourceAssetGUID: 8ecbbcae4cc747a4abbc4adce795d25e
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_46.png
+    packedSize: 4208
+    offset: 8762536
+    sourceAssetGUID: 8b1b887ce0453814795204548220642b
+    buildTimeAssetPath: Assets/VideoFeedback/Alignment Mark.png
   - fileID: 98
     classID: 28
     packedSize: 4204
-    offset: 8770688
-    sourceAssetGUID: 936dea238abb0864ab3985a995e16a29
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_54.png
+    offset: 8766744
+    sourceAssetGUID: 8ecbbcae4cc747a4abbc4adce795d25e
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_46.png
   - fileID: 99
     classID: 28
     packedSize: 4204
-    offset: 8774896
-    sourceAssetGUID: 9660a4ca1ca8425408ac25c641932977
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_38.png
+    offset: 8770952
+    sourceAssetGUID: 936dea238abb0864ab3985a995e16a29
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_54.png
   - fileID: 100
     classID: 28
     packedSize: 4204
-    offset: 8779104
-    sourceAssetGUID: 980acadb960f8424c94307ec0e585b4e
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_12.png
+    offset: 8775160
+    sourceAssetGUID: 9660a4ca1ca8425408ac25c641932977
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_38.png
   - fileID: 101
     classID: 28
-    packedSize: 65644
-    offset: 8783312
-    sourceAssetGUID: 999434725cbc2be4eb54043b36efd4a8
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_6.png
+    packedSize: 4204
+    offset: 8779368
+    sourceAssetGUID: 980acadb960f8424c94307ec0e585b4e
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_12.png
   - fileID: 102
     classID: 28
-    packedSize: 48632
-    offset: 8848960
-    sourceAssetGUID: 9ef1fabc9bb896046b6d5240dfdd315c
-    buildTimeAssetPath: Assets/UI/Hue Slider Background.png
+    packedSize: 65644
+    offset: 8783576
+    sourceAssetGUID: 999434725cbc2be4eb54043b36efd4a8
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_6.png
   - fileID: 103
     classID: 28
-    packedSize: 4204
-    offset: 8897592
-    sourceAssetGUID: a03c400b0e3959f428ee99dfc6cfc263
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_62.png
+    packedSize: 48632
+    offset: 8849224
+    sourceAssetGUID: 9ef1fabc9bb896046b6d5240dfdd315c
+    buildTimeAssetPath: Assets/UI/Hue Slider Background.png
   - fileID: 104
     classID: 28
-    packedSize: 388936
-    offset: 8901800
-    sourceAssetGUID: a18d75a506cbace49a373b41d6fa1f26
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-37-33.602_1920x1080.png
+    packedSize: 4204
+    offset: 8897856
+    sourceAssetGUID: a03c400b0e3959f428ee99dfc6cfc263
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_62.png
   - fileID: 105
     classID: 28
-    packedSize: 4204
-    offset: 9290736
-    sourceAssetGUID: a1ae041906217ae44a774d4ca139af50
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_5.png
+    packedSize: 388936
+    offset: 8902064
+    sourceAssetGUID: a18d75a506cbace49a373b41d6fa1f26
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-37-33.602_1920x1080.png
   - fileID: 106
     classID: 28
     packedSize: 4204
-    offset: 9294944
-    sourceAssetGUID: a469f920b21fc7c4fb5b950917ce2fb2
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_2.png
+    offset: 9291000
+    sourceAssetGUID: a1ae041906217ae44a774d4ca139af50
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_5.png
   - fileID: 107
     classID: 28
-    packedSize: 1124
-    offset: 9299152
-    sourceAssetGUID: a8e549540ead38b45a0827edc6c61c13
-    buildTimeAssetPath: Assets/VideoFeedback/Menu.png
+    packedSize: 4204
+    offset: 9295208
+    sourceAssetGUID: a469f920b21fc7c4fb5b950917ce2fb2
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_2.png
   - fileID: 108
     classID: 28
-    packedSize: 4204
-    offset: 9300280
-    sourceAssetGUID: aa80dc44aa4fe4c43bb9d51d90cf2958
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_29.png
+    packedSize: 1124
+    offset: 9299416
+    sourceAssetGUID: a8e549540ead38b45a0827edc6c61c13
+    buildTimeAssetPath: Assets/VideoFeedback/Menu.png
   - fileID: 109
     classID: 28
-    packedSize: 65644
-    offset: 9304488
-    sourceAssetGUID: acde5141d5f4f7a4188394bd52c4dc38
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_5.png
+    packedSize: 4204
+    offset: 9300544
+    sourceAssetGUID: aa80dc44aa4fe4c43bb9d51d90cf2958
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_29.png
   - fileID: 110
     classID: 28
-    packedSize: 4204
-    offset: 9370136
-    sourceAssetGUID: afe1e502240079342a0a980484b6da8b
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_10.png
+    packedSize: 65644
+    offset: 9304752
+    sourceAssetGUID: acde5141d5f4f7a4188394bd52c4dc38
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_5.png
   - fileID: 111
     classID: 28
     packedSize: 4204
-    offset: 9374344
-    sourceAssetGUID: aff59c63d25d43f4c938f248837c30fb
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_48.png
+    offset: 9370400
+    sourceAssetGUID: afe1e502240079342a0a980484b6da8b
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_10.png
   - fileID: 112
     classID: 28
-    packedSize: 388936
-    offset: 9378552
-    sourceAssetGUID: b0bae7661b160714c9198d7f3d7b7db5
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_15-24-53.799_1920x1080.png
+    packedSize: 4204
+    offset: 9374608
+    sourceAssetGUID: aff59c63d25d43f4c938f248837c30fb
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_48.png
   - fileID: 113
     classID: 28
-    packedSize: 48628
-    offset: 9767488
-    sourceAssetGUID: b246b26456a6bdf4f9973c143bd614b2
-    buildTimeAssetPath: Assets/UI/Slider Background.png
+    packedSize: 388936
+    offset: 9378816
+    sourceAssetGUID: b0bae7661b160714c9198d7f3d7b7db5
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_15-24-53.799_1920x1080.png
   - fileID: 114
     classID: 28
-    packedSize: 4204
-    offset: 9816120
-    sourceAssetGUID: b266511438fae724f9d3ce6bd26583e8
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_42.png
+    packedSize: 48628
+    offset: 9767752
+    sourceAssetGUID: b246b26456a6bdf4f9973c143bd614b2
+    buildTimeAssetPath: Assets/UI/Slider Background.png
   - fileID: 115
     classID: 28
-    packedSize: 65644
-    offset: 9820328
-    sourceAssetGUID: b52d5033b68309943a2386c270a90f44
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_4.png
+    packedSize: 4204
+    offset: 9816384
+    sourceAssetGUID: b266511438fae724f9d3ce6bd26583e8
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_42.png
   - fileID: 116
     classID: 28
-    packedSize: 4204
-    offset: 9885976
-    sourceAssetGUID: b71bb466b71fd13449dd736f63caeb67
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_33.png
+    packedSize: 65644
+    offset: 9820592
+    sourceAssetGUID: b52d5033b68309943a2386c270a90f44
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_4.png
   - fileID: 117
     classID: 28
     packedSize: 4204
-    offset: 9890184
-    sourceAssetGUID: b7f000750830ddb4bbc80065b9314ce9
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_21.png
+    offset: 9886240
+    sourceAssetGUID: b71bb466b71fd13449dd736f63caeb67
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_33.png
   - fileID: 118
     classID: 28
     packedSize: 4204
-    offset: 9894392
-    sourceAssetGUID: b9960364038cbfa4aa49d7b2032d3110
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_45.png
+    offset: 9890448
+    sourceAssetGUID: b7f000750830ddb4bbc80065b9314ce9
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_21.png
   - fileID: 119
     classID: 28
     packedSize: 4204
-    offset: 9898600
-    sourceAssetGUID: bdd06fb88ef36ed4a85dd506352c2d80
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_27.png
+    offset: 9894656
+    sourceAssetGUID: b9960364038cbfa4aa49d7b2032d3110
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_45.png
   - fileID: 120
     classID: 28
     packedSize: 4204
-    offset: 9902808
-    sourceAssetGUID: bf95b6fdc179b0e4f890c841406193fc
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_17.png
+    offset: 9898864
+    sourceAssetGUID: bdd06fb88ef36ed4a85dd506352c2d80
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_27.png
   - fileID: 121
     classID: 28
     packedSize: 4204
-    offset: 9907016
-    sourceAssetGUID: bfe953600e8fb1849a804ee08ace7b4c
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_23.png
+    offset: 9903072
+    sourceAssetGUID: bf95b6fdc179b0e4f890c841406193fc
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_17.png
   - fileID: 122
     classID: 28
-    packedSize: 108
-    offset: 9911224
-    sourceAssetGUID: c02b74cb2d914c042904bd38941e809e
-    buildTimeAssetPath: Assets/VideoFeedback/apercu-bold.ttf
+    packedSize: 4204
+    offset: 9907280
+    sourceAssetGUID: bfe953600e8fb1849a804ee08ace7b4c
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_23.png
   - fileID: 123
     classID: 28
-    packedSize: 65644
-    offset: 9911336
-    sourceAssetGUID: c072b653e98a06e40857d76ca8c7eecd
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_3.png
+    packedSize: 108
+    offset: 9911488
+    sourceAssetGUID: c02b74cb2d914c042904bd38941e809e
+    buildTimeAssetPath: Assets/VideoFeedback/apercu-bold.ttf
   - fileID: 124
     classID: 28
-    packedSize: 4204
-    offset: 9976984
-    sourceAssetGUID: c55042318a938344ab23cd7f09dd0076
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_8.png
+    packedSize: 65644
+    offset: 9911600
+    sourceAssetGUID: c072b653e98a06e40857d76ca8c7eecd
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise256px/LDR_LLL1_3.png
   - fileID: 125
     classID: 28
-    packedSize: 388936
-    offset: 9981192
-    sourceAssetGUID: c7a2633f4a4f65041a5ee38ee10abacd
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-36-29.403_1920x1080.png
+    packedSize: 4204
+    offset: 9977248
+    sourceAssetGUID: c55042318a938344ab23cd7f09dd0076
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_8.png
   - fileID: 126
     classID: 28
-    packedSize: 4204
-    offset: 10370128
-    sourceAssetGUID: c94b57b5a32a22d43ade66e09f6a4bd2
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_53.png
+    packedSize: 388936
+    offset: 9981456
+    sourceAssetGUID: c7a2633f4a4f65041a5ee38ee10abacd
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-36-29.403_1920x1080.png
   - fileID: 127
     classID: 28
-    packedSize: 174876
-    offset: 10374336
-    sourceAssetGUID: cad16115f5923fe42b9b0c2a333951e8
-    buildTimeAssetPath: Assets/VideoFeedback/Logo.png
+    packedSize: 4204
+    offset: 10370392
+    sourceAssetGUID: c94b57b5a32a22d43ade66e09f6a4bd2
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_53.png
   - fileID: 128
     classID: 28
-    packedSize: 4204
-    offset: 10549216
-    sourceAssetGUID: cd9006dc442cc244e89b3f492384d46a
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_41.png
+    packedSize: 174876
+    offset: 10374600
+    sourceAssetGUID: cad16115f5923fe42b9b0c2a333951e8
+    buildTimeAssetPath: Assets/VideoFeedback/Logo.png
   - fileID: 129
     classID: 28
     packedSize: 4204
-    offset: 10553424
-    sourceAssetGUID: d2e8e90fac2e6a341a38e1c3963c218d
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_52.png
+    offset: 10549480
+    sourceAssetGUID: cd9006dc442cc244e89b3f492384d46a
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_41.png
   - fileID: 130
     classID: 28
     packedSize: 4204
-    offset: 10557632
-    sourceAssetGUID: d5a51525b27e3ee4aadbeb39cbcf0750
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_51.png
+    offset: 10553688
+    sourceAssetGUID: d2e8e90fac2e6a341a38e1c3963c218d
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_52.png
   - fileID: 131
     classID: 28
-    packedSize: 388936
-    offset: 10561840
-    sourceAssetGUID: d87098ef99d47bc4fb6c9e813f888e9f
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-29-28.459_1920x1080.png
+    packedSize: 4204
+    offset: 10557896
+    sourceAssetGUID: d5a51525b27e3ee4aadbeb39cbcf0750
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_51.png
   - fileID: 132
     classID: 28
-    packedSize: 4204
-    offset: 10950776
-    sourceAssetGUID: d8c290e38ff0425409d0ae6a98c95e41
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_50.png
+    packedSize: 388936
+    offset: 10562104
+    sourceAssetGUID: d87098ef99d47bc4fb6c9e813f888e9f
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-29-28.459_1920x1080.png
   - fileID: 133
     classID: 28
     packedSize: 4204
-    offset: 10954984
-    sourceAssetGUID: d96974690c77f50489eb60ec84bd8dac
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_59.png
+    offset: 10951040
+    sourceAssetGUID: d8c290e38ff0425409d0ae6a98c95e41
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_50.png
   - fileID: 134
     classID: 28
-    packedSize: 1132
-    offset: 10959192
-    sourceAssetGUID: d99701099481a2f489610e977df6dcbc
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/SMAA/SearchTex.tga
+    packedSize: 4204
+    offset: 10955248
+    sourceAssetGUID: d96974690c77f50489eb60ec84bd8dac
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_59.png
   - fileID: 135
     classID: 28
-    packedSize: 4204
-    offset: 10960328
-    sourceAssetGUID: df01d03f056c6f445b4b8a0ae054207c
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_22.png
+    packedSize: 1132
+    offset: 10959456
+    sourceAssetGUID: d99701099481a2f489610e977df6dcbc
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/SMAA/SearchTex.tga
   - fileID: 136
     classID: 28
     packedSize: 4204
-    offset: 10964536
-    sourceAssetGUID: e138166e7a7c70f49943be7edda35d35
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_57.png
+    offset: 10960592
+    sourceAssetGUID: df01d03f056c6f445b4b8a0ae054207c
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_22.png
   - fileID: 137
     classID: 28
-    packedSize: 1124
-    offset: 10968744
-    sourceAssetGUID: e26680dc3cb05434ab135e09121acade
-    buildTimeAssetPath: Assets/VideoFeedback/Hand.png
+    packedSize: 4204
+    offset: 10964800
+    sourceAssetGUID: e138166e7a7c70f49943be7edda35d35
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_57.png
   - fileID: 138
     classID: 28
-    packedSize: 108
-    offset: 10969872
-    sourceAssetGUID: edab5d6c615a8904fbbecbaf3bae3779
-    buildTimeAssetPath: Assets/VideoFeedback/Fugue-Regular.ttf
+    packedSize: 1124
+    offset: 10969008
+    sourceAssetGUID: e26680dc3cb05434ab135e09121acade
+    buildTimeAssetPath: Assets/VideoFeedback/Hand.png
   - fileID: 139
     classID: 28
-    packedSize: 388936
-    offset: 10969984
-    sourceAssetGUID: f34c3138c75f792438cfcc12f80296ad
-    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-32-55.983_1920x1080.png
+    packedSize: 108
+    offset: 10970136
+    sourceAssetGUID: edab5d6c615a8904fbbecbaf3bae3779
+    buildTimeAssetPath: Assets/VideoFeedback/Fugue-Regular.ttf
   - fileID: 140
     classID: 28
-    packedSize: 4204
-    offset: 11358920
-    sourceAssetGUID: f4b8ab78b57749d4e96d36f6d8a395d0
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_25.png
+    packedSize: 388936
+    offset: 10970248
+    sourceAssetGUID: f34c3138c75f792438cfcc12f80296ad
+    buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-32-55.983_1920x1080.png
   - fileID: 141
     classID: 28
     packedSize: 4204
-    offset: 11363128
+    offset: 11359184
+    sourceAssetGUID: f4b8ab78b57749d4e96d36f6d8a395d0
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_25.png
+  - fileID: 142
+    classID: 28
+    packedSize: 4204
+    offset: 11363392
     sourceAssetGUID: f6439b54b28f3884eb67579dec0b6f21
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Textures/BlueNoise64px/LDR_LLL1_14.png
-  - fileID: 142
-    classID: 43
-    packedSize: 8836
-    offset: 11367336
-    sourceAssetGUID: 394d367372aee764e8a0d5f0d3ba9b7e
-    buildTimeAssetPath: Assets/VideoFeedback/Video Feedback.fbx
   - fileID: 143
     classID: 43
-    packedSize: 4852
-    offset: 11376176
+    packedSize: 8836
+    offset: 11367600
     sourceAssetGUID: 394d367372aee764e8a0d5f0d3ba9b7e
     buildTimeAssetPath: Assets/VideoFeedback/Video Feedback.fbx
   - fileID: 144
     classID: 43
-    packedSize: 2856
-    offset: 11381032
+    packedSize: 4852
+    offset: 11376440
     sourceAssetGUID: 394d367372aee764e8a0d5f0d3ba9b7e
     buildTimeAssetPath: Assets/VideoFeedback/Video Feedback.fbx
   - fileID: 145
     classID: 43
-    packedSize: 8840
-    offset: 11383888
+    packedSize: 2856
+    offset: 11381296
     sourceAssetGUID: 394d367372aee764e8a0d5f0d3ba9b7e
     buildTimeAssetPath: Assets/VideoFeedback/Video Feedback.fbx
   - fileID: 146
     classID: 43
-    packedSize: 5388
-    offset: 11392728
+    packedSize: 8840
+    offset: 11384152
     sourceAssetGUID: 394d367372aee764e8a0d5f0d3ba9b7e
     buildTimeAssetPath: Assets/VideoFeedback/Video Feedback.fbx
   - fileID: 147
     classID: 43
-    packedSize: 1436
-    offset: 11398120
+    packedSize: 5388
+    offset: 11392992
     sourceAssetGUID: 394d367372aee764e8a0d5f0d3ba9b7e
     buildTimeAssetPath: Assets/VideoFeedback/Video Feedback.fbx
   - fileID: 148
     classID: 43
-    packedSize: 7848
-    offset: 11399560
-    sourceAssetGUID: fe8fcbc495d9918418ef84a58e114e66
-    buildTimeAssetPath: Assets/VideoFeedback/Horseshoe Pipe.fbx
+    packedSize: 1436
+    offset: 11398384
+    sourceAssetGUID: 394d367372aee764e8a0d5f0d3ba9b7e
+    buildTimeAssetPath: Assets/VideoFeedback/Video Feedback.fbx
   - fileID: 149
     classID: 43
-    packedSize: 1004
-    offset: 11407408
-    sourceAssetGUID: 7df7505746a3d554996936f3dda88c6b
-    buildTimeAssetPath: Assets/VideoFeedback/Tetragonal Trapezohedron.fbx
+    packedSize: 7848
+    offset: 11399824
+    sourceAssetGUID: fe8fcbc495d9918418ef84a58e114e66
+    buildTimeAssetPath: Assets/VideoFeedback/Horseshoe Pipe.fbx
   - fileID: 150
     classID: 43
-    packedSize: 2880
-    offset: 11408416
-    sourceAssetGUID: f8c3473de55e1fc45bc48ae1ba9602c3
-    buildTimeAssetPath: Assets/VideoFeedback/Stellated Octahedron.fbx
+    packedSize: 1004
+    offset: 11407672
+    sourceAssetGUID: 7df7505746a3d554996936f3dda88c6b
+    buildTimeAssetPath: Assets/VideoFeedback/Tetragonal Trapezohedron.fbx
   - fileID: 151
     classID: 43
-    packedSize: 20776
-    offset: 11411296
-    sourceAssetGUID: 394d367372aee764e8a0d5f0d3ba9b7e
-    buildTimeAssetPath: Assets/VideoFeedback/Video Feedback.fbx
+    packedSize: 2880
+    offset: 11408680
+    sourceAssetGUID: f8c3473de55e1fc45bc48ae1ba9602c3
+    buildTimeAssetPath: Assets/VideoFeedback/Stellated Octahedron.fbx
   - fileID: 152
     classID: 43
-    packedSize: 3800
-    offset: 11432072
-    sourceAssetGUID: 404d370f12087dc4ea951998da3018f9
-    buildTimeAssetPath: Assets/VideoFeedback/Camera.fbx
+    packedSize: 20776
+    offset: 11411560
+    sourceAssetGUID: 394d367372aee764e8a0d5f0d3ba9b7e
+    buildTimeAssetPath: Assets/VideoFeedback/Video Feedback.fbx
   - fileID: 153
     classID: 43
-    packedSize: 11704
-    offset: 11435872
-    sourceAssetGUID: 394d367372aee764e8a0d5f0d3ba9b7e
-    buildTimeAssetPath: Assets/VideoFeedback/Video Feedback.fbx
+    packedSize: 3800
+    offset: 11432336
+    sourceAssetGUID: 404d370f12087dc4ea951998da3018f9
+    buildTimeAssetPath: Assets/VideoFeedback/Camera.fbx
   - fileID: 154
     classID: 43
-    packedSize: 7600
-    offset: 11447576
-    sourceAssetGUID: b5cdb20cfef9cac48b4cad42cd634260
-    buildTimeAssetPath: Assets/VideoFeedback/Eggshell.fbx
-  - fileID: 155
-    classID: 43
-    packedSize: 1436
-    offset: 11455176
+    packedSize: 11704
+    offset: 11436136
     sourceAssetGUID: 394d367372aee764e8a0d5f0d3ba9b7e
     buildTimeAssetPath: Assets/VideoFeedback/Video Feedback.fbx
+  - fileID: 155
+    classID: 43
+    packedSize: 7600
+    offset: 11447840
+    sourceAssetGUID: b5cdb20cfef9cac48b4cad42cd634260
+    buildTimeAssetPath: Assets/VideoFeedback/Eggshell.fbx
   - fileID: 156
     classID: 43
-    packedSize: 11708
-    offset: 11456616
+    packedSize: 1436
+    offset: 11455440
     sourceAssetGUID: 394d367372aee764e8a0d5f0d3ba9b7e
     buildTimeAssetPath: Assets/VideoFeedback/Video Feedback.fbx
   - fileID: 157
-    classID: 48
-    packedSize: 38476
-    offset: 11468328
-    sourceAssetGUID: 0000000000000000f000000000000000
-    buildTimeAssetPath: Resources/unity_builtin_extra
+    classID: 43
+    packedSize: 11708
+    offset: 11456880
+    sourceAssetGUID: 394d367372aee764e8a0d5f0d3ba9b7e
+    buildTimeAssetPath: Assets/VideoFeedback/Video Feedback.fbx
   - fileID: 158
     classID: 48
-    packedSize: 128856
-    offset: 11506808
+    packedSize: 38476
+    offset: 11468592
     sourceAssetGUID: 0000000000000000f000000000000000
     buildTimeAssetPath: Resources/unity_builtin_extra
   - fileID: 159
     classID: 48
-    packedSize: 7188
-    offset: 11635664
+    packedSize: 128856
+    offset: 11507072
     sourceAssetGUID: 0000000000000000f000000000000000
     buildTimeAssetPath: Resources/unity_builtin_extra
   - fileID: 160
     classID: 48
-    packedSize: 6244
-    offset: 11642856
+    packedSize: 7188
+    offset: 11635928
     sourceAssetGUID: 0000000000000000f000000000000000
     buildTimeAssetPath: Resources/unity_builtin_extra
   - fileID: 161
     classID: 48
-    packedSize: 6132
-    offset: 11649104
+    packedSize: 6244
+    offset: 11643120
     sourceAssetGUID: 0000000000000000f000000000000000
     buildTimeAssetPath: Resources/unity_builtin_extra
   - fileID: 162
     classID: 48
-    packedSize: 5980
-    offset: 11655240
+    packedSize: 6132
+    offset: 11649368
     sourceAssetGUID: 0000000000000000f000000000000000
     buildTimeAssetPath: Resources/unity_builtin_extra
   - fileID: 163
     classID: 48
-    packedSize: 216
-    offset: 11661224
-    sourceAssetGUID: 02d2da9bc88d25c4d878c1ed4e0b3854
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/CopyStdFromTexArray.shader
+    packedSize: 5980
+    offset: 11655504
+    sourceAssetGUID: 0000000000000000f000000000000000
+    buildTimeAssetPath: Resources/unity_builtin_extra
   - fileID: 164
     classID: 48
-    packedSize: 116376
-    offset: 11661440
-    sourceAssetGUID: 0b7113dea2069fc4e8943843eff19f70
-    buildTimeAssetPath: Packages/com.vrchat.base/Runtime/VRCSDK/Sample Assets/Shaders/Mobile/VRChat-Mobile-StandardLite.shader
+    packedSize: 216
+    offset: 11661488
+    sourceAssetGUID: 02d2da9bc88d25c4d878c1ed4e0b3854
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/CopyStdFromTexArray.shader
   - fileID: 165
     classID: 48
-    packedSize: 144
-    offset: 11777816
-    sourceAssetGUID: 0d8afcb51cc9f0349a6d190da929b838
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/GrainBaker.shader
+    packedSize: 116376
+    offset: 11661704
+    sourceAssetGUID: 0b7113dea2069fc4e8943843eff19f70
+    buildTimeAssetPath: Packages/com.vrchat.base/Runtime/VRCSDK/Sample Assets/Shaders/Mobile/VRChat-Mobile-StandardLite.shader
   - fileID: 166
     classID: 48
-    packedSize: 160
-    offset: 11777960
-    sourceAssetGUID: 0ef78d24e85a44f4da9d5b5eaa00e50b
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/DepthOfField.shader
+    packedSize: 144
+    offset: 11778080
+    sourceAssetGUID: 0d8afcb51cc9f0349a6d190da929b838
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/GrainBaker.shader
   - fileID: 167
     classID: 48
-    packedSize: 6468
-    offset: 11778120
-    sourceAssetGUID: 1ddda2f3e5a6312488d6e62a43790271
-    buildTimeAssetPath: Assets/UI/Horizontal Gradient.shader
+    packedSize: 160
+    offset: 11778224
+    sourceAssetGUID: 0ef78d24e85a44f4da9d5b5eaa00e50b
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/DepthOfField.shader
   - fileID: 168
     classID: 48
-    packedSize: 144
-    offset: 11784592
-    sourceAssetGUID: 2c459b89a7c8b1a4fbefe0d81341651c
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MotionBlur.shader
+    packedSize: 6468
+    offset: 11778384
+    sourceAssetGUID: 1ddda2f3e5a6312488d6e62a43790271
+    buildTimeAssetPath: Assets/UI/Horizontal Gradient.shader
   - fileID: 169
     classID: 48
-    packedSize: 25084
-    offset: 11784736
-    sourceAssetGUID: 2dcd9e0568e0a6f45b92c60ba2eb16a0
-    buildTimeAssetPath: Packages/com.vrchat.base/Runtime/VRCSDK/Sample Assets/Shaders/Mobile/VRChat-Mobile-Diffuse.shader
+    packedSize: 144
+    offset: 11784856
+    sourceAssetGUID: 2c459b89a7c8b1a4fbefe0d81341651c
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MotionBlur.shader
   - fileID: 170
     classID: 48
-    packedSize: 1960
-    offset: 11809824
-    sourceAssetGUID: 3020ac7ece79a7f4eb789a236f8bd6c5
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Waveform.shader
+    packedSize: 25084
+    offset: 11785000
+    sourceAssetGUID: 2dcd9e0568e0a6f45b92c60ba2eb16a0
+    buildTimeAssetPath: Packages/com.vrchat.base/Runtime/VRCSDK/Sample Assets/Shaders/Mobile/VRChat-Mobile-Diffuse.shader
   - fileID: 171
     classID: 48
-    packedSize: 148
-    offset: 11811784
-    sourceAssetGUID: 34a819c9e33402547a81619693adc8d5
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Texture2DLerp.shader
+    packedSize: 1960
+    offset: 11810088
+    sourceAssetGUID: 3020ac7ece79a7f4eb789a236f8bd6c5
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Waveform.shader
   - fileID: 172
     classID: 48
-    packedSize: 3788
-    offset: 11811936
-    sourceAssetGUID: 382151503e2a43a4ebb7366d1632731d
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Uber.shader
+    packedSize: 148
+    offset: 11812048
+    sourceAssetGUID: 34a819c9e33402547a81619693adc8d5
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Texture2DLerp.shader
   - fileID: 173
     classID: 48
-    packedSize: 148
-    offset: 11815728
-    sourceAssetGUID: 4117fce9491711c4094d33a048e36e73
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/DeferredFog.shader
+    packedSize: 3788
+    offset: 11812200
+    sourceAssetGUID: 382151503e2a43a4ebb7366d1632731d
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Uber.shader
   - fileID: 174
     classID: 48
-    packedSize: 204
-    offset: 11815880
-    sourceAssetGUID: 4bf4cff0d0bac3d43894e2e8839feb40
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/CopyStd.shader
+    packedSize: 148
+    offset: 11815992
+    sourceAssetGUID: 4117fce9491711c4094d33a048e36e73
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/DeferredFog.shader
   - fileID: 175
     classID: 48
-    packedSize: 156
-    offset: 11816088
-    sourceAssetGUID: 51bcf79c50dc92e47ba87821b61100c3
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/TemporalAntialiasing.shader
+    packedSize: 204
+    offset: 11816144
+    sourceAssetGUID: 4bf4cff0d0bac3d43894e2e8839feb40
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/CopyStd.shader
   - fileID: 176
     classID: 48
-    packedSize: 148
-    offset: 11816248
-    sourceAssetGUID: 5ab0816423f0dfe45841cab3b05ec9ef
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/DiscardAlpha.shader
+    packedSize: 156
+    offset: 11816352
+    sourceAssetGUID: 51bcf79c50dc92e47ba87821b61100c3
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/TemporalAntialiasing.shader
   - fileID: 177
     classID: 48
-    packedSize: 15248
-    offset: 11816400
-    sourceAssetGUID: 5f8fef09682fab74fb7a29d783391edb
-    buildTimeAssetPath: Packages/com.vrchat.base/Runtime/VRCSDK/Sample Assets/Shaders/VRChat-Sprites-Default.shader
+    packedSize: 148
+    offset: 11816512
+    sourceAssetGUID: 5ab0816423f0dfe45841cab3b05ec9ef
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/DiscardAlpha.shader
   - fileID: 178
     classID: 48
-    packedSize: 7396
-    offset: 11831648
-    sourceAssetGUID: 67f9497810829eb4791ec19e95781e51
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVO.shader
+    packedSize: 15248
+    offset: 11816664
+    sourceAssetGUID: 5f8fef09682fab74fb7a29d783391edb
+    buildTimeAssetPath: Packages/com.vrchat.base/Runtime/VRCSDK/Sample Assets/Shaders/VRChat-Sprites-Default.shader
   - fileID: 179
     classID: 48
-    packedSize: 144
-    offset: 11839048
-    sourceAssetGUID: 7ad194cbe7d006f4bace915156972026
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Lut2DBaker.shader
+    packedSize: 7396
+    offset: 11831912
+    sourceAssetGUID: 67f9497810829eb4791ec19e95781e51
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVO.shader
   - fileID: 180
     classID: 48
-    packedSize: 168
-    offset: 11839192
-    sourceAssetGUID: 81af42a93ade3dd46a9b583d4eec76d6
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/SubpixelMorphologicalAntialiasing.shader
+    packedSize: 144
+    offset: 11839312
+    sourceAssetGUID: 7ad194cbe7d006f4bace915156972026
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Lut2DBaker.shader
   - fileID: 181
     classID: 48
-    packedSize: 5988
-    offset: 11839360
-    sourceAssetGUID: 867e8fe2ff419814684180593898e710
-    buildTimeAssetPath: Assets/VideoFeedback/Static.shader
+    packedSize: 168
+    offset: 11839456
+    sourceAssetGUID: 81af42a93ade3dd46a9b583d4eec76d6
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/SubpixelMorphologicalAntialiasing.shader
   - fileID: 182
     classID: 48
-    packedSize: 7952
-    offset: 11845352
-    sourceAssetGUID: 8e44038df7bf8754b9451eb1599d0860
-    buildTimeAssetPath: Assets/VideoFeedback/Gradient Mapping.shader
+    packedSize: 5988
+    offset: 11839624
+    sourceAssetGUID: 867e8fe2ff419814684180593898e710
+    buildTimeAssetPath: Assets/VideoFeedback/Static.shader
   - fileID: 183
     classID: 48
-    packedSize: 1964
-    offset: 11853304
-    sourceAssetGUID: a71093f2a4fe26a40805c22739e10e4a
-    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Vectorscope.shader
+    packedSize: 7952
+    offset: 11845616
+    sourceAssetGUID: 8e44038df7bf8754b9451eb1599d0860
+    buildTimeAssetPath: Assets/VideoFeedback/Gradient Mapping.shader
   - fileID: 184
     classID: 48
-    packedSize: 11344
-    offset: 11855272
-    sourceAssetGUID: b1f7ecc80417c414b9d62ce541d5bcbf
-    buildTimeAssetPath: Packages/com.vrchat.base/Runtime/VRCSDK/Sample Assets/Shaders/Mobile/VRChat-Mobile-Lightmapped.shader
+    packedSize: 1964
+    offset: 11853568
+    sourceAssetGUID: a71093f2a4fe26a40805c22739e10e4a
+    buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Vectorscope.shader
   - fileID: 185
     classID: 48
     packedSize: 1964
-    offset: 11866616
+    offset: 11855536
     sourceAssetGUID: b34a29e523cb9d545881e193a079f2df
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/LightMeter.shader
   - fileID: 186
     classID: 48
     packedSize: 148
-    offset: 11868584
+    offset: 11857504
     sourceAssetGUID: b958ad1c92bd3d64c9e61318b8681dab
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Overlays.shader
   - fileID: 187
     classID: 48
     packedSize: 140
-    offset: 11868736
+    offset: 11857656
     sourceAssetGUID: c1e1d3119c6fd4646aea0b4b74cacc1a
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Bloom.shader
   - fileID: 188
     classID: 48
     packedSize: 140
-    offset: 11868880
+    offset: 11857800
     sourceAssetGUID: cdbdb71de5f9c454b980f6d0e87f0afb
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Copy.shader
   - fileID: 189
     classID: 48
     packedSize: 144
-    offset: 11869024
+    offset: 11857944
     sourceAssetGUID: d7640629310e79646af0f46eb55ae466
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/ScalableAO.shader
   - fileID: 190
     classID: 48
     packedSize: 216
-    offset: 11869168
+    offset: 11858088
     sourceAssetGUID: e8ce9961912f3214586fe8709b9012c1
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/CopyStdFromDoubleWide.shader
   - fileID: 191
     classID: 48
     packedSize: 1992
-    offset: 11869384
+    offset: 11858304
     sourceAssetGUID: f75014305794b3948a3c6d5ccd550e05
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/FinalPass.shader
   - fileID: 192
     classID: 48
     packedSize: 1964
-    offset: 11871376
+    offset: 11860296
     sourceAssetGUID: f7ea35cfb33fcad4ab8f2429ec103bef
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Histogram.shader
   - fileID: 193
     classID: 48
     packedSize: 156
-    offset: 11873344
+    offset: 11862264
     sourceAssetGUID: f997a3dc9254c44459323cced085150c
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/ScreenSpaceReflections.shader
   - fileID: 194
     classID: 48
     packedSize: 9368
-    offset: 11873504
+    offset: 11862424
     sourceAssetGUID: ff2b868c0d1a43b4dbfe0d2169b488c9
     buildTimeAssetPath: Assets/VideoFeedback/Video Mixer.shader
   - fileID: 195
     classID: 72
     packedSize: 20
-    offset: 11882872
+    offset: 11871792
     sourceAssetGUID: 18183ebfeeab97749b43e38b928604a7
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Histogram.compute
   - fileID: 196
     classID: 72
     packedSize: 24
-    offset: 11882896
+    offset: 11871816
     sourceAssetGUID: 31e9175024adfd44aba2530ff9b77494
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Texture3DLerp.compute
   - fileID: 197
     classID: 72
     packedSize: 20
-    offset: 11882920
+    offset: 11871840
     sourceAssetGUID: 34845e0ca016b7448842e965db5890a5
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/AutoExposure.compute
   - fileID: 198
     classID: 72
     packedSize: 28
-    offset: 11882944
+    offset: 11871864
     sourceAssetGUID: 34a460e8a2e66c243a9c12024e5a798d
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVORender.compute
   - fileID: 199
     classID: 72
     packedSize: 43164
-    offset: 11882976
+    offset: 11871896
     sourceAssetGUID: 42496b74c071f5749950ca1abe33e945
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Lut3DBaker.compute
   - fileID: 200
     classID: 72
     packedSize: 32
-    offset: 11926144
+    offset: 11915064
     sourceAssetGUID: 4c63bc487e6c29a4a99f85a6c47b292b
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVODownsample1.compute
   - fileID: 201
     classID: 72
     packedSize: 28
-    offset: 11926176
+    offset: 11915096
     sourceAssetGUID: 600d6212b59bb40409d19d750b5fd1e9
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVOUpsample.compute
   - fileID: 202
     classID: 72
     packedSize: 28
-    offset: 11926208
+    offset: 11915128
     sourceAssetGUID: 6dba4103d23a7904fbc49099355aff3e
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/GaussianDownsample.compute
   - fileID: 203
     classID: 72
     packedSize: 28
-    offset: 11926240
+    offset: 11915160
     sourceAssetGUID: 8c2fcbdf9bc58664f89917f7b9d79501
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/ExposureHistogram.compute
   - fileID: 204
     classID: 72
     packedSize: 16
-    offset: 11926272
+    offset: 11915192
     sourceAssetGUID: 92c63830cd50c0b4fbb8233613839958
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Waveform.compute
   - fileID: 205
     classID: 72
     packedSize: 20
-    offset: 11926288
+    offset: 11915208
     sourceAssetGUID: e1efca7c36fd01840aae0dd10378de5c
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Debug/Vectorscope.compute
   - fileID: 206
     classID: 72
     packedSize: 32
-    offset: 11926312
+    offset: 11915232
     sourceAssetGUID: e4d3e4779e48a374f91d48d4c0aedb7b
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVODownsample2.compute
   - fileID: 207
     classID: 84
     packedSize: 100
-    offset: 11926344
+    offset: 11915264
     sourceAssetGUID: 391ff128b81de4541982001129d072d3
     buildTimeAssetPath: Assets/VideoFeedback/Video Gradient Mapped 1.renderTexture
   - fileID: 208
     classID: 84
     packedSize: 84
-    offset: 11926448
+    offset: 11915368
     sourceAssetGUID: fe13457fe69734042bc04725d21fcd13
     buildTimeAssetPath: Assets/VideoFeedback/Video0.renderTexture
   - fileID: 209
     classID: 84
     packedSize: 84
-    offset: 11926536
+    offset: 11915456
     sourceAssetGUID: 09cb7dc75f6032242b4b518d5703736f
     buildTimeAssetPath: Assets/VideoFeedback/Video1.renderTexture
   - fileID: 210
     classID: 86
     packedSize: 196
-    offset: 11926624
+    offset: 11915544
     sourceAssetGUID: 6307d5f6af1ad2a4992edbe0398a0af0
     buildTimeAssetPath: Assets/VideoFeedback/Video Gradient Mapped 0.asset
   - fileID: 211
     classID: 86
     packedSize: 184
-    offset: 11926824
+    offset: 11915744
     sourceAssetGUID: 691e7b05c5f6d61429034051f4931f4a
     buildTimeAssetPath: Assets/VideoFeedback/Video Mixed.asset
   - fileID: 212
     classID: 89
     packedSize: 65808
-    offset: 11927008
+    offset: 11915928
     sourceAssetGUID: 16a1dfba18f68df4d84bb42be6096845
     buildTimeAssetPath: Assets/VideoFeedback/ReflectionProbe-0.exr
   - fileID: 213
     classID: 89
     packedSize: 65808
-    offset: 11992816
+    offset: 11981736
     sourceAssetGUID: 44713f6e449cb83419f49b618e2d51e8
     buildTimeAssetPath: Assets/VideoFeedback/ReflectionProbe-1.exr
   - fileID: 214
@@ -1671,342 +1662,351 @@ PackedAssets:
   - fileID: 241
     classID: 128
     packedSize: 180126
-    offset: 12058624
+    offset: 12047544
     sourceAssetGUID: c02b74cb2d914c042904bd38941e809e
     buildTimeAssetPath: Assets/VideoFeedback/apercu-bold.ttf
   - fileID: 242
     classID: 128
     packedSize: 108586
-    offset: 12238752
+    offset: 12227672
     sourceAssetGUID: edab5d6c615a8904fbbecbaf3bae3779
     buildTimeAssetPath: Assets/VideoFeedback/Fugue-Regular.ttf
   - fileID: 243
     classID: 213
     packedSize: 568
-    offset: 12347344
+    offset: 12336264
     sourceAssetGUID: 0000000000000000f000000000000000
     buildTimeAssetPath: Resources/unity_builtin_extra
   - fileID: 244
     classID: 213
     packedSize: 572
-    offset: 12347912
+    offset: 12336832
     sourceAssetGUID: 0000000000000000f000000000000000
     buildTimeAssetPath: Resources/unity_builtin_extra
   - fileID: 245
     classID: 213
     packedSize: 632
-    offset: 12348488
+    offset: 12337408
     sourceAssetGUID: 0000000000000000f000000000000000
     buildTimeAssetPath: Resources/unity_builtin_extra
   - fileID: 246
     classID: 213
     packedSize: 516
-    offset: 12349120
+    offset: 12338040
     sourceAssetGUID: 0000000000000000f000000000000000
     buildTimeAssetPath: Resources/unity_builtin_extra
   - fileID: 247
     classID: 213
     packedSize: 492
-    offset: 12349640
+    offset: 12338560
     sourceAssetGUID: 0b538f6328be6b547a8254a6b2b27dd2
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_03-06-42.283_1920x1080.png
   - fileID: 248
     classID: 213
     packedSize: 492
-    offset: 12350136
+    offset: 12339056
     sourceAssetGUID: 0e844fd13d5ee1e44952da5cb92c9201
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-40-39.304_1920x1080.png
   - fileID: 249
     classID: 213
     packedSize: 684
-    offset: 12350632
+    offset: 12339552
     sourceAssetGUID: 10f88007a1ca981419e2a381e88f0cc9
     buildTimeAssetPath: Assets/VideoFeedback/Camera.png
   - fileID: 250
     classID: 213
     packedSize: 524
-    offset: 12351320
+    offset: 12340240
     sourceAssetGUID: 208820d69ad9a1245849bb60b25d196d
     buildTimeAssetPath: Assets/VideoFeedback/Tick.png
   - fileID: 251
     classID: 213
     packedSize: 492
-    offset: 12351848
+    offset: 12340768
     sourceAssetGUID: 31d96ca3ae723054eb167f31c57d7780
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-38-26.924_1920x1080.png
   - fileID: 252
     classID: 213
     packedSize: 704
-    offset: 12352344
+    offset: 12341264
     sourceAssetGUID: 351039fab387e7145acc0e496f3001cf
     buildTimeAssetPath: Assets/VideoFeedback/Reset.png
   - fileID: 253
     classID: 213
     packedSize: 492
-    offset: 12353048
+    offset: 12341968
     sourceAssetGUID: 3aed7aafe747eaf41bc56b9f62cef8ed
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-39-45.232_1920x1080.png
   - fileID: 254
     classID: 213
     packedSize: 500
-    offset: 12353544
+    offset: 12342464
     sourceAssetGUID: 3b675466bfad0ef419551483144a2f09
     buildTimeAssetPath: Assets/VideoFeedback/Button Primary.png
   - fileID: 255
     classID: 213
     packedSize: 492
-    offset: 12354048
+    offset: 12342968
     sourceAssetGUID: 3e221058c21ac554a80d5aeeff03402e
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-58-01.208_1920x1080.png
   - fileID: 256
     classID: 213
     packedSize: 496
-    offset: 12354544
+    offset: 12343464
     sourceAssetGUID: 413a0f3a50719c041855617d66304e2d
     buildTimeAssetPath: Assets/VideoFeedback/Input Field.png
   - fileID: 257
     classID: 213
     packedSize: 492
-    offset: 12355040
+    offset: 12343960
     sourceAssetGUID: 467ceddc200e70b49bab5d25c0cc1ab4
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-36-30.168_1920x1080.png
   - fileID: 258
     classID: 213
     packedSize: 492
-    offset: 12355536
+    offset: 12344456
     sourceAssetGUID: 4cb1285c3e5c03648b554bd536f3c07e
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-53-29.255_1920x1080.png
   - fileID: 259
     classID: 213
     packedSize: 492
-    offset: 12356032
+    offset: 12344952
     sourceAssetGUID: 53f3d6bf714223241b1ca0bafcf74d5b
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-31-05.878_1920x1080.png
   - fileID: 260
     classID: 213
     packedSize: 652
-    offset: 12356528
+    offset: 12345448
     sourceAssetGUID: 550f695a9bed5d44394f6a7c60d1cea5
     buildTimeAssetPath: Assets/VideoFeedback/Checkmark.png
   - fileID: 261
     classID: 213
     packedSize: 492
-    offset: 12357184
+    offset: 12346104
     sourceAssetGUID: 551cc22e56390a2478639d1f13b209dd
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-34-14.128_1920x1080.png
   - fileID: 262
     classID: 213
     packedSize: 536
-    offset: 12357680
+    offset: 12346600
     sourceAssetGUID: 5ff748131defe5641be2f9cb3d1bba7b
     buildTimeAssetPath: Assets/VideoFeedback/Button Border.png
   - fileID: 263
     classID: 213
     packedSize: 652
-    offset: 12358216
+    offset: 12347136
     sourceAssetGUID: 64d534e5f083dea438e5a4183b849439
     buildTimeAssetPath: Assets/VideoFeedback/Pyramid.png
   - fileID: 264
     classID: 213
     packedSize: 492
-    offset: 12358872
+    offset: 12347792
     sourceAssetGUID: 6fabd907b715f3e45ad8e10da8162bf1
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-46-30.148_1920x1080.png
   - fileID: 265
     classID: 213
     packedSize: 492
-    offset: 12359368
+    offset: 12348288
     sourceAssetGUID: 73f90d9ec2ed6724fa52ccebcc5a7d66
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-20_02-26-36.769_1920x1080.png
   - fileID: 266
     classID: 213
     packedSize: 492
-    offset: 12359864
+    offset: 12348784
     sourceAssetGUID: 748b6a637b163ea41a61520c5cd1025d
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-02-12.341_1920x1080.png
   - fileID: 267
     classID: 213
     packedSize: 712
-    offset: 12360360
+    offset: 12349280
     sourceAssetGUID: 83e5daa993b577d41a67e9b167371b99
     buildTimeAssetPath: Assets/VideoFeedback/Light.png
   - fileID: 268
     classID: 213
     packedSize: 492
-    offset: 12361072
+    offset: 12349992
     sourceAssetGUID: 871146886ce94f84c838f6983e5ecc1e
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-35-32.470_1920x1080.png
   - fileID: 269
     classID: 213
     packedSize: 576
-    offset: 12361568
+    offset: 12350488
     sourceAssetGUID: 8b1b887ce0453814795204548220642b
     buildTimeAssetPath: Assets/VideoFeedback/Alignment Mark.png
   - fileID: 270
     classID: 213
     packedSize: 500
-    offset: 12362144
+    offset: 12351064
     sourceAssetGUID: 9ef1fabc9bb896046b6d5240dfdd315c
     buildTimeAssetPath: Assets/UI/Hue Slider Background.png
   - fileID: 271
     classID: 213
     packedSize: 492
-    offset: 12362648
+    offset: 12351568
     sourceAssetGUID: a18d75a506cbace49a373b41d6fa1f26
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-37-33.602_1920x1080.png
   - fileID: 272
     classID: 213
     packedSize: 744
-    offset: 12363144
+    offset: 12352064
     sourceAssetGUID: a8e549540ead38b45a0827edc6c61c13
     buildTimeAssetPath: Assets/VideoFeedback/Menu.png
   - fileID: 273
     classID: 213
     packedSize: 492
-    offset: 12363888
+    offset: 12352808
     sourceAssetGUID: b0bae7661b160714c9198d7f3d7b7db5
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_15-24-53.799_1920x1080.png
   - fileID: 274
     classID: 213
     packedSize: 496
-    offset: 12364384
+    offset: 12353304
     sourceAssetGUID: b246b26456a6bdf4f9973c143bd614b2
     buildTimeAssetPath: Assets/UI/Slider Background.png
   - fileID: 275
     classID: 213
     packedSize: 492
-    offset: 12364880
+    offset: 12353800
     sourceAssetGUID: c7a2633f4a4f65041a5ee38ee10abacd
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-36-29.403_1920x1080.png
   - fileID: 276
     classID: 213
     packedSize: 492
-    offset: 12365376
+    offset: 12354296
     sourceAssetGUID: d87098ef99d47bc4fb6c9e813f888e9f
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-29-28.459_1920x1080.png
   - fileID: 277
     classID: 213
     packedSize: 728
-    offset: 12365872
+    offset: 12354792
     sourceAssetGUID: e26680dc3cb05434ab135e09121acade
     buildTimeAssetPath: Assets/VideoFeedback/Hand.png
   - fileID: 278
     classID: 213
     packedSize: 492
-    offset: 12366600
+    offset: 12355520
     sourceAssetGUID: f34c3138c75f792438cfcc12f80296ad
     buildTimeAssetPath: Assets/VideoFeedback/Screenshots/VRChat_2023-04-14_13-32-55.983_1920x1080.png
   - fileID: 279
     classID: 258
-    packedSize: 13784
-    offset: 12367096
+    packedSize: 33164
+    offset: 12356016
     sourceAssetGUID: 051e74ef160caa645a2e7e5353f0c1c9
     buildTimeAssetPath: Assets/VideoFeedback/LightingData.asset
   - fileID: 280
     classID: 114
     packedSize: 88
-    offset: 12380880
+    offset: 12389184
     sourceAssetGUID: ab801abf55ea9d748bfd7dbee2ee7377
     buildTimeAssetPath: Assets/Post Processing/SilentProfile.asset
   - fileID: 281
     classID: 114
     packedSize: 36508
-    offset: 12380968
+    offset: 12389272
     sourceAssetGUID: 3b1888f56e8c4574ea7ac0d57ab36a44
     buildTimeAssetPath: Assets/SerializedUdonPrograms/0588ef3201a69ef40b5bb0936e9162ea.asset
   - fileID: 282
     classID: 114
     packedSize: 14812
-    offset: 12417480
+    offset: 12425784
     sourceAssetGUID: c650bb04b48361e4e9ad41d07d1a5f6a
     buildTimeAssetPath: Assets/SerializedUdonPrograms/465435174fd20e0488c7e80e61498d39.asset
   - fileID: 283
     classID: 114
     packedSize: 19700
-    offset: 12432296
+    offset: 12440600
     sourceAssetGUID: a2f972a09b75bef4496a9b473b93b4dc
     buildTimeAssetPath: Assets/SerializedUdonPrograms/682e6428f826a3c4ab4b4f0db77c4c04.asset
   - fileID: 284
     classID: 114
     packedSize: 43016
-    offset: 12452000
+    offset: 12460304
     sourceAssetGUID: 30719b47ee57c574aa56cd11bc2444de
     buildTimeAssetPath: Assets/SerializedUdonPrograms/6e73fb9cd355fff4b9d13097da16e67a.asset
   - fileID: 285
     classID: 114
     packedSize: 17260
-    offset: 12495016
+    offset: 12503320
     sourceAssetGUID: b5c57184ae54b404fbecc409b59b6ba1
     buildTimeAssetPath: Assets/SerializedUdonPrograms/7f3812bfad034ee4fba17a1964ffb753.asset
   - fileID: 286
     classID: 114
     packedSize: 62164
-    offset: 12512280
+    offset: 12520584
     sourceAssetGUID: 9bea1ef591b1a67459ff14829c0c1052
     buildTimeAssetPath: Assets/SerializedUdonPrograms/80af54cce1b67404cb98ad36eca1c46f.asset
   - fileID: 287
     classID: 114
     packedSize: 24668
-    offset: 12574448
+    offset: 12582752
     sourceAssetGUID: 5ea00363dc1896347bbfa07809d82902
     buildTimeAssetPath: Assets/SerializedUdonPrograms/826b4eaf64b577842af53379a7449c10.asset
   - fileID: 288
     classID: 114
     packedSize: 33800
-    offset: 12599120
+    offset: 12607424
     sourceAssetGUID: 011383cb7db03774e998ec10a3b17dbd
     buildTimeAssetPath: Assets/SerializedUdonPrograms/88f8ad25fb047dc46bdf2629f3e6a404.asset
   - fileID: 289
     classID: 114
     packedSize: 13280
-    offset: 12632920
+    offset: 12641224
     sourceAssetGUID: 064efa827bafe1a4f869174281c43c20
     buildTimeAssetPath: Assets/SerializedUdonPrograms/8d93d506b842c1d4b8b7e1c8f028ad9d.asset
   - fileID: 290
     classID: 114
     packedSize: 64708
-    offset: 12646200
+    offset: 12654504
     sourceAssetGUID: 8fa6fc97c6c5b524297d6938fd3a8aff
     buildTimeAssetPath: Assets/SerializedUdonPrograms/c10eabcfde4123948a8bfc0e956027ad.asset
   - fileID: 291
     classID: 114
     packedSize: 17068
-    offset: 12710912
+    offset: 12719216
     sourceAssetGUID: 02d9ae7f46f28d442a2d662a2d037879
     buildTimeAssetPath: Assets/SerializedUdonPrograms/c8df303ceb45ae84f85a11591f741734.asset
   - fileID: 292
     classID: 114
     packedSize: 33892
-    offset: 12727984
+    offset: 12736288
     sourceAssetGUID: ed533d1c69cb6974296d2fbfa01b155b
     buildTimeAssetPath: Assets/SerializedUdonPrograms/ca7c68eef6a25ae478526105ceb7c183.asset
   - fileID: 293
     classID: 114
     packedSize: 337992
-    offset: 12761880
+    offset: 12770184
     sourceAssetGUID: 4149ce4f83c2df249bf55c0ff3d1cd19
     buildTimeAssetPath: Assets/SerializedUdonPrograms/e67b32ad4eee7c84a933a226e0ed26a4.asset
   - fileID: 294
     classID: 114
     packedSize: 1380
-    offset: 13099872
+    offset: 13108176
     sourceAssetGUID: d82512f9c8e5d4a4d938b575d47f88d4
     buildTimeAssetPath: Packages/com.unity.postprocessing/PostProcessing/PostProcessResources.asset
   - fileID: 295
     classID: 114
     packedSize: 156
-    offset: 13101256
+    offset: 13109560
     sourceAssetGUID: ab801abf55ea9d748bfd7dbee2ee7377
     buildTimeAssetPath: Assets/Post Processing/SilentProfile.asset
   - fileID: 296
     classID: 114
     packedSize: 116
-    offset: 13101416
+    offset: 13109720
     sourceAssetGUID: ab801abf55ea9d748bfd7dbee2ee7377
     buildTimeAssetPath: Assets/Post Processing/SilentProfile.asset
   - fileID: 297
     classID: 114
     packedSize: 4984
-    offset: 13101536
+    offset: 13109840
     sourceAssetGUID: ab801abf55ea9d748bfd7dbee2ee7377
     buildTimeAssetPath: Assets/Post Processing/SilentProfile.asset
+--- !u!668709126 &8785524330579858739
+BuiltAssetBundleInfoSet:
+  bundleInfos:
+  - bundleName: scene-android-videofeedback.vrcw
+    bundleArchiveFile: 2
+    packagedFileIndices: 0000000001000000
+  - bundleName: VideoFeedback
+    bundleArchiveFile: 5
+    packagedFileIndices: 04000000
