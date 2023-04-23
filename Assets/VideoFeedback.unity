@@ -5132,13 +5132,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344464150}
   m_CullTransparentMesh: 0
+--- !u!1 &345591975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6164838722738130105, guid: 86ef76544d844044f89991064c150791,
+    type: 3}
+  m_PrefabInstance: {fileID: 2392752126621000855}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &345591976 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9190900781133753372, guid: 86ef76544d844044f89991064c150791,
     type: 3}
   m_PrefabInstance: {fileID: 2392752126621000855}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 345591975}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
@@ -5827,6 +5833,8 @@ GameObject:
   - component: {fileID: 412417132}
   - component: {fileID: 412417131}
   - component: {fileID: 412417130}
+  - component: {fileID: 412417136}
+  - component: {fileID: 412417135}
   m_Layer: 0
   m_Name: EQS_DATA
   m_TagString: EditorOnly
@@ -5874,9 +5882,15 @@ MonoBehaviour:
   - Target: {fileID: 914553284}
     Type: {fileID: 412417130}
     Foldout: 1
+  - Target: {fileID: 345591975}
+    Type: {fileID: 412417136}
+    Foldout: 1
+  - Target: {fileID: 583682756}
+    Type: {fileID: 412417135}
+    Foldout: 1
   buildInfo:
-    CachedBuildTarget: 19
-    NewBuildTarget: 19
+    CachedBuildTarget: 13
+    NewBuildTarget: 13
 --- !u!4 &412417125
 Transform:
   m_ObjectHideFlags: 1
@@ -6070,6 +6084,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enabled:
     PC: 1
+    Quest: 0
+--- !u!114 &412417135
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412417123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80acf45703dd3f0458b5c15f1d8a841f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active:
+    PC: 1
+    Quest: 0
+  Tag:
+    PC: Untagged
+    Quest: Untagged
+  Layer:
+    PC: 0
+    Quest: 0
+  StaticEditorFlags:
+    PC: 0
+    Quest: 0
+--- !u!114 &412417136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412417123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80acf45703dd3f0458b5c15f1d8a841f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active:
+    PC: 1
+    Quest: 0
+  Tag:
+    PC: Untagged
+    Quest: Untagged
+  Layer:
+    PC: 0
+    Quest: 0
+  StaticEditorFlags:
+    PC: 0
     Quest: 0
 --- !u!1 &415038163
 GameObject:
@@ -8191,7 +8253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &583682757
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9627,7 +9689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &697471936
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12610,13 +12672,13 @@ GameObject:
   - component: {fileID: 914553287}
   - component: {fileID: 914553286}
   - component: {fileID: 914553285}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Point Light B Quest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &914553285
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14219,7 +14281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1093876246
 Light:
   m_ObjectHideFlags: 0
@@ -16545,7 +16607,7 @@ PrefabInstance:
     - target: {fileID: 3239814342749280702, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5238423235348180072, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
@@ -16590,7 +16652,7 @@ PrefabInstance:
     - target: {fileID: 6219864878710455669, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff9e78d2135083f4e90ab894cb05c668, type: 3}
@@ -19860,7 +19922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1548985425
 Light:
   m_ObjectHideFlags: 0
@@ -21511,7 +21573,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719878934}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
@@ -24855,13 +24917,13 @@ GameObject:
   - component: {fileID: 2088469058}
   - component: {fileID: 2088469057}
   - component: {fileID: 2088469056}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Point Light A Quest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &2088469056
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -25242,7 +25304,7 @@ PrefabInstance:
     - target: {fileID: 3239814342749280702, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5238423235348180072, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
@@ -25287,7 +25349,7 @@ PrefabInstance:
     - target: {fileID: 6219864878710455669, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff9e78d2135083f4e90ab894cb05c668, type: 3}
@@ -25448,6 +25510,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Post Processing Toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6164838722738130105, guid: 86ef76544d844044f89991064c150791,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8092878034450425816, guid: 86ef76544d844044f89991064c150791,
         type: 3}
