@@ -6,8 +6,8 @@ using VRC.Udon;
 
 public class Screen : UdonSharpBehaviour
 {
-    public Material videoMixerMaterial;
     public Material gradientMappingMaterial;
+    public Material videoMixerMaterial;
     public SyncedToggle cameraClearToggle;
     public ColorButton gradientStop0ColorButton;
     public ColorButton gradientStop1ColorButton;
@@ -22,6 +22,7 @@ public class Screen : UdonSharpBehaviour
     public SyncedToggle mirrorYToggle;
     public float screenScaleX = 4.0f;
     public float screenScaleY = 2.25f;
+    public Camera videoCamera1;
 
     private float scaleX;
     private float scaleY;

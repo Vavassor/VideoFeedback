@@ -34,11 +34,11 @@
             fixed4 _GradientStop0Color;
             fixed4 _GradientStop1Color;
 
-            inline fixed4 blendOver(fixed4 s, fixed4 t)
+            inline float4 blendOver(float4 s, float4 t)
             {
                 float a0 = s.a + (1.0 - s.a) * t.a;
                 float3 color = (s.a * s.rgb + (1.0 - s.a) * t.a * t.rgb) / a0;
-                return fixed4(color, a0);
+                return float4(color, a0);
             }
 
             fixed4 frag(v2f_customrendertexture IN) : COLOR
@@ -52,7 +52,7 @@
                     currentColor.rgb = lerp(_GradientStop0Color.rgb, _GradientStop1Color.rgb, value);
                 }
 
-                fixed4 col = blendOver(currentColor, priorColor);
+                float4 col = blendOver(currentColor, priorColor);
 
                 if (_ShouldClearColor == 0.0)
                 {

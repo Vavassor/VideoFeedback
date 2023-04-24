@@ -73,7 +73,9 @@
                 fixed4 center = tex2D(_MainTex, distortedTexcoord);
                 fixed4 colorWithCa = getColorWithChromaticAberration(_MainTex, distortedTexcoord, center);
                 fixed4 edges = detectEdges(_MainTex, distortedTexcoord, colorWithCa);
-                fixed4 currentColor = colorWithCa + _EdgeBrightness * colorWithCa * edges;
+                fixed4 currentColor;
+                currentColor.rgb = colorWithCa.rgb + _EdgeBrightness * colorWithCa.rgb * edges.rgb;
+                currentColor.a = colorWithCa.a;
                 float3 hsv = rgbToHsv(currentColor.rgb);
 
                 // To wrap negative numbers, normally you'd use (n % m + m) % m.
