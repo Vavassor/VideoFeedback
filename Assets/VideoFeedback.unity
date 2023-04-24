@@ -72,7 +72,7 @@ LightmapSettings:
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
-    m_BakeBackend: 2
+    m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 512
@@ -1876,7 +1876,7 @@ PrefabInstance:
     - target: {fileID: 3039398447849226693, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -40
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 3039398447849226693, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
@@ -1931,7 +1931,7 @@ PrefabInstance:
     - target: {fileID: 5238423235348180072, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
       propertyPath: m_MaxValue
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5238423235348180072, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
@@ -2021,7 +2021,7 @@ PrefabInstance:
     - target: {fileID: 6527588811651940981, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -112
+      value: -115
       objectReference: {fileID: 0}
     - target: {fileID: 6703890848091118345, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
@@ -3327,7 +3327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 234}
+  m_AnchoredPosition: {x: 0, y: 284}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &191127783
@@ -5889,8 +5889,8 @@ MonoBehaviour:
     Type: {fileID: 412417135}
     Foldout: 1
   buildInfo:
-    CachedBuildTarget: 13
-    NewBuildTarget: 13
+    CachedBuildTarget: 19
+    NewBuildTarget: 19
 --- !u!4 &412417125
 Transform:
   m_ObjectHideFlags: 1
@@ -8253,7 +8253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &583682757
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8272,7 +8272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -30, y: 61.4}
+  m_AnchoredPosition: {x: -30, y: 111}
   m_SizeDelta: {x: 240, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &583682758
@@ -9689,7 +9689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &697471936
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12500,8 +12500,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 3.221, y: 1.177}
-  m_SizeDelta: {x: 500, y: 600}
+  m_AnchoredPosition: {x: 3.221, y: 1.079}
+  m_SizeDelta: {x: 500, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &904300729
 GameObject:
@@ -12672,13 +12672,13 @@ GameObject:
   - component: {fileID: 914553287}
   - component: {fileID: 914553286}
   - component: {fileID: 914553285}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Point Light B Quest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &914553285
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14281,7 +14281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1093876246
 Light:
   m_ObjectHideFlags: 0
@@ -15680,7 +15680,7 @@ PrefabInstance:
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: NetworkIDs.Array.size
-      value: 55
+      value: 57
       objectReference: {fileID: 0}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
@@ -15964,9 +15964,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
+      propertyPath: NetworkIDs.Array.data[55].ID
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
+        type: 3}
+      propertyPath: NetworkIDs.Array.data[56].ID
+      value: 67
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
+        type: 3}
       propertyPath: DynamicMaterials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: af9f977bbfcac1549ada38e01eb2ce8b, type: 2}
+      objectReference: {fileID: 2100000, guid: 023aac1bccf9a204ebaefd7b88db41ca, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[1]
@@ -15981,7 +15991,7 @@ PrefabInstance:
         type: 3}
       propertyPath: DynamicMaterials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 023aac1bccf9a204ebaefd7b88db41ca, type: 2}
+      objectReference: {fileID: 2100000, guid: af9f977bbfcac1549ada38e01eb2ce8b, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[4]
@@ -16297,6 +16307,16 @@ PrefabInstance:
       propertyPath: NetworkIDs.Array.data[54].gameObject
       value: 
       objectReference: {fileID: 1758201052}
+    - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
+        type: 3}
+      propertyPath: NetworkIDs.Array.data[55].gameObject
+      value: 
+      objectReference: {fileID: 3350193}
+    - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
+        type: 3}
+      propertyPath: NetworkIDs.Array.data[56].gameObject
+      value: 
+      objectReference: {fileID: 1165154014}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8894fa7e4588a5c4fab98453e558847d, type: 3}
 --- !u!1 &1201157205
@@ -16607,7 +16627,7 @@ PrefabInstance:
     - target: {fileID: 3239814342749280702, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5238423235348180072, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
@@ -16652,7 +16672,7 @@ PrefabInstance:
     - target: {fileID: 6219864878710455669, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff9e78d2135083f4e90ab894cb05c668, type: 3}
@@ -19922,7 +19942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1548985425
 Light:
   m_ObjectHideFlags: 0
@@ -21573,7 +21593,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719878934}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
@@ -21968,6 +21988,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1198000761}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1756854690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756854685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 229740497, guid: 4ecd63eff847044b68db9453ce219299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentType: 1
 --- !u!1 &1758201052
 GameObject:
   m_ObjectHideFlags: 0
@@ -24917,13 +24950,13 @@ GameObject:
   - component: {fileID: 2088469058}
   - component: {fileID: 2088469057}
   - component: {fileID: 2088469056}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Point Light A Quest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &2088469056
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -25304,7 +25337,7 @@ PrefabInstance:
     - target: {fileID: 3239814342749280702, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5238423235348180072, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
@@ -25349,7 +25382,7 @@ PrefabInstance:
     - target: {fileID: 6219864878710455669, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff9e78d2135083f4e90ab894cb05c668, type: 3}
@@ -25514,7 +25547,7 @@ PrefabInstance:
     - target: {fileID: 6164838722738130105, guid: 86ef76544d844044f89991064c150791,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8092878034450425816, guid: 86ef76544d844044f89991064c150791,
         type: 3}
@@ -25604,7 +25637,7 @@ PrefabInstance:
     - target: {fileID: 8092878034450425816, guid: 86ef76544d844044f89991064c150791,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 174.5
+      value: 224
       objectReference: {fileID: 0}
     - target: {fileID: 8092878034450425816, guid: 86ef76544d844044f89991064c150791,
         type: 3}

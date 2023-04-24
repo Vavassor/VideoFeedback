@@ -27,6 +27,13 @@
         "saturationSliderLabel": "Saturation",
         "valueSliderLabel": "Value"
     },
+    "localSettingsMenu": {
+        "ambientOcclusionIntensitySliderLabel": "Ambient Occlusion",
+        "bloomIntensitySliderLabel": "Bloom",
+        "enablePostProcessingToggleLabel": "Post Processing",
+        "floorLevelSliderLabel": "Floor Level",
+        "localSettingsHeading": "Local Settings"
+    },
     "photosensitiveWarning": {
         "photosensitiveWarningHeading": "Photosensitive Warning",
         "photosensitiveWarningText": "Effects here cause flashes of light that could trigger seizures in people with visual sensitivities.\n\nThe visuals are unpredictable and it's not possible to avoid the risk."
