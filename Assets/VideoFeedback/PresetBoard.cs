@@ -1,6 +1,7 @@
 ﻿// The read and write functions are from UNet by Xytabich. https://github.com/Xytabich/UNet
 // For licensing see /licenses/LICENSE-unet.txt
 using System;
+using System.Text.RegularExpressions;
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
@@ -64,7 +65,7 @@ public class PresetBoard : UdonSharpBehaviour
     private const int headerSizeBytes = 4;
     private const ushort currentVersion = 3;
     private const string defaultPresetCode = "VkYAAr8g4A4/v5PVPsWoCamGO/KtFizdOtDJ4wAA0c1zRAYvAAEB";
-    private Color defaultClearColor = Color.black;
+    private Color defaultClearColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
     private Color defaultStop0Color = new Color(0.4470588f, 0.8078431f, 0.8196079f);
     private Color defaultStop1Color = new Color(0.1844448f, 0.02889f, 0.27f);
 
@@ -151,6 +152,40 @@ public class PresetBoard : UdonSharpBehaviour
         return value ? 1 : 0;
     }
 
+    private bool IsBase64Char(char digit)
+    {
+        if (digit >= 'A' && digit <= 'Z') return true;
+        if (digit >= 'a' && digit <= 'z') return true;
+        if (digit >= '0' && digit <= '9') return true;
+        if (digit == '+') return true;
+        if (digit == '/') return true;
+        return false;
+    }
+
+    private bool IsBase64(string text)
+    {
+        if (text.Length % 4 != 0)
+        {
+            return false;
+        }
+
+        for (var i = 0; i < text.Length; i++)
+        {
+            if (!IsBase64Char(text[i]))
+            {
+                if (text[i] == '=')
+                {
+                    // Padding characters are only valid at the end as the last one or two characters.
+                    return i == text.Length - 1 || (text[i + 1] == '=' && i == text.Length - 2);
+                }
+
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     private string StripWhitespace(string text)
     {
         return string.Join("", text.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
@@ -158,7 +193,9 @@ public class PresetBoard : UdonSharpBehaviour
 
     public bool DeserializePreset(string text)
     {
-        if (text.Length % 4 != 0)
+        // There's no try/catch in U#. So in order to prevent invalid preset codes from crashing
+        // the UdonBehaviour, validate that it's actually base64.
+        if (!IsBase64(text))
         {
             return false;
         }

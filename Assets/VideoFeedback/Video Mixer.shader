@@ -27,10 +27,12 @@
             #pragma target 3.0
 
             #include "ColorConversion.cginc"
-
+            
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _MainTex_TexelSize;
+            // sampler2D _NoiseTexture;
+            // float4 _NoiseTexture_TexelSize;
 
             half _ChromaticAberrationFalloff;
             half _ChromaticAberrationSize;
@@ -68,7 +70,13 @@
             fixed4 frag(v2f_customrendertexture IN) : COLOR
             {
                 float2 distortedTexcoord = abs(2.0 * frac(_MirrorTileCount * 0.5 * IN.localTexcoord + 0.5) - 1.0);
+
+                // Wave Distortion
                 // distortedTexcoord.y += _WaveDistortion * sin(15.708 * IN.localTexcoord.x);
+
+                // Noise distortion
+                // float frameCount = _Time.y / unity_DeltaTime.x;
+                // distortedTexcoord += tex2D(_NoiseTexture, distortedTexcoord + frameCount * _NoiseTexture_TexelSize.xy).xy * _MainTex_TexelSize.xy * 4.0;
 
                 fixed4 center = tex2D(_MainTex, distortedTexcoord);
                 fixed4 colorWithCa = getColorWithChromaticAberration(_MainTex, distortedTexcoord, center);
