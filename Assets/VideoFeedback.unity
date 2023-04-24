@@ -3263,6 +3263,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 163922845}
+  cameraClearToggle: {fileID: 1908938354}
   clearColorButton: {fileID: 1718471425}
   camera0Controller: {fileID: 1719878938}
   videoGradientMapped: {fileID: 8600000, guid: 6307d5f6af1ad2a4992edbe0398a0af0, type: 2}
@@ -3271,6 +3272,8 @@ MonoBehaviour:
   videoMixed: {fileID: 8600000, guid: 691e7b05c5f6d61429034051f4931f4a, type: 2}
   orthographicProjectionToggle: {fileID: 1268363423}
   backboardMaterial: {fileID: 2100000, guid: e5462149339b71141a676a1b84a5c07c, type: 2}
+  gradientMappingMaterial: {fileID: 2100000, guid: 81751d02911ea8e4e90853446f10cc74,
+    type: 2}
   videoScreenOpaqueMaterial: {fileID: 2100000, guid: 0e817fbc46c9fe24086c24813d917962,
     type: 2}
 --- !u!1 &179272465 stripped
@@ -3307,32 +3310,32 @@ PrefabInstance:
     - target: {fileID: 8548828918246221001, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548828918288868289, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548828918288868289, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548828918424618434, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548828918424618434, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548828918424618434, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548828918606082970, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
@@ -3343,17 +3346,17 @@ PrefabInstance:
     - target: {fileID: 8548828918657822225, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548828918857426320, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548828918857426320, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548828918928059054, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
@@ -3363,7 +3366,7 @@ PrefabInstance:
     - target: {fileID: 8548828918928059054, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8548828918928059055, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
@@ -3473,17 +3476,17 @@ PrefabInstance:
     - target: {fileID: 8548828919238112101, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548828919238112101, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548828919238112101, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548828919264443955, guid: fe48398a14a01cd4ba74a5aca047a30d,
         type: 3}
@@ -21024,7 +21027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1640281972
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21295,7 +21298,6 @@ MonoBehaviour:
   gradientMappingMaterial: {fileID: 2100000, guid: 81751d02911ea8e4e90853446f10cc74,
     type: 2}
   videoMixerMaterial: {fileID: 2100000, guid: e9c9700536a149a47a6dbd026115b3e1, type: 2}
-  cameraClearToggle: {fileID: 1908938354}
   gradientStop0ColorButton: {fileID: 661124139}
   gradientStop1ColorButton: {fileID: 613154960}
   brightnessSlider: {fileID: 57240208}
@@ -21931,6 +21933,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1719878937}
+  clearColorButton: {fileID: 1718471425}
   orthographicProjectionToggle: {fileID: 1268363423}
 --- !u!114 &1719878939
 MonoBehaviour:
@@ -24109,7 +24112,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1908938353}
   isOn: 1
-  target: {fileID: 1664888923}
+  target: {fileID: 163922842}
   changeToggleEventName: OnChangeCameraClear
 --- !u!1 &1911227297
 GameObject:

@@ -6,6 +6,7 @@ using VRC.Udon;
 
 public class Camera0Controller : UdonSharpBehaviour
 {
+    public ColorButton clearColorButton;
     public SyncedToggle orthographicProjectionToggle;
 
     private Camera cameraComponent;

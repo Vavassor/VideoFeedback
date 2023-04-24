@@ -6,6 +6,7 @@ using VRC.Udon;
 
 public class CameraController : UdonSharpBehaviour
 {
+    public SyncedToggle cameraClearToggle;
     public ColorButton clearColorButton;
     public Camera0Controller camera0Controller;
     public CustomRenderTexture videoGradientMapped;
@@ -13,17 +14,25 @@ public class CameraController : UdonSharpBehaviour
     public CustomRenderTexture videoMixed;
     public SyncedToggle orthographicProjectionToggle;
     public Material backboardMaterial;
+    public Material gradientMappingMaterial;
     public Material videoScreenOpaqueMaterial;
 
     private Camera cameraComponent;
 
+    public void OnChangeCameraClear()
+    {
+        var isClearEnabled = cameraClearToggle.isOn;
+        gradientMappingMaterial.SetFloat("_ShouldClearColor", isClearEnabled ? 1.0f : 0.0f);
+        var transparentBlack = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        SetClearColor(isClearEnabled ? clearColorButton.color : transparentBlack);
+    }
+
     public void OnChangeClearColor()
     {
-        var color = clearColorButton.color;
-        var clearColor = new Color(color.r, color.g, color.b, 0.0f);
-        videoScreenOpaqueMaterial.SetColor("_BackgroundColor", clearColor);
-        backboardMaterial.SetColor("_Color", clearColor);
-        cameraComponent.backgroundColor = clearColor;
+        if (cameraClearToggle.isOn)
+        {
+            SetClearColor(clearColorButton.color);
+        }
     }
 
     public void OnChangeOrthographicProjection()
@@ -46,5 +55,13 @@ public class CameraController : UdonSharpBehaviour
         VRCGraphics.Blit(videoGradientMapped, videoGradientMapped1);
 
         videoMixed.Update();
+    }
+
+    private void SetClearColor(Color color)
+    {
+        var opaqueClearColor = new Color(color.r, color.g, color.b, 1.0f);
+        videoScreenOpaqueMaterial.SetColor("_BackgroundColor", opaqueClearColor);
+        backboardMaterial.SetColor("_Color", opaqueClearColor);
+        cameraComponent.backgroundColor = color;
     }
 }
