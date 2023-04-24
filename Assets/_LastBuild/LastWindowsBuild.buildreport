@@ -1,121 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!668709126 &-6215271839363654367
-BuiltAssetBundleInfoSet:
-  bundleInfos:
-  - bundleName: scene-standalonewindows64-videofeedback.vrcw
-    bundleArchiveFile: 2
-    packagedFileIndices: 0000000001000000
-  - bundleName: VideoFeedback
-    bundleArchiveFile: 5
-    packagedFileIndices: 04000000
---- !u!1125 &1
-BuildReport:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: LastWindowsBuild
-  m_Summary:
-    buildStartTime:
-      serializedVersion: 2
-      ticks: 638178905001570873
-    buildGUID: 00000000000000000000000000000000
-    platformName: Win64
-    platformGroupName: Standalone
-    options: 16
-    assetBundleOptions: 32
-    outputPath: C:/Users/Coper/AppData/Local/Temp/DefaultCompany/VideoFeedback/scene-standalonewindows64-videofeedback.vrcw
-    crc: 1562569060
-    totalSize: 5092360
-    totalTimeTicks: 766131434
-    totalErrors: 0
-    totalWarnings: 0
-    buildType: 1
-    buildResult: 1
-  m_Files:
-  - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/scene-standalonewindows64-videofeedback.vrcw/BuildPlayer-VideoFeedback
-    role: Scene
-    id: 0
-    totalSize: 487816
-  - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/scene-standalonewindows64-videofeedback.vrcw/BuildPlayer-VideoFeedback.sharedAssets
-    role: SharedAssets
-    id: 1
-    totalSize: 18170976
-  - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/scene-standalonewindows64-videofeedback.vrcw
-    role: AssetBundle
-    id: 2
-    totalSize: 5086965
-  - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/scene-standalonewindows64-videofeedback.vrcw.manifest
-    role: AssetBundleTextManifest
-    id: 3
-    totalSize: 4165
-  - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/VideoFeedback/CAB-772455bfbb4bbb3d6d53dea1b44dedbf
-    role: ResourcesFile
-    id: 4
-    totalSize: 4312
-  - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/VideoFeedback
-    role: ManifestAssetBundle
-    id: 5
-    totalSize: 1058
-  - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/VideoFeedback.manifest
-    role: AssetBundleTextManifest
-    id: 6
-    totalSize: 172
-  m_BuildSteps:
-  - stepName: Build Asset Bundles
-    durationTicks: 766131434
-    depth: 0
-    messages: []
-  - stepName: Calculate asset bundles to be built
-    durationTicks: 238237
-    depth: 1
-    messages: []
-  - stepName: Compile scripts
-    durationTicks: 63402724
-    depth: 1
-    messages: []
-  - stepName: Build player
-    durationTicks: 644379057
-    depth: 1
-    messages:
-    - type: 3
-      content: HTTPFormUseage:UrlEncoded
-  - stepName: Prepare assets for target platform
-    durationTicks: 1588431
-    depth: 2
-    messages: []
-  - stepName: Building scenes
-    durationTicks: 35822769
-    depth: 2
-    messages: []
-  - stepName: Building scene Assets/VideoFeedback.unity
-    durationTicks: 35795648
-    depth: 3
-    messages: []
-  - stepName: Writing asset files
-    durationTicks: 558851283
-    depth: 2
-    messages: []
-  - stepName: Packaging assets - archive:/BuildPlayer-VideoFeedback/BuildPlayer-VideoFeedback.sharedAssets
-    durationTicks: 558792251
-    depth: 3
-    messages: []
-  - stepName: Creating compressed player package
-    durationTicks: 32190748
-    depth: 2
-    messages: []
-  - stepName: Postprocess built player
-    durationTicks: 54216
-    depth: 2
-    messages: []
-  m_Appendices:
-  - {fileID: -6215271839363654367}
-  - {fileID: 2809669428058568240}
-  - {fileID: 4025114585362282255}
-  - {fileID: 6640933886997790553}
-  - {fileID: 4892597226155111419}
---- !u!1126 &2809669428058568240
+--- !u!1126 &-8619996887900636404
 PackedAssets:
   m_File: 1
   m_ShortPath: BuildPlayer-VideoFeedback.sharedAssets
@@ -1957,7 +1842,143 @@ PackedAssets:
     offset: 18165992
     sourceAssetGUID: ab801abf55ea9d748bfd7dbee2ee7377
     buildTimeAssetPath: Assets/Post Processing/SilentProfile.asset
---- !u!382020655 &4025114585362282255
+--- !u!1126 &-6783810572030553581
+PackedAssets:
+  m_File: 4
+  m_ShortPath: CAB-772455bfbb4bbb3d6d53dea1b44dedbf
+  m_Overhead: 4096
+  m_Contents:
+  - fileID: 1
+    classID: 142
+    packedSize: 104
+    offset: 4096
+    sourceAssetGUID: 00000000000000000000000000000000
+    buildTimeAssetPath: AssetBundle Object
+  - fileID: 2
+    classID: 290
+    packedSize: 112
+    offset: 4200
+    sourceAssetGUID: 00000000000000000000000000000000
+    buildTimeAssetPath: 'Built-in AssetBundleManifest: AssetBundleManifest'
+--- !u!1125 &1
+BuildReport:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LastWindowsBuild
+  m_Summary:
+    buildStartTime:
+      serializedVersion: 2
+      ticks: 638178947965669267
+    buildGUID: 00000000000000000000000000000000
+    platformName: Win64
+    platformGroupName: Standalone
+    options: 16
+    assetBundleOptions: 32
+    outputPath: C:/Users/Coper/AppData/Local/Temp/DefaultCompany/VideoFeedback/scene-standalonewindows64-videofeedback.vrcw
+    crc: 1983607713
+    totalSize: 5092660
+    totalTimeTicks: 253216544
+    totalErrors: 0
+    totalWarnings: 0
+    buildType: 1
+    buildResult: 1
+  m_Files:
+  - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/scene-standalonewindows64-videofeedback.vrcw/BuildPlayer-VideoFeedback
+    role: Scene
+    id: 0
+    totalSize: 487816
+  - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/scene-standalonewindows64-videofeedback.vrcw/BuildPlayer-VideoFeedback.sharedAssets
+    role: SharedAssets
+    id: 1
+    totalSize: 18170976
+  - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/scene-standalonewindows64-videofeedback.vrcw
+    role: AssetBundle
+    id: 2
+    totalSize: 5087267
+  - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/scene-standalonewindows64-videofeedback.vrcw.manifest
+    role: AssetBundleTextManifest
+    id: 3
+    totalSize: 4165
+  - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/VideoFeedback/CAB-772455bfbb4bbb3d6d53dea1b44dedbf
+    role: ResourcesFile
+    id: 4
+    totalSize: 4312
+  - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/VideoFeedback
+    role: ManifestAssetBundle
+    id: 5
+    totalSize: 1057
+  - path: C:/Users/Coper/AppData/Local/VRChatProjects/VideoFeedback/VideoFeedback.manifest
+    role: AssetBundleTextManifest
+    id: 6
+    totalSize: 171
+  m_BuildSteps:
+  - stepName: Build Asset Bundles
+    durationTicks: 253216544
+    depth: 0
+    messages: []
+  - stepName: Calculate asset bundles to be built
+    durationTicks: 172253
+    depth: 1
+    messages: []
+  - stepName: Compile scripts
+    durationTicks: 57612540
+    depth: 1
+    messages: []
+  - stepName: Build player
+    durationTicks: 137515263
+    depth: 1
+    messages: []
+  - stepName: Prepare assets for target platform
+    durationTicks: 1660242
+    depth: 2
+    messages: []
+  - stepName: Building scenes
+    durationTicks: 14144225
+    depth: 2
+    messages: []
+  - stepName: Building scene Assets/VideoFeedback.unity
+    durationTicks: 14119636
+    depth: 3
+    messages: []
+  - stepName: Writing asset files
+    durationTicks: 72929534
+    depth: 2
+    messages: []
+  - stepName: Packaging assets - archive:/BuildPlayer-VideoFeedback/BuildPlayer-VideoFeedback.sharedAssets
+    durationTicks: 72866772
+    depth: 3
+    messages: []
+  - stepName: Creating compressed player package
+    durationTicks: 31846776
+    depth: 2
+    messages: []
+  - stepName: Postprocess built player
+    durationTicks: 42048
+    depth: 2
+    messages: []
+  m_Appendices:
+  - {fileID: 4333520930437436527}
+  - {fileID: -8619996887900636404}
+  - {fileID: 8660312238052725099}
+  - {fileID: 448346952068092127}
+  - {fileID: -6783810572030553581}
+--- !u!641289076 &448346952068092127
+AudioBuildInfo:
+  m_IsAudioDisabled: 0
+  m_AudioClipCount: 0
+  m_AudioMixerCount: 0
+--- !u!668709126 &4333520930437436527
+BuiltAssetBundleInfoSet:
+  bundleInfos:
+  - bundleName: scene-standalonewindows64-videofeedback.vrcw
+    bundleArchiveFile: 2
+    packagedFileIndices: 0000000001000000
+  - bundleName: VideoFeedback
+    bundleArchiveFile: 5
+    packagedFileIndices: 04000000
+--- !u!382020655 &8660312238052725099
 PluginBuildInfo:
   m_RuntimePlugins:
   - Unity.Burst.Unsafe
@@ -2034,26 +2055,3 @@ PluginBuildInfo:
   - Unity.Plastic.Antlr3.Runtime
   - Serilog.Sinks.Unity3D
   - lz4x64Plastic
---- !u!1126 &4892597226155111419
-PackedAssets:
-  m_File: 4
-  m_ShortPath: CAB-772455bfbb4bbb3d6d53dea1b44dedbf
-  m_Overhead: 4096
-  m_Contents:
-  - fileID: 1
-    classID: 142
-    packedSize: 104
-    offset: 4096
-    sourceAssetGUID: 00000000000000000000000000000000
-    buildTimeAssetPath: AssetBundle Object
-  - fileID: 2
-    classID: 290
-    packedSize: 112
-    offset: 4200
-    sourceAssetGUID: 00000000000000000000000000000000
-    buildTimeAssetPath: 'Built-in AssetBundleManifest: AssetBundleManifest'
---- !u!641289076 &6640933886997790553
-AudioBuildInfo:
-  m_IsAudioDisabled: 0
-  m_AudioClipCount: 0
-  m_AudioMixerCount: 0

@@ -1,7 +1,6 @@
 ﻿// The read and write functions are from UNet by Xytabich. https://github.com/Xytabich/UNet
 // For licensing see /licenses/LICENSE-unet.txt
 using System;
-using System.Text.RegularExpressions;
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;

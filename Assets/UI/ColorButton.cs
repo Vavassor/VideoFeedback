@@ -9,8 +9,11 @@ public class ColorButton : UdonSharpBehaviour
 {
     public string changeEventName = "OnChangeColor";
     public Color color;
+    public int paletteColorIndex;
     public SyncedSlider hueSlider;
     public CanvasGroup modal;
+    public Palette palette;
+    public PaletteButton[] paletteButtons;
     public SyncedSlider saturationSlider;
     public Material saturationSliderMaterial;
     public SyncedSlider valueSlider;
@@ -77,12 +80,22 @@ public class ColorButton : UdonSharpBehaviour
 
         valueSlider.value = value;
         valueSlider.OnSetValueExternally();
+
+        OnUpdatePalette();
     }
 
     public void OnGetColor()
     {
         var pickedColor = Color.HSVToRGB(hueSlider.value, saturationSlider.value, valueSlider.value);
         color = pickedColor;
+    }
+
+    public void OnUpdatePalette()
+    {
+        foreach (var paletteButton in paletteButtons)
+        {
+            paletteButton.OnUpdatePalette();
+        }
     }
 
     private void UpdateColor()
@@ -98,6 +111,9 @@ public class ColorButton : UdonSharpBehaviour
         saturationSliderMaterial.SetColor("_Stop0Color", Color.HSVToRGB(hue, 0.0f, value));
         saturationSliderMaterial.SetColor("_Stop1Color", Color.HSVToRGB(hue, 1.0f, value));
         valueSliderMaterial.SetColor("_Stop1Color", Color.HSVToRGB(hue, saturation, 1.0f));
+
+        palette.colors[paletteColorIndex] = pickedColor;
+        palette.OnUpdatePalette();
 
         foreach (var targetBehaviour in targetBehaviours)
         {
