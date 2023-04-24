@@ -8,6 +8,8 @@
         [Header(Gradient Mapping)] _UseGradientMapping("Use Gradient Mapping", float) = 0.0
         _GradientStop0Color("Gradient Stop 0 Color", Color) = (0,0,0,1)
         _GradientStop1Color("Gradient Stop 1 Color", Color) = (1,1,1,1)
+        _HighThreshold("High Threshold", Range(0, 1)) = 1.0
+        _LowThreshold("Low Threshold", Range(0, 1)) = 0.0
         [Header(Camera Settings)] _ShouldClearColor("Should Clear Color", float) = 0.0
     }
     SubShader
@@ -33,12 +35,19 @@
             half _UseGradientMapping;
             fixed4 _GradientStop0Color;
             fixed4 _GradientStop1Color;
+            half _HighThreshold;
+            half _LowThreshold;
 
             inline float4 blendOver(float4 s, float4 t)
             {
                 float a0 = s.a + (1.0 - s.a) * t.a;
                 float3 color = (s.a * s.rgb + (1.0 - s.a) * t.a * t.rgb) / a0;
                 return float4(color, a0);
+            }
+
+            inline float unlerp(float a, float b, float t)
+            {
+                return (t - a) / (b - a);
             }
 
             fixed4 frag(v2f_customrendertexture IN) : COLOR
@@ -48,8 +57,9 @@
 
                 if (_UseGradientMapping != 0.0)
                 {
-                    float3 value = rgbToValue(currentColor.rgb);
-                    currentColor.rgb = lerp(_GradientStop0Color.rgb, _GradientStop1Color.rgb, value);
+                    float value = rgbToValue(currentColor.rgb);
+                    value = unlerp(_LowThreshold, _HighThreshold, clamp(value, _LowThreshold, _HighThreshold));
+                    currentColor.rgb = lerp(_GradientStop0Color.rgb, _GradientStop1Color.rgb, value.xxx);
                 }
 
                 float4 col = blendOver(currentColor, priorColor);
