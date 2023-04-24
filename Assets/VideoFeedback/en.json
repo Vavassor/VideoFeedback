@@ -7,6 +7,7 @@
     "cameraMenu": {
         "cameraMenuHeading": "Camera",
         "clearCameraToggleLabel": "Clear Camera",
+        "clearColorButtonLabel": "Clear Color",
         "orthographicProjectionToggleLabel": "Orthographic Projection"
     },
     "contactSection": {

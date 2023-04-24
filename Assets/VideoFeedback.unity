@@ -2337,6 +2337,7 @@ MonoBehaviour:
   cameraPickup: {fileID: 589861406}
   chromaticDistortionSlider: {fileID: 1417255969}
   clearCameraToggle: {fileID: 1908938354}
+  clearColorButton: {fileID: 1718471425}
   edgeBrightnessSlider: {fileID: 1727977611}
   gradientMappingStop0ColorButton: {fileID: 661124139}
   gradientMappingStop1ColorButton: {fileID: 613154960}
