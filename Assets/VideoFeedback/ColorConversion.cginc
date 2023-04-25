@@ -9,6 +9,14 @@ float3 hueToRgb(in float h)
     return saturate(float3(r, g, b));
 }
 
+float3 hslToRgb(float3 hsl)
+{
+    hsl.x = clamp(hsl.x, 0.0, 360.0) / 360.0;
+    float3 rgb = hueToRgb(hsl.x);
+    float c = (1.0 - abs(2.0 * hsl.z - 1.0)) * hsl.y;
+    return (rgb - 0.5) * c + hsl.z;
+}
+
 float3 hsvToRgb(float3 hsv)
 {
     float h = clamp(hsv.x, 0.0, 360.0) / 360.0;
@@ -16,6 +24,26 @@ float3 hsvToRgb(float3 hsv)
     float v = saturate(hsv.z);
     float3 rgb = hueToRgb(h);
     return ((rgb - 1) * s + 1) * v;
+}
+
+float3 rgbToHcv(in float3 rgb)
+{
+    // Based on work by Sam Hocevar and Emil Persson
+    float epsilon = 1e-10;
+    float4 p = (rgb.g < rgb.b) ? float4(rgb.bg, -1.0, 2.0 / 3.0) : float4(rgb.gb, 0.0, -1.0 / 3.0);
+    float4 q = (rgb.r < p.x) ? float4(p.xyw, rgb.r) : float4(rgb.r, p.yzx);
+    float c = q.x - min(q.w, q.y);
+    float h = abs((q.w - q.y) / (6.0 * c + epsilon) + q.z);
+    return float3(h, c, q.x);
+}
+
+float3 rgbToHsl(in float3 rgb)
+{
+    float epsilon = 1e-10;
+    float3 hcv = rgbToHcv(rgb);
+    float l = hcv.z - hcv.y * 0.5;
+    float s = hcv.y / (1.0 - abs(l * 2.0 - 1.0) + epsilon);
+    return float3(360.0 * hcv.x, s, l);
 }
 
 float3 rgbToHsv(float3 rgb)

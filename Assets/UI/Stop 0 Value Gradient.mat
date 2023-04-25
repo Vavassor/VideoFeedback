@@ -76,4 +76,4 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Stop0Color: {r: 0, g: 0, b: 0, a: 1}
-    - _Stop1Color: {r: 0.5502392, g: 0.98086137, b: 1, a: 1}
+    - _Stop1Color: {r: 1, g: 0.54066986, b: 0.54066986, a: 1}
