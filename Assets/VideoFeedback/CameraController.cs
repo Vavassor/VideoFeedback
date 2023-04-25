@@ -9,6 +9,7 @@ public class CameraController : UdonSharpBehaviour
     public SyncedToggle cameraClearToggle;
     public ColorButton clearColorButton;
     public Camera0Controller camera0Controller;
+    public SyncedSlider fieldOfViewSlider;
     public CustomRenderTexture videoGradientMapped;
     public RenderTexture videoGradientMapped1;
     public CustomRenderTexture videoMixed;
@@ -33,6 +34,12 @@ public class CameraController : UdonSharpBehaviour
         {
             SetClearColor(clearColorButton.color);
         }
+    }
+
+    public void OnChangeFieldOfView()
+    {
+        cameraComponent.fieldOfView = fieldOfViewSlider.value;
+        camera0Controller.OnChangeFieldOfView();
     }
 
     public void OnChangeOrthographicProjection()

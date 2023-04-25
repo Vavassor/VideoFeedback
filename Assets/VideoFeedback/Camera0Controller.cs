@@ -7,6 +7,7 @@ using VRC.Udon;
 public class Camera0Controller : UdonSharpBehaviour
 {
     public ColorButton clearColorButton;
+    public SyncedSlider fieldOfViewSlider;
     public SyncedToggle orthographicProjectionToggle;
 
     private Camera cameraComponent;
@@ -19,5 +20,10 @@ public class Camera0Controller : UdonSharpBehaviour
     public void OnChangeOrthographicProjection()
     {
         cameraComponent.orthographic = orthographicProjectionToggle.isOn;
+    }
+
+    public void OnChangeFieldOfView()
+    {
+        cameraComponent.fieldOfView = fieldOfViewSlider.value;
     }
 }

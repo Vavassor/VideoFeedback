@@ -57,7 +57,7 @@
                 return fixed4(r, center.g, b, center.a);
             }
 
-            inline float4 detectEdges(sampler2D samp, float2 uv, fixed4 c)
+            inline float4 detectEdges(sampler2D samp, float2 uv)
             {
                 float4 offset = float4(_MainTex_TexelSize.xy, 0.0, -_MainTex_TexelSize.x);
 
@@ -100,7 +100,7 @@
 
                 fixed4 center = tex2D(_MainTex, distortedTexcoord);
                 fixed4 colorWithCa = getColorWithChromaticAberration(_MainTex, distortedTexcoord, center);
-                fixed4 edges = detectEdges(_MainTex, distortedTexcoord, colorWithCa);
+                fixed4 edges = detectEdges(_MainTex, distortedTexcoord);
                 fixed4 currentColor;
                 currentColor.rgb = colorWithCa.rgb + _EdgeBrightness * colorWithCa.rgb * edges.rgb;
                 currentColor.a = colorWithCa.a;

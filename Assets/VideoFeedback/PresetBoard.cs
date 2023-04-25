@@ -29,6 +29,7 @@ public class PresetBoard : UdonSharpBehaviour
     public SyncedToggle clearCameraToggle;
     public ColorButton clearColorButton;
     public SyncedSlider edgeBrightnessSlider;
+    public SyncedSlider fieldOfViewSlider;
     public ColorButton gradientMappingStop0ColorButton;
     public ColorButton gradientMappingStop1ColorButton;
     public SyncedToggle gradientMappingToggle;
@@ -48,6 +49,7 @@ public class PresetBoard : UdonSharpBehaviour
     private float chromaticDistortion;
     private Color clearColor;
     private float edgeBrightness;
+    private float fieldOfView;
     private Color gradientMappingStop0Color;
     private Color gradientMappingStop1Color;
     private bool clearCamera;
@@ -64,6 +66,7 @@ public class PresetBoard : UdonSharpBehaviour
     private const int headerSizeBytes = 4;
     private const ushort currentVersion = 3;
     private const string defaultPresetCode = "VkYAAr8g4A4/v5PVPsWoCamGO/KtFizdOtDJ4wAA0c1zRAYvAAEB";
+    private float defaultFieldOfView = 60.0f;
     private Color defaultClearColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
     private Color defaultStop0Color = new Color(0.4470588f, 0.8078431f, 0.8196079f);
     private Color defaultStop1Color = new Color(0.1844448f, 0.02889f, 0.27f);
@@ -77,10 +80,12 @@ public class PresetBoard : UdonSharpBehaviour
         cameraRotation = cameraPickup.transform.rotation;
         clearCamera = clearCameraToggle.isOn;
         chromaticDistortion = chromaticDistortionSlider.value;
-        edgeBrightness = edgeBrightnessSlider.value;
 
         clearColorButton.OnGetColor();
         clearColor = clearColorButton.color;
+
+        edgeBrightness = edgeBrightnessSlider.value;
+        fieldOfView = fieldOfViewSlider.value;
 
         gradientMappingStop0ColorButton.OnGetColor();
         gradientMappingStop0Color = gradientMappingStop0ColorButton.color;
@@ -141,7 +146,7 @@ public class PresetBoard : UdonSharpBehaviour
         WriteOpaqueColor(gradientMappingStop1Color, bytes, 33);
         WriteOpaqueColor(clearColor, bytes, 36);
         WriteUnorm(edgeBrightness, bytes, 39);
-        bytes[40] = (byte) mirrorTileCount;
+        bytes[40] = (byte) (((((int) Mathf.Floor(fieldOfView) - 45) & 0x3f) << 2) | mirrorTileCount);
         bytes[41] = (byte) ((ToInt(useGradientMapping) << 5) | (ToInt(invertColor) << 4) | (ToInt(mirrorX) << 3) | (ToInt(mirrorY) << 2) | (ToInt(isProjectionOrthographic) << 1) | ToInt(clearCamera));
         return Convert.ToBase64String(bytes);
     }
@@ -234,7 +239,10 @@ public class PresetBoard : UdonSharpBehaviour
         gradientMappingStop1Color = ReadOpaqueColor(bytes, 33);
         clearColor = ReadOpaqueColor(bytes, 36);
         edgeBrightness = ReadUnorm(bytes, 39);
-        mirrorTileCount = bytes[40];
+
+        var mirrorTileAndFov = bytes[40];
+        mirrorTileCount = mirrorTileAndFov & 0x3;
+        fieldOfView = ((mirrorTileAndFov & 0xfc) >> 2) + 45;
 
         var flags = bytes[41];
         clearCamera = (flags & 0x01) > 0;
@@ -266,6 +274,9 @@ public class PresetBoard : UdonSharpBehaviour
 
         edgeBrightnessSlider.value = edgeBrightness;
         edgeBrightnessSlider.OnSetValueExternally();
+
+        fieldOfViewSlider.value = fieldOfView;
+        fieldOfViewSlider.OnSetValueExternally();
 
         gradientMappingStop0ColorButton.color = gradientMappingStop0Color;
         gradientMappingStop0ColorButton.OnSetValueExternally();
@@ -559,7 +570,9 @@ public class PresetBoard : UdonSharpBehaviour
         WriteUInt16(3, bytes, 2);
         CopyBytes(bytes, 4, newBytes, 4, 32);
         WriteOpaqueColor(defaultClearColor, newBytes, 36);
-        CopyBytes(bytes, 36, newBytes, 39, 3);
+        newBytes[39] = bytes[36];
+        newBytes[40] = (byte) (bytes[37] | (((int) Mathf.Floor(defaultFieldOfView) - 45) << 2));
+        newBytes[41] = bytes[38];
 
         return newBytes;
     }
