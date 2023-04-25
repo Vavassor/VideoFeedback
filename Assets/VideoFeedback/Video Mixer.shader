@@ -57,14 +57,34 @@
                 return fixed4(r, center.g, b, center.a);
             }
 
-            inline fixed4 detectEdges(sampler2D samp, float2 uv, fixed4 c)
+            inline float4 detectEdges(sampler2D samp, float2 uv, fixed4 c)
             {
-                float3 offset = float3(_MainTex_TexelSize.xy, 0.0);
+                float4 offset = float4(_MainTex_TexelSize.xy, 0.0, -_MainTex_TexelSize.x);
+
                 fixed4 n = tex2D(samp, uv + offset.yz);
                 fixed4 s = tex2D(samp, uv - offset.yz);
                 fixed4 e = tex2D(samp, uv + offset.xz);
                 fixed4 w = tex2D(samp, uv - offset.xz);
-                return abs(n - c) + abs(s - c) + abs(e - c) + abs(w - c);
+                fixed4 ne = tex2D(samp, uv + offset.xy);
+                fixed4 nw = tex2D(samp, uv + offset.wy);
+                fixed4 se = tex2D(samp, uv - offset.wy);
+                fixed4 sw = tex2D(samp, uv - offset.xy);
+
+                float3 luminanceConv = { 0.2125, 0.7154, 0.0721 };
+                float n0 = dot(n, luminanceConv);
+                float s0 = dot(s, luminanceConv);
+                float e0 = dot(e, luminanceConv);
+                float w0 = dot(w, luminanceConv);
+                float ne0 = dot(ne, luminanceConv);
+                float nw0 = dot(nw, luminanceConv);
+                float se0 = dot(se, luminanceConv);
+                float sw0 = dot(sw, luminanceConv);
+
+                float x = sw0 + 2.0 * w0 + nw0 - se0 - 2.0 * w0 - ne0;
+                float y = sw0 + 2.0 * s0 + se0 - nw0 - 2.0 * e0 - ne0;
+                float edge = sqrt(x * x + y * y);
+
+                return float4(edge, edge, edge, 1.0);
             }
 
             fixed4 frag(v2f_customrendertexture IN) : COLOR

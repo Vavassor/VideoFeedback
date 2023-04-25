@@ -559,8 +559,7 @@ public class PresetBoard : UdonSharpBehaviour
         WriteUInt16(3, bytes, 2);
         CopyBytes(bytes, 4, newBytes, 4, 32);
         WriteOpaqueColor(defaultClearColor, newBytes, 36);
-        newBytes[40] = bytes[37];
-        newBytes[41] = bytes[38];
+        CopyBytes(bytes, 36, newBytes, 39, 3);
 
         return newBytes;
     }
