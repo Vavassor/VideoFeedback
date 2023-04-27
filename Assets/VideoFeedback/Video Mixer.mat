@@ -48,7 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTexture:
-        m_Texture: {fileID: 2800000, guid: 4aa7d521e3aad414d85680690f5d3274, type: 3}
+        m_Texture: {fileID: 2800000, guid: 69e570ac2d98d5c4982839ff9078b989, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -68,7 +68,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Brightness: 0.8515625
+    - _Brightness: 1.0683594
     - _BumpScale: 1
     - _ChromaticAberrationFalloff: 0.65
     - _ChromaticAberrationSize: 0.9
@@ -77,11 +77,12 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EdgeBrightness: 0
+    - _EdgeBrightness: 0.7254902
+    - _FlowDistortion: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _HueShift: -11.7734375
+    - _HueShift: -8.546875
     - _InvertColor: 0
     - _Metallic: 0
     - _MirrorTileCount: 1
@@ -89,6 +90,9 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _SharpenAmount: 0
+    - _SharpenBlend: 0.25
+    - _SharpenFactor: 0.14
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
