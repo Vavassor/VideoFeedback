@@ -30,6 +30,7 @@ public class PresetBoard : UdonSharpBehaviour
     public ColorButton clearColorButton;
     public SyncedSlider edgeBrightnessSlider;
     public SyncedSlider fieldOfViewSlider;
+    public SyncedSlider flowDistortionSlider;
     public ColorButton gradientMappingStop0ColorButton;
     public ColorButton gradientMappingStop1ColorButton;
     public SyncedToggle gradientMappingToggle;
@@ -39,6 +40,7 @@ public class PresetBoard : UdonSharpBehaviour
     public SyncedToggle mirrorXToggle;
     public SyncedToggle mirrorYToggle;
     public SyncedToggle orthographicProjectionToggle;
+    public SyncedSlider sharpnessSlider;
     public InputField presetCodeInputField;
     public GameObject loadPresetCodeError;
 
@@ -50,6 +52,7 @@ public class PresetBoard : UdonSharpBehaviour
     private Color clearColor;
     private float edgeBrightness;
     private float fieldOfView;
+    private float flowDistortion;
     private Color gradientMappingStop0Color;
     private Color gradientMappingStop1Color;
     private bool clearCamera;
@@ -59,12 +62,13 @@ public class PresetBoard : UdonSharpBehaviour
     private int mirrorTileCount;
     private bool mirrorX;
     private bool mirrorY;
+    private float sharpness;
     private bool useGradientMapping;
 
     private const string codeId = "VF";
-    private const int codeSizeBytes = 42;
+    private const int codeSizeBytes = 44;
     private const int headerSizeBytes = 4;
-    private const ushort currentVersion = 3;
+    private const ushort currentVersion = 4;
     private const string defaultPresetCode = "VkYAAr8g4A4/v5PVPsWoCamGO/KtFizdOtDJ4wAA0c1zRAYvAAEB";
     private float defaultFieldOfView = 60.0f;
     private Color defaultClearColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
@@ -86,6 +90,7 @@ public class PresetBoard : UdonSharpBehaviour
 
         edgeBrightness = edgeBrightnessSlider.value;
         fieldOfView = fieldOfViewSlider.value;
+        flowDistortion = flowDistortionSlider.value;
 
         gradientMappingStop0ColorButton.OnGetColor();
         gradientMappingStop0Color = gradientMappingStop0ColorButton.color;
@@ -99,6 +104,7 @@ public class PresetBoard : UdonSharpBehaviour
         mirrorTileCount = (int) mirrorTileCountSlider.value;
         mirrorX = mirrorXToggle.isOn;
         mirrorY = mirrorYToggle.isOn;
+        sharpness = sharpnessSlider.value;
         useGradientMapping = gradientMappingToggle.isOn;
 
         presetCodeInputField.text = SerializePreset();
@@ -148,6 +154,8 @@ public class PresetBoard : UdonSharpBehaviour
         WriteUnorm(edgeBrightness, bytes, 39);
         bytes[40] = (byte) (((((int) Mathf.Floor(fieldOfView) - 45) & 0x3f) << 2) | mirrorTileCount);
         bytes[41] = (byte) ((ToInt(useGradientMapping) << 5) | (ToInt(invertColor) << 4) | (ToInt(mirrorX) << 3) | (ToInt(mirrorY) << 2) | (ToInt(isProjectionOrthographic) << 1) | ToInt(clearCamera));
+        WriteUnorm(4.0f * sharpness, bytes, 42);
+        bytes[43] = (byte) flowDistortion;
         return Convert.ToBase64String(bytes);
     }
 
@@ -252,6 +260,9 @@ public class PresetBoard : UdonSharpBehaviour
         invertColor = (flags & 0x10) > 0;
         useGradientMapping = (flags & 0x20) > 0;
 
+        sharpness = 0.25f * ReadUnorm(bytes, 42);
+        flowDistortion = bytes[43];
+
         return true;
     }
 
@@ -278,6 +289,9 @@ public class PresetBoard : UdonSharpBehaviour
         fieldOfViewSlider.value = fieldOfView;
         fieldOfViewSlider.OnSetValueExternally();
 
+        flowDistortionSlider.value = flowDistortion;
+        flowDistortionSlider.OnSetValueExternally();
+
         gradientMappingStop0ColorButton.color = gradientMappingStop0Color;
         gradientMappingStop0ColorButton.OnSetValueExternally();
 
@@ -301,6 +315,9 @@ public class PresetBoard : UdonSharpBehaviour
 
         mirrorYToggle.isOn = mirrorY;
         mirrorYToggle.OnSetValueExternally();
+
+        sharpnessSlider.value = sharpness;
+        sharpnessSlider.OnSetValueExternally();
 
         gradientMappingToggle.isOn = useGradientMapping;
         gradientMappingToggle.OnSetValueExternally();
@@ -540,6 +557,12 @@ public class PresetBoard : UdonSharpBehaviour
             version = 3;
         }
 
+        if (version == 3)
+        {
+            bytes = MigrateVersion3To4(bytes);
+            version = 4;
+        }
+
         return bytes;
     }
 
@@ -573,6 +596,18 @@ public class PresetBoard : UdonSharpBehaviour
         newBytes[39] = bytes[36];
         newBytes[40] = (byte) (bytes[37] | (((int) Mathf.Floor(defaultFieldOfView) - 45) << 2));
         newBytes[41] = bytes[38];
+
+        return newBytes;
+    }
+
+    private byte[] MigrateVersion3To4(byte[] bytes)
+    {
+        byte[] newBytes = new byte[codeSizeBytes];
+
+        WriteSByte((sbyte)codeId[0], bytes, 0);
+        WriteSByte((sbyte)codeId[1], bytes, 1);
+        WriteUInt16(4, bytes, 2);
+        CopyBytes(bytes, 4, newBytes, 4, 38);
 
         return newBytes;
     }

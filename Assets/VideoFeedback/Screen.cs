@@ -23,7 +23,6 @@ public class Screen : UdonSharpBehaviour
     public SyncedSlider sharpnessSlider;
     public float screenScaleX = 4.0f;
     public float screenScaleY = 2.25f;
-    public Camera videoCamera1;
 
     private float scaleX;
     private float scaleY;

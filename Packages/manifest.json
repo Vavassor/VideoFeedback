@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.phi-lira.smarttexture": "https://github.com/s-ilent/SmartTexture.git",
     "com.spoiledcat.git": "1.0.12",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.collab-proxy": "1.6.0",

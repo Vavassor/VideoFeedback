@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Video Mixer
-  m_Shader: {fileID: 4800000, guid: ff2b868c0d1a43b4dbfe0d2169b488c9, type: 3}
+  m_Name: Light Bulb Dim
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -40,15 +40,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 8600000, guid: 6307d5f6af1ad2a4992edbe0398a0af0, type: 2}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTexture:
-        m_Texture: {fileID: 2800000, guid: 69e570ac2d98d5c4982839ff9078b989, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -59,49 +55,23 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _PriorTexture:
-        m_Texture: {fileID: 8400000, guid: 09cb7dc75f6032242b4b518d5703736f, type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Video1Texture:
-        m_Texture: {fileID: 8400000, guid: 09cb7dc75f6032242b4b518d5703736f, type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Brightness: 0.8515625
     - _BumpScale: 1
-    - _ChromaticAberrationFalloff: 0.65
-    - _ChromaticAberrationSize: 0.9
-    - _ChromaticDistortion: 0
-    - _ChromaticStrength: 0.26
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EdgeBrightness: 0
-    - _FlowDistortion: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.484
     - _GlossyReflections: 1
-    - _HueShift: -11.7734375
-    - _InvertColor: 0
     - _Metallic: 0
-    - _MirrorTileCount: 1
-    - _MirrorXYCount: 1
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _SharpenAmount: 0
-    - _SharpenBlend: 0.25
-    - _SharpenFactor: 0.14
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UseGradientMapping: 0
-    - _WaveDistortion: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GradientStop0Color: {r: 0.46226418, g: 0, b: 0, a: 1}
-    - _GradientStop1Color: {r: 0, g: 1, b: 0.84803915, a: 1}

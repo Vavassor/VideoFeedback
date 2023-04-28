@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.phi-lira.smarttexture": {
+      "version": "https://github.com/s-ilent/SmartTexture.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "c870b820c3886b143f8e3233b7b7d4a4cb45ceee"
+    },
     "com.spoiledcat.git": {
       "version": "1.0.12",
       "depth": 0,

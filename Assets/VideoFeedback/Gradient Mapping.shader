@@ -25,6 +25,7 @@
             #pragma fragment frag
             #pragma target 3.0
 
+            #include "ColorAdjustment.cginc"
             #include "ColorConversion.cginc"
 
             sampler2D _Video0Texture;
@@ -37,17 +38,14 @@
             fixed4 _GradientStop1Color;
             half _HighThreshold;
             half _LowThreshold;
+            half _Brightness;
+            half _Contrast;
 
             inline float4 blendOver(float4 s, float4 t)
             {
                 float a0 = s.a + (1.0 - s.a) * t.a;
                 float3 color = (s.a * s.rgb + (1.0 - s.a) * t.a * t.rgb) / a0;
                 return float4(color, a0);
-            }
-
-            inline float unlerp(float a, float b, float t)
-            {
-                return (t - a) / (b - a);
             }
 
             fixed4 frag(v2f_customrendertexture IN) : COLOR
@@ -57,8 +55,7 @@
 
                 if (_UseGradientMapping != 0.0)
                 {
-                    float value = rgbToValue(currentColor.rgb);
-                    value = unlerp(_LowThreshold, _HighThreshold, clamp(value, _LowThreshold, _HighThreshold));
+                    float value = getLuminance(currentColor.rgb);
                     currentColor.rgb = lerp(_GradientStop0Color.rgb, _GradientStop1Color.rgb, value.xxx);
                 }
 
