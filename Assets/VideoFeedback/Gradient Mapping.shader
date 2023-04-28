@@ -8,8 +8,6 @@
         [Header(Gradient Mapping)] _UseGradientMapping("Use Gradient Mapping", float) = 0.0
         _GradientStop0Color("Gradient Stop 0 Color", Color) = (0,0,0,1)
         _GradientStop1Color("Gradient Stop 1 Color", Color) = (1,1,1,1)
-        _HighThreshold("High Threshold", Range(0, 1)) = 1.0
-        _LowThreshold("Low Threshold", Range(0, 1)) = 0.0
         [Header(Camera Settings)] _ShouldClearColor("Should Clear Color", float) = 0.0
     }
     SubShader
@@ -32,14 +30,13 @@
             sampler2D _Video1Texture;
             sampler2D _GradientMapped1Texture;
 
+            float4 _GradientMapped1Texture_TexelSize;
+            float4 _NoiseTexture_TexelSize;
+
             half _ShouldClearColor;
             half _UseGradientMapping;
             fixed4 _GradientStop0Color;
             fixed4 _GradientStop1Color;
-            half _HighThreshold;
-            half _LowThreshold;
-            half _Brightness;
-            half _Contrast;
 
             inline float4 blendOver(float4 s, float4 t)
             {

@@ -10,10 +10,16 @@
         _ChromaticAberrationFalloff("Chromatic Aberattion Falloff", Range(0, 1)) = 0.65
         _ChromaticAberrationSize("Chromatic Aberattion Size", Range(0, 1)) = 0.9
         [Header(Distortion)] _MirrorTileCount("Mirror Tiles", float) = 1.0
-        // _WaveDistortion("WaveDistortion", Range(-0.24, 0.24)) = 0.0
         _FlowDistortion("Flow Distortion", Range(0.0, 32.0)) = 16.0
         [Header(Post Processing)] _EdgeBrightness("Edge Brightness", Range(0, 1)) = 0.0
+        _EdgeWidth("Edge Width", Range(0, 16)) = 1.0
         _SharpenAmount("Sharpen", Range(0.0, 0.25)) = 0.0
+        [Header(Experimental)] [Toggle(EXPERIMENTAL_ON)] _UseExperimental("Use Experimental", Float) = 0
+        _NoiseTexture("Noise Texture", 2D) = "white" {}
+        _EdgeNoiseBlend("Edge Noise Blend", Range(0, 1)) = 0.0
+        _Contrast("Contrast", Range(0.9, 1.1)) = 0.0
+        _Saturation("Saturation", Range(-0.1, 0.1)) = 0.0
+        _WaveDistortion("WaveDistortion", Range(-0.24, 0.24)) = 0.0
     }
     SubShader
     {
@@ -27,14 +33,14 @@
             #pragma vertex CustomRenderTextureVertexShader
             #pragma fragment frag
             #pragma target 3.0
+            #pragma shader_feature_local EXPERIMENTAL_ON
 
+            #include "ColorAdjustment.cginc"
             #include "ColorConversion.cginc"
             
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _MainTex_TexelSize;
-            // sampler2D _NoiseTexture;
-            // float4 _NoiseTexture_TexelSize;
 
             half _ChromaticAberrationFalloff;
             half _ChromaticAberrationSize;
@@ -47,9 +53,19 @@
             half _FlowDistortion;
             half _MirrorTileCount;
             half _SharpenAmount;
-            // half _WaveDistortion;
 
             half _EdgeBrightness;
+            half _EdgeWidth;
+
+#ifdef EXPERIMENTAL_ON
+            sampler2D _NoiseTexture;
+            float4 _NoiseTexture_TexelSize;
+
+            half _EdgeNoiseBlend;
+            half _Contrast;
+            half _Saturation;
+            half _WaveDistortion;
+#endif
 
             inline float4 getColorWithChromaticAberration(sampler2D samp, float2 uv, fixed4 center)
             {
@@ -63,7 +79,7 @@
 
             inline float4 detectEdgesAndSharpen(sampler2D samp, float2 uv, float4 center, float sharpenFactor)
             {
-                float4 offset = float4(_MainTex_TexelSize.xy, 0.0, -_MainTex_TexelSize.x);
+                float4 offset = float4(_EdgeWidth * _MainTex_TexelSize.xy, 0.0, -_EdgeWidth * _MainTex_TexelSize.x);
 
                 // Get samples for the convolution kernel.
                 float3 n = tex2D(samp, uv + offset.yz).rgb;
@@ -93,8 +109,15 @@
                 float y = sw0 + 2.0 * s0 + se0 - nw0 - 2.0 * e0 - ne0;
                 float edge = length(float2(x, y));
 
+#ifdef EXPERIMENTAL_ON
+                float2 noiseTexcoord = uv * _MainTex_TexelSize.zw * _NoiseTexture_TexelSize.xy + _Time.y * 21.7;
+                float3 noise = tex2D(_NoiseTexture, noiseTexcoord);
+                float3 noiseFactor = (1.0 - _EdgeNoiseBlend) + _EdgeNoiseBlend * (noise - 0.5);
+                float3 color = sharpened.rgb + _EdgeBrightness * edge * noiseFactor * sharpened.rgb;
+#else
                 float3 color = sharpened.rgb + _EdgeBrightness * edge * sharpened.rgb;
-
+#endif
+ 
                 return float4(color, center.a);
             }
 
@@ -120,8 +143,10 @@
                     distortedTexcoord += getHslFlow(distortedTexcoord, _FlowDistortion);
                 }
 
+#ifdef EXPERIMENTAL_ON
                 // Wave Distortion
-                // distortedTexcoord.y += _WaveDistortion * sin(15.708 * IN.localTexcoord.x);
+                distortedTexcoord.y += _WaveDistortion * sin(15.708 * IN.localTexcoord.x);
+#endif
 
                 // Noise distortion
                 // float frameCount = _Time.y / unity_DeltaTime.x;
@@ -137,9 +162,18 @@
                 // To wrap negative numbers, normally you'd use (n % m + m) % m.
                 // Because n is smaller than a couple cycles, we can get away with (n + m) % m.
                 hsv.x = (hsv.x + _HueShift + 360.0) % 360.0;
+
+#ifdef EXPERIMENTAL_ON
+                hsv.y = hsv.y + _Saturation;
+#endif
+
                 currentColor.rgb = hsvToRgb(hsv) * _Brightness;
 
                 fixed4 col = currentColor;
+
+#ifdef EXPERIMENTAL_ON
+                col.rgb = adjustContrast(col.rgb, _Contrast);
+#endif
 
                 if (_InvertColor != 0.0)
                 {
