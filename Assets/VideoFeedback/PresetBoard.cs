@@ -242,12 +242,6 @@ public class PresetBoard : UdonSharpBehaviour
             bytes = MigrateVersions(bytes, version);
         }
 
-        // VkYABD1FLAA/pfOgPpwS1Ds4WaldmzwAPIsAAAAA0c1zRAUtAAAAAC0BehAAAA==
-        // VkYABL5cyAA/0j/Wvg/SqEBFWYNMDTwAPM0AABmJ0c1zRAUtAAAA0WkV/wAAAA==
-        // VkYABD0s4QA/thKAvtNq0ESmWahHZzwAPBNEYRmJ0c1zRAUtrTE+AI0hHAsAAA==
-
-        // VkYABL8g4A4/v5PVPsWoCUhZWVddiTwAOtDJ4wAA0c1zRAUuAAAAAD0BAAAAAA==
-
         if (bytes.Length != codeSizeBytes)
         {
             return false;

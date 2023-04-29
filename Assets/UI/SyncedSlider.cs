@@ -13,24 +13,35 @@ public class SyncedSlider : UdonSharpBehaviour
     [UdonSynced]
     public float value;
 
-    private bool isInitialized;
+    private bool isDeserializing;
     private Slider slider;
     private UdonBehaviour[] targetBehaviours;
 
     void Start()
     {
-        Initialize();
+        slider = GetComponent<Slider>();
+        targetBehaviours = (UdonBehaviour[])target.GetComponents(typeof(UdonBehaviour));
+        isDeserializing = false;
     }
 
     public override void OnDeserialization()
     {
+        isDeserializing = true;
         base.OnDeserialization();
-        ApplyValue();
+        if (!Networking.IsOwner(gameObject))
+        {
+            ApplyValue();
+        }
+        isDeserializing = false;
     }
 
     public void OnChangeValue()
     {
-        Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        if (!Networking.IsOwner(gameObject) && !isDeserializing)
+        {
+            Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        }
+        
         value = slider.value;
         RequestSerialization();
         ApplyValue();
@@ -38,8 +49,11 @@ public class SyncedSlider : UdonSharpBehaviour
 
     public void OnSetValueExternally()
     {
-        Initialize();
-        Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        if (!Networking.IsOwner(gameObject) && !isDeserializing)
+        {
+            Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        }
+
         RequestSerialization();
         ApplyValue();
     }
@@ -52,18 +66,5 @@ public class SyncedSlider : UdonSharpBehaviour
         {
             targetBehaviour.SendCustomEvent(changeSliderEventName);
         }
-    }
-
-    private void Initialize()
-    {
-        if (isInitialized)
-        {
-            return;
-        }
-
-        slider = GetComponent<Slider>();
-        targetBehaviours = (UdonBehaviour[])target.GetComponents(typeof(UdonBehaviour));
-
-        isInitialized = true;
     }
 }

@@ -90,10 +90,10 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UseGradientMapping: 1
+    - _UseGradientMapping: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GradientStop0Color: {r: 0.9137256, g: 0.15686274, b: 1, a: 1}
-    - _GradientStop1Color: {r: 0.062745094, g: 0.14509805, b: 0.14509805, a: 1}
+    - _GradientStop0Color: {r: 0.4509804, g: 0.80392164, b: 0.81960785, a: 1}
+    - _GradientStop1Color: {r: 0.18039215, g: 0.019607848, b: 0.26666668, a: 1}

@@ -24,7 +24,7 @@ public class SyncedToggle : UdonSharpBehaviour
 
     public void OnChangeValue()
     {
-        Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        EnsureOwnership();
         isOn = toggle.isOn;
         RequestSerialization();
         ApplyToggle();
@@ -32,7 +32,7 @@ public class SyncedToggle : UdonSharpBehaviour
 
     public void OnSetValueExternally()
     {
-        Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        EnsureOwnership();
         RequestSerialization();
         ApplyToggle();
     }
@@ -51,5 +51,13 @@ public class SyncedToggle : UdonSharpBehaviour
     {
         toggle = GetComponent<Toggle>();
         targetBehaviours = (UdonBehaviour[]) target.GetComponents(typeof(UdonBehaviour));
+    }
+
+    private void EnsureOwnership()
+    {
+        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject))
+        {
+            Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        }
     }
 }
