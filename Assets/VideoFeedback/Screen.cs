@@ -12,6 +12,7 @@ public class Screen : UdonSharpBehaviour
     public ColorButton gradientStop1ColorButton;
     public SyncedSlider brightnessSlider;
     public SyncedSlider chromaticDistortionSlider;
+    public SyncedSlider contrastSlider;
     public SyncedSlider edgeBrightnessSlider;
     public SyncedSlider flowDistortionSlider;
     public SyncedToggle gradientMappingToggle;
@@ -20,6 +21,7 @@ public class Screen : UdonSharpBehaviour
     public SyncedSlider mirrorTileCountSlider;
     public SyncedToggle mirrorXToggle;
     public SyncedToggle mirrorYToggle;
+    public SyncedSlider saturationSlider;
     public SyncedSlider sharpnessSlider;
     public float screenScaleX = 4.0f;
     public float screenScaleY = 2.25f;
@@ -41,6 +43,11 @@ public class Screen : UdonSharpBehaviour
     public void OnChangeChromaticDistortion()
     {
         videoMixerMaterial.SetFloat("_ChromaticDistortion", chromaticDistortionSlider.value);
+    }
+
+    public void OnChangeContrast()
+    {
+        videoMixerMaterial.SetFloat("_Contrast", contrastSlider.value);
     }
 
     public void OnChangeEdgeBrightness()
@@ -93,6 +100,11 @@ public class Screen : UdonSharpBehaviour
     {
         scaleY = mirrorYToggle.isOn ? -screenScaleY : screenScaleY;
         UpdateScale();
+    }
+
+    public void OnChangeSaturation()
+    {
+        videoMixerMaterial.SetFloat("_Saturation", saturationSlider.value);
     }
 
     public void OnChangeSharpness()

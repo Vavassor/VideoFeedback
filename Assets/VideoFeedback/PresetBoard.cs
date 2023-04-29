@@ -28,6 +28,7 @@ public class PresetBoard : UdonSharpBehaviour
     public SyncedSlider chromaticDistortionSlider;
     public SyncedToggle clearCameraToggle;
     public ColorButton clearColorButton;
+    public SyncedSlider contrastSlider;
     public SyncedSlider edgeBrightnessSlider;
     public SyncedSlider fieldOfViewSlider;
     public SyncedSlider flowDistortionSlider;
@@ -40,6 +41,7 @@ public class PresetBoard : UdonSharpBehaviour
     public SyncedToggle mirrorXToggle;
     public SyncedToggle mirrorYToggle;
     public SyncedToggle orthographicProjectionToggle;
+    public SyncedSlider saturationSlider;
     public SyncedSlider sharpnessSlider;
     public InputField presetCodeInputField;
     public GameObject loadPresetCodeError;
@@ -50,6 +52,7 @@ public class PresetBoard : UdonSharpBehaviour
     private Quaternion cameraRotation;
     private float chromaticDistortion;
     private Color clearColor;
+    private float contrast;
     private float edgeBrightness;
     private float fieldOfView;
     private float flowDistortion;
@@ -62,14 +65,15 @@ public class PresetBoard : UdonSharpBehaviour
     private int mirrorTileCount;
     private bool mirrorX;
     private bool mirrorY;
+    private float saturation;
     private float sharpness;
     private bool useGradientMapping;
 
     private const string codeId = "VF";
-    private const int codeSizeBytes = 44;
+    private const int codeSizeBytes = 46;
     private const int headerSizeBytes = 4;
     private const ushort currentVersion = 4;
-    private const string defaultPresetCode = "VkYAAr8g4A4/v5PVPsWoCamGO/KtFizdOtDJ4wAA0c1zRAYvAAEB";
+    private const string defaultPresetCode = "VkYABL8g4A4/v5PVPsWoCUhZWVddiTwAOtDJ4wAA0c1zRAUuAAAAAD0BAAAAAA==";
     private float defaultFieldOfView = 60.0f;
     private Color defaultClearColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
     private Color defaultStop0Color = new Color(0.4470588f, 0.8078431f, 0.8196079f);
@@ -88,6 +92,7 @@ public class PresetBoard : UdonSharpBehaviour
         clearColorButton.OnGetColor();
         clearColor = clearColorButton.color;
 
+        contrast = contrastSlider.value;
         edgeBrightness = edgeBrightnessSlider.value;
         fieldOfView = fieldOfViewSlider.value;
         flowDistortion = flowDistortionSlider.value;
@@ -104,6 +109,7 @@ public class PresetBoard : UdonSharpBehaviour
         mirrorTileCount = (int) mirrorTileCountSlider.value;
         mirrorX = mirrorXToggle.isOn;
         mirrorY = mirrorYToggle.isOn;
+        saturation = saturationSlider.value;
         sharpness = sharpnessSlider.value;
         useGradientMapping = gradientMappingToggle.isOn;
 
@@ -144,7 +150,8 @@ public class PresetBoard : UdonSharpBehaviour
         WriteSByte((sbyte) codeId[1], bytes, 1);
         WriteUInt16(currentVersion, bytes, 2);
         WriteVector3(cameraPosition, bytes, 4);
-        WriteHalfQuaternion(cameraRotation, bytes, 16);
+        WriteHalfVector3(cameraRotation.eulerAngles, bytes, 16);
+        WriteHalf(contrast, bytes, 22);
         WriteHalf(brightness, bytes, 24);
         WriteHalf(hueShift, bytes, 26);
         WriteHalf(chromaticDistortion, bytes, 28);
@@ -156,6 +163,8 @@ public class PresetBoard : UdonSharpBehaviour
         bytes[41] = (byte) ((ToInt(useGradientMapping) << 5) | (ToInt(invertColor) << 4) | (ToInt(mirrorX) << 3) | (ToInt(mirrorY) << 2) | (ToInt(isProjectionOrthographic) << 1) | ToInt(clearCamera));
         WriteUnorm(4.0f * sharpness, bytes, 42);
         bytes[43] = (byte) flowDistortion;
+        WriteHalf(saturation, bytes, 44);
+
         return Convert.ToBase64String(bytes);
     }
 
@@ -233,13 +242,20 @@ public class PresetBoard : UdonSharpBehaviour
             bytes = MigrateVersions(bytes, version);
         }
 
+        // VkYABD1FLAA/pfOgPpwS1Ds4WaldmzwAPIsAAAAA0c1zRAUtAAAAAC0BehAAAA==
+        // VkYABL5cyAA/0j/Wvg/SqEBFWYNMDTwAPM0AABmJ0c1zRAUtAAAA0WkV/wAAAA==
+        // VkYABD0s4QA/thKAvtNq0ESmWahHZzwAPBNEYRmJ0c1zRAUtrTE+AI0hHAsAAA==
+
+        // VkYABL8g4A4/v5PVPsWoCUhZWVddiTwAOtDJ4wAA0c1zRAUuAAAAAD0BAAAAAA==
+
         if (bytes.Length != codeSizeBytes)
         {
             return false;
         }
 
         cameraPosition = ReadVector3(bytes, 4);
-        cameraRotation = ReadHalfQuaternion(bytes, 16);
+        cameraRotation = Quaternion.Euler(ReadHalfVector3(bytes, 16));
+        contrast = ReadHalf(bytes, 22);
         brightness = ReadHalf(bytes, 24);
         hueShift = ReadHalf(bytes, 26);
         chromaticDistortion = ReadHalf(bytes, 28);
@@ -262,6 +278,7 @@ public class PresetBoard : UdonSharpBehaviour
 
         sharpness = 0.25f * ReadUnorm(bytes, 42);
         flowDistortion = bytes[43];
+        saturation = ReadHalf(bytes, 44);
 
         return true;
     }
@@ -282,6 +299,9 @@ public class PresetBoard : UdonSharpBehaviour
 
         clearColorButton.color = clearColor;
         clearColorButton.OnSetValueExternally();
+
+        contrastSlider.value = contrast;
+        contrastSlider.OnSetValueExternally();
 
         edgeBrightnessSlider.value = edgeBrightness;
         edgeBrightnessSlider.OnSetValueExternally();
@@ -316,6 +336,9 @@ public class PresetBoard : UdonSharpBehaviour
         mirrorYToggle.isOn = mirrorY;
         mirrorYToggle.OnSetValueExternally();
 
+        saturationSlider.value = saturation;
+        saturationSlider.OnSetValueExternally();
+
         sharpnessSlider.value = sharpness;
         sharpnessSlider.OnSetValueExternally();
 
@@ -339,6 +362,17 @@ public class PresetBoard : UdonSharpBehaviour
         float w = ReadHalf(buffer, index);
 
         return new Quaternion(x, y, z, w);
+    }
+
+    public Vector3 ReadHalfVector3(byte[] buffer, int index)
+    {
+        float x = ReadHalf(buffer, index);
+        index += 2;
+        float y = ReadHalf(buffer, index);
+        index += 2;
+        float z = ReadHalf(buffer, index);
+
+        return new Vector3(x, y, z);
     }
 
     public Color ReadOpaqueColor(byte[] buffer, int index)
@@ -437,6 +471,16 @@ public class PresetBoard : UdonSharpBehaviour
         index += 2;
         WriteHalf(value.w, buffer, index);
         return 8;
+    }
+
+    public int WriteHalfVector3(Vector3 value, byte[] buffer, int index)
+    {
+        WriteHalf(value.x, buffer, index);
+        index += 2;
+        WriteHalf(value.y, buffer, index);
+        index += 2;
+        WriteHalf(value.z, buffer, index);
+        return 6;
     }
 
     public int WriteOpaqueColor(Color color, byte[] buffer, int index)
@@ -607,7 +651,10 @@ public class PresetBoard : UdonSharpBehaviour
         WriteSByte((sbyte)codeId[0], bytes, 0);
         WriteSByte((sbyte)codeId[1], bytes, 1);
         WriteUInt16(4, bytes, 2);
-        CopyBytes(bytes, 4, newBytes, 4, 38);
+        CopyBytes(bytes, 4, newBytes, 4, 12);
+        WriteHalfVector3(ReadHalfQuaternion(bytes, 16).eulerAngles, newBytes, 16);
+        WriteHalf(1.0f, newBytes, 22);
+        CopyBytes(bytes, 24, newBytes, 24, 18);
 
         return newBytes;
     }

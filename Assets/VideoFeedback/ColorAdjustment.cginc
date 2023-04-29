@@ -28,15 +28,6 @@ float getPerceptualLightness(float3 linearColor)
     }
 }
 
-float4x4 getContrastMatrix(float contrast)
-{
-    float t = (1.0 - contrast) / 2.0;
-    return float4x4(contrast, 0, 0, t,
-        0, contrast, 0, t,
-        0, 0, contrast, t,
-        0, 0, 0, 1);
-}
-
 float3 adjustBrightness(float3 color, float amount)
 {
     const float scale = 1.5;
@@ -46,7 +37,7 @@ float3 adjustBrightness(float3 color, float amount)
 
 float3 adjustContrast(float3 color, float amount)
 {
-    return mul(getContrastMatrix(amount), float4(color, 1.0)).xyz;
+    return 0.5 + amount * (color - 0.5);
 }
 
 float3 adjustExposure(float3 color, float amount)
