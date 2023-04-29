@@ -37,7 +37,7 @@ public class SyncedSlider : UdonSharpBehaviour
 
     public void OnChangeValue()
     {
-        if (!Networking.IsOwner(gameObject) && !isDeserializing)
+        if (!isDeserializing)
         {
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
         }
@@ -49,7 +49,7 @@ public class SyncedSlider : UdonSharpBehaviour
 
     public void OnSetValueExternally()
     {
-        if (!Networking.IsOwner(gameObject) && !isDeserializing)
+        if (!isDeserializing)
         {
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
         }

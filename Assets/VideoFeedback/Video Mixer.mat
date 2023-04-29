@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Video Mixer
   m_Shader: {fileID: 4800000, guid: ff2b868c0d1a43b4dbfe0d2169b488c9, type: 3}
-  m_ShaderKeywords: EXPERIMENTAL_ON
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -101,7 +101,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UseExperimental: 1
+    - _UseExperimental: 0
     - _UseGradientMapping: 0
     - _WaveDistortion: 0
     - _ZWrite: 1

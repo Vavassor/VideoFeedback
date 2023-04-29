@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3350194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6706,8 +6706,8 @@ MonoBehaviour:
     Type: {fileID: 412417137}
     Foldout: 1
   buildInfo:
-    CachedBuildTarget: 19
-    NewBuildTarget: 19
+    CachedBuildTarget: 13
+    NewBuildTarget: 13
 --- !u!4 &412417125
 Transform:
   m_ObjectHideFlags: 1
@@ -9518,7 +9518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &583682757
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11303,7 +11303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &697471936
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14055,7 +14055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &876132872
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14505,7 +14505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &914553285
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -16612,7 +16612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1093876246
 Light:
   m_ObjectHideFlags: 0
@@ -18455,67 +18455,67 @@ PrefabInstance:
         type: 3}
       propertyPath: DynamicMaterials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 023aac1bccf9a204ebaefd7b88db41ca, type: 2}
+      objectReference: {fileID: 2100000, guid: af9f977bbfcac1549ada38e01eb2ce8b, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: af9f977bbfcac1549ada38e01eb2ce8b, type: 2}
+      objectReference: {fileID: 2100000, guid: 3b155d60e6154bb46966fe8bc67dccdf, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 8bfc6b0ce5d48164faf2de591b0dfa97, type: 2}
+      objectReference: {fileID: 2100000, guid: 962b581ac16aaa44aa248604b07b22a1, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 3b155d60e6154bb46966fe8bc67dccdf, type: 2}
+      objectReference: {fileID: 2100000, guid: eba05f28d49452e4a8c7e77cc4473e2e, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[4]
       value: 
-      objectReference: {fileID: 2100000, guid: 962b581ac16aaa44aa248604b07b22a1, type: 2}
+      objectReference: {fileID: 2100000, guid: 0e817fbc46c9fe24086c24813d917962, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[5]
       value: 
-      objectReference: {fileID: 2100000, guid: eba05f28d49452e4a8c7e77cc4473e2e, type: 2}
+      objectReference: {fileID: 2100000, guid: 9d06a30a28855a14a88046202267b67d, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[6]
       value: 
-      objectReference: {fileID: 2100000, guid: 0e817fbc46c9fe24086c24813d917962, type: 2}
+      objectReference: {fileID: 2100000, guid: e5462149339b71141a676a1b84a5c07c, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[7]
       value: 
-      objectReference: {fileID: 2100000, guid: 9d06a30a28855a14a88046202267b67d, type: 2}
+      objectReference: {fileID: 2100000, guid: 25500f0d5a2df8848a8f78a613e8b88c, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[8]
       value: 
-      objectReference: {fileID: 2100000, guid: e5462149339b71141a676a1b84a5c07c, type: 2}
+      objectReference: {fileID: 2100000, guid: 8bfc6b0ce5d48164faf2de591b0dfa97, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[9]
       value: 
-      objectReference: {fileID: 2100000, guid: 25500f0d5a2df8848a8f78a613e8b88c, type: 2}
+      objectReference: {fileID: 2100000, guid: 023aac1bccf9a204ebaefd7b88db41ca, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[10]
       value: 
-      objectReference: {fileID: 2100000, guid: dd7d5867e041ec44b971dfc73d405b19, type: 2}
+      objectReference: {fileID: 2100000, guid: 23fba0a9f3479584da822b5032904f13, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[11]
       value: 
-      objectReference: {fileID: 2100000, guid: 8be830a9502f30147801cc7022ac9fa2, type: 2}
+      objectReference: {fileID: 2100000, guid: dd7d5867e041ec44b971dfc73d405b19, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: DynamicMaterials.Array.data[12]
       value: 
-      objectReference: {fileID: 2100000, guid: 5b6c15fa551626f4f97fe341e6232a89, type: 2}
+      objectReference: {fileID: 2100000, guid: 88cd835e97caf1e449f6e74172330fad, type: 2}
     - target: {fileID: 6759095419728963412, guid: 8894fa7e4588a5c4fab98453e558847d,
         type: 3}
       propertyPath: NetworkIDs.Array.data[0].gameObject
@@ -21951,7 +21951,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1458012492}
-  presetCode: VkYABD3uzoA/maCOPLVEQCDyPAAhVqO/PCkAAAAAAAAA////AADSwE0hACA=
+  presetCode: VkYABD3uzoA/maCOPLVEQF2bWa48WzwAPCkAAAAAAAAA////AADSwE0hACAAAA==
   presetBoard: {fileID: 108330627}
 --- !u!114 &1458012494
 MonoBehaviour:
@@ -23363,7 +23363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1548985425
 Light:
   m_ObjectHideFlags: 0
@@ -25204,7 +25204,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719878934}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
@@ -25599,6 +25599,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1198000761}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1756854690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756854685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 229740497, guid: 4ecd63eff847044b68db9453ce219299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentType: 1
 --- !u!1 &1758201052
 GameObject:
   m_ObjectHideFlags: 0
@@ -26096,7 +26109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1790191601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28912,7 +28925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &2088469056
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -29721,7 +29734,7 @@ PrefabInstance:
     - target: {fileID: 6164838722738130105, guid: 86ef76544d844044f89991064c150791,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8092878034450425816, guid: 86ef76544d844044f89991064c150791,
         type: 3}

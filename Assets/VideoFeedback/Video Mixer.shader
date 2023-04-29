@@ -6,6 +6,8 @@
         [Header(Color Filters)] _Brightness("Brightness", float) = 1
         _HueShift("Hue Shift", float) = 0
         _InvertColor("Invert Color", float) = 0
+        _Contrast("Contrast", Range(0.9, 1.1)) = 0.0
+        _Saturation("Saturation", Range(-0.1, 0.1)) = 0.0
         [Header(Chromatic Aberration)] _ChromaticDistortion("Chromatic Distortion", Range(0, 0.4)) = 0.01
         _ChromaticAberrationFalloff("Chromatic Aberattion Falloff", Range(0, 1)) = 0.65
         _ChromaticAberrationSize("Chromatic Aberattion Size", Range(0, 1)) = 0.9
@@ -17,8 +19,6 @@
         [Header(Experimental)] [Toggle(EXPERIMENTAL_ON)] _UseExperimental("Use Experimental", Float) = 0
         _NoiseTexture("Noise Texture", 2D) = "white" {}
         _EdgeNoiseBlend("Edge Noise Blend", Range(0, 1)) = 0.0
-        _Contrast("Contrast", Range(0.9, 1.1)) = 0.0
-        _Saturation("Saturation", Range(-0.1, 0.1)) = 0.0
         _WaveDistortion("WaveDistortion", Range(-0.24, 0.24)) = 0.0
     }
     SubShader
@@ -47,8 +47,10 @@
             half _ChromaticDistortion;
             
             half _Brightness;
+            half _Contrast;
             half _HueShift;
             half _InvertColor;
+            half _Saturation;
 
             half _FlowDistortion;
             half _MirrorTileCount;
@@ -62,8 +64,6 @@
             float4 _NoiseTexture_TexelSize;
 
             half _EdgeNoiseBlend;
-            half _Contrast;
-            half _Saturation;
             half _WaveDistortion;
 #endif
 
@@ -163,17 +163,11 @@
                 // Because n is smaller than a couple cycles, we can get away with (n + m) % m.
                 hsv.x = (hsv.x + _HueShift + 360.0) % 360.0;
 
-#ifdef EXPERIMENTAL_ON
                 hsv.y = hsv.y + _Saturation;
-#endif
-
                 currentColor.rgb = hsvToRgb(hsv) * _Brightness;
 
                 fixed4 col = currentColor;
-
-#ifdef EXPERIMENTAL_ON
                 col.rgb = adjustContrast(col.rgb, _Contrast);
-#endif
 
                 if (_InvertColor != 0.0)
                 {
