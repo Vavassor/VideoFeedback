@@ -92,7 +92,7 @@ BuildReport:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LastBuild
+  m_Name: LastWindowsBuild
   m_Summary:
     buildStartTime:
       serializedVersion: 2
