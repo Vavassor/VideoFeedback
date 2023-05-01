@@ -53,6 +53,9 @@ Shader "Unlit/Handheld Camera Monitor"
 
                 float2 uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.uv = uv;
+#if !UNITY_UV_STARTS_AT_TOP
+                o.uv.y = 1.0 - o.uv.y;
+#endif
 
                 float3 objectPosition = mul(unity_ObjectToWorld, float4(0.0, 0.0, 0.0, 1.0));
 #ifdef UNITY_SINGLE_PASS_STEREO
