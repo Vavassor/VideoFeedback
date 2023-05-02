@@ -112,6 +112,25 @@ public class Screen : UdonSharpBehaviour
         videoMixerMaterial.SetFloat("_SharpenAmount", sharpnessSlider.value);
     }
 
+    public void OnClickRandomize()
+    {
+        gradientStop0ColorButton.Randomize();
+        gradientStop1ColorButton.Randomize();
+        brightnessSlider.Randomize();
+        chromaticDistortionSlider.Randomize();
+        contrastSlider.Randomize();
+        edgeBrightnessSlider.Randomize();
+        flowDistortionSlider.Randomize();
+        gradientMappingToggle.Randomize();
+        hueShiftSlider.Randomize();
+        invertColorToggle.Randomize();
+        mirrorTileCountSlider.Randomize();
+        mirrorXToggle.Randomize();
+        mirrorYToggle.Randomize();
+        saturationSlider.Randomize();
+        sharpnessSlider.Randomize();
+    }
+
     private void UpdateScale()
     {
         transform.localScale = new Vector3(scaleX, scaleY, 1.0f);

@@ -1,0 +1,54 @@
+fileFormatVersion: 2
+guid: 16c9d298c5a47114a9b024ed7d13c9d8
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2456aa1653d249e08f78b862a3bd857, type: 3}
+  inputTextures:
+  - {fileID: 2800000, guid: ba1604c0b6b448447b8163bdb7aa6c4d, type: 3}
+  - {fileID: 2800000, guid: ba1604c0b6b448447b8163bdb7aa6c4d, type: 3}
+  - {fileID: 2800000, guid: ba1604c0b6b448447b8163bdb7aa6c4d, type: 3}
+  - {fileID: 2800000, guid: 586f44bb9d8b1e14fb01b8785c387453, type: 3}
+  inputTextureSettings:
+  - invertColor: 0
+    useLuminance: 0
+    remapRange: {x: 0, y: 1}
+    channel: 0
+  - invertColor: 0
+    useLuminance: 0
+    remapRange: {x: 0, y: 1}
+    channel: 1
+  - invertColor: 0
+    useLuminance: 0
+    remapRange: {x: 0, y: 1}
+    channel: 2
+  - invertColor: 1
+    useLuminance: 0
+    remapRange: {x: 0, y: 1}
+    channel: 0
+  isReadable: 0
+  sRGBTexture: 0
+  enableMipMap: 1
+  streamingMipMaps: 0
+  streamingMipMapPriority: 0
+  filterMode: 1
+  wrapMode: 0
+  anisotropicLevel: 1
+  texturePlatformSettings:
+    name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  textureFormat: 4
+  useExplicitTextureFormat: 0

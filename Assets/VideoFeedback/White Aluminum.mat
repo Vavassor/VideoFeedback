@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: White Aluminum
-  m_Shader: {fileID: 4800000, guid: 0b7113dea2069fc4e8943843eff19f70, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -62,9 +62,9 @@ Material:
     - _DstBlend: 0
     - _EnableEmission: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.65
+    - _Glossiness: 0.296
     - _GlossyReflections: 1
-    - _Metallic: 0.5
+    - _Metallic: 0.126
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -74,5 +74,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+    - _Color: {r: 0.21867213, g: 0.29260427, b: 0.3962264, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

@@ -37,6 +37,12 @@ public class SyncedToggle : UdonSharpBehaviour
         ApplyToggle();
     }
 
+    public void Randomize()
+    {
+        isOn = Random.value > 0.5f;
+        OnSetValueExternally();
+    }
+
     private void ApplyToggle()
     {
         toggle.isOn = isOn;
@@ -55,7 +61,7 @@ public class SyncedToggle : UdonSharpBehaviour
 
     private void EnsureOwnership()
     {
-        if (!Networking.IsOwner(Networking.LocalPlayer, gameObject))
+        if (!Networking.IsOwner(gameObject))
         {
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
         }

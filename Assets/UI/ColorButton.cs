@@ -98,6 +98,15 @@ public class ColorButton : UdonSharpBehaviour
         }
     }
 
+    public void Randomize()
+    {
+        var red = Random.Range(0.0f, 1.0f);
+        var green = Random.Range(0.0f, 1.0f);
+        var blue = Random.Range(0.0f, 1.0f);
+        color = new Color(red, green, blue);
+        OnSetValueExternally();
+    }
+
     private void UpdateColor()
     {
         var hue = hueSlider.value;

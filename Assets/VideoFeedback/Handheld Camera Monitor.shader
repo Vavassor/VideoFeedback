@@ -82,30 +82,32 @@ Shader "Unlit/Handheld Camera Monitor"
             {
                 float screenAspectRatio = _ScreenParams.x / _ScreenParams.y;
                 float textureAspectRatio = samplerTexelSize.z * samplerTexelSize.y;
-                float clipTexcoord;
 
                 if (textureAspectRatio > screenAspectRatio)
                 {
                     float scaledSize = textureAspectRatio / screenAspectRatio;
                     float letterboxSize = 0.5 * (1.0 - scaledSize);
                     texcoord.y = scaledSize * texcoord.y + letterboxSize;
-                    clipTexcoord = texcoord.y;
+                    
+                    if (texcoord.y < 0.0 || texcoord.y > 1.0)
+                    {
+                        return fixed4(0.0, 0.0, 0.0, 1.0);
+                    }
                 }
                 else
                 {
                     float scaledSize = screenAspectRatio / textureAspectRatio;
                     float letterboxSize = 0.5 * (1.0 - scaledSize);
                     texcoord.x = scaledSize * texcoord.x + letterboxSize;
-                    clipTexcoord = texcoord.x;
+                    
+                    if (texcoord.x < 0.0 || texcoord.x > 1.0)
+                    {
+                        return fixed4(0.0, 0.0, 0.0, 1.0);
+                    }
                 }
 
                 fixed4 col;
                 col = tex2D(samp, texcoord);
-
-                if (clipTexcoord < 0.0 || clipTexcoord > 1.0)
-                {
-                    col.rgb = fixed4(0.0, 0.0, 0.0, 1.0);
-                }
 
                 return col;
             }

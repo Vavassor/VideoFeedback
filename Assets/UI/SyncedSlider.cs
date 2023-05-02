@@ -37,7 +37,7 @@ public class SyncedSlider : UdonSharpBehaviour
 
     public void OnChangeValue()
     {
-        if (!isDeserializing)
+        if (!Networking.IsOwner(gameObject) && !isDeserializing)
         {
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
         }
@@ -49,13 +49,19 @@ public class SyncedSlider : UdonSharpBehaviour
 
     public void OnSetValueExternally()
     {
-        if (!isDeserializing)
+        if (!Networking.IsOwner(gameObject) && !isDeserializing)
         {
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
         }
 
         RequestSerialization();
         ApplyValue();
+    }
+
+    public void Randomize()
+    {
+        value = Random.Range(slider.minValue, slider.maxValue);
+        OnSetValueExternally();
     }
 
     private void ApplyValue()
