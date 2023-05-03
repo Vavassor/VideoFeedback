@@ -50,5 +50,5 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
-  textureFormat: 4
-  useExplicitTextureFormat: 0
+  textureFormat: 65
+  useExplicitTextureFormat: 1
