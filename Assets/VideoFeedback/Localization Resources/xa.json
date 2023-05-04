@@ -1,0 +1,72 @@
+{
+  "adjustColorMenu": {
+    "brightnessAdjustSliderLabel": "[!!! ßřïϱλƭñèƨƨ !!!]",
+    "contrastSliderLabel": "[!!! Çôñƭřáƨƭ !!!]",
+    "hueAdjustSliderLabel": "[!!! Húè !!!]",
+    "invertColorToggleLabel": "[!!! ÌñƲèřƭ Çôℓôř !!!]",
+    "saturationSliderLabel": "[!!! §áƭúřáƭïôñ !!!]"
+  },
+  "cameraMenu": {
+    "cameraMenuHeading": "[!!! Çá₥èřá !!!]",
+    "clearCameraToggleLabel": "[!!! Çℓèář Çá₥èřá !!!]",
+    "clearColorButtonLabel": "[!!! Çℓèář Çôℓôř !!!]",
+    "fieldOfViewTextFieldLabel": "[!!! Fïèℓδ Óƒ Vïèω !!!]",
+    "orthographicProjectionToggleLabel": "[!!! Óřƭλôϱřáƥλïç ÞřôJèçƭïôñ !!!]"
+  },
+  "contactSection": {
+    "contactSectionHeading": "[!!! Çôñƭáçƭ !!!]",
+    "sourceCodeMessage": "[!!! Wôřℓδ çřèáƭôřƨ, ¥ôú çáñ úƨè áñ¥ƭλïñϱ λèřè ƒôř ¥ôúř ωôřℓδ, ƭôô! Tλè ƨôúřçè çôδè áñδ áƨƨèƭƨ ářè áƲáïℓáβℓè áƭ {{ sourceCodeUrl }} !!!]"
+  },
+  "directionsSection": {
+    "directionsSectionHeading": "[!!! Ðïřèçƭïôñƨ !!!]",
+    "directionsText": "[!!! Júƨƭ ƭř¥ ƨƭúƒƒ!\n\nÌƒ ïƭ ƨúçƙƨ, λïƭ ƭλè Rèƨèƭ Âℓℓ Tô Ðèƒáúℓƭ βúƭƭôñ. !!!]"
+  },
+  "effectsMenu": {
+    "chromaticDistortionSliderLabel": "[!!! Çλřô₥áƭïç Ðïƨƭôřƭïôñ !!!]",
+    "edgeBrightnessSliderLabel": "[!!! Éδϱè ßřïϱλƭñèƨƨ !!!]",
+    "effectsMenuHeading": "[!!! Éƒƒèçƭƨ !!!]",
+    "gradientMappingToggleLabel": "[!!! Gřáδïèñƭ Máƥƥïñϱ !!!]",
+    "hueSliderLabel": "[!!! Húè !!!]",
+    "mirrorTileCountSliderLabel": "[!!! Mïřřôř Tïℓèƨ !!!]",
+    "saturationSliderLabel": "[!!! §áƭúřáƭïôñ !!!]",
+    "sharpnessSliderLabel": "[!!! §λářƥñèƨƨ !!!]",
+    "valueSliderLabel": "[!!! Váℓúè !!!]"
+  },
+  "localSettingsMenu": {
+    "ambientOcclusionIntensitySliderLabel": "[!!! Â₥βïèñƭ Óççℓúƨïôñ !!!]",
+    "bloomIntensitySliderLabel": "[!!! ßℓôô₥ !!!]",
+    "enablePostProcessingToggleLabel": "[!!! Þôƨƭ Þřôçèƨƨïñϱ !!!]",
+    "floorLevelSliderLabel": "[!!! Fℓôôř £èƲèℓ !!!]",
+    "localSettingsHeading": "[!!! £ôçáℓ §èƭƭïñϱƨ !!!]"
+  },
+  "photosensitiveWarning": {
+    "photosensitiveWarningHeading": "[!!! ÞλôƭôƨèñƨïƭïƲè Wářñïñϱ !!!]",
+    "photosensitiveWarningText": "[!!! Éƒƒèçƭƨ λèřè çáúƨè ƒℓáƨλèƨ ôƒ ℓïϱλƭ ƭλáƭ çôúℓδ ƭřïϱϱèř ƨèïƺúřèƨ ïñ ƥèôƥℓè ωïƭλ Ʋïƨúáℓ ƨèñƨïƭïƲïƭïèƨ.\n\nTλè Ʋïƨúáℓƨ ářè úñƥřèδïçƭáβℓè áñδ ïƭ'ƨ ñôƭ ƥôƨƨïβℓè ƭô áƲôïδ ƭλè řïƨƙ. !!!]"
+  },
+  "presetsMenu": {
+    "presetsMenuHeading": "[!!! Þřèƨèƭƨ !!!]"
+  },
+  "respawnMenu": {
+    "respawnMenuHeading": "[!!! Rèƨƥáωñ !!!]",
+    "respawnCameraButtonLabel": "[!!! Rèƨƥáωñ Çá₥èřá !!!]",
+    "respawnLightsButtonLabel": "[!!! Rèƨƥáωñ £ïϱλƭƨ !!!]",
+    "respawnToysButtonLabel": "[!!! Rèƨƥáωñ Tô¥ƨ !!!]",
+    "respawnMenusButtonLabel": "[!!! Rèƨƥáωñ Mèñúƨ !!!]"
+  },
+  "saveAndLoadPresetsMenu": {
+    "generatePresetCodeButtonLabel": "[!!! Gèñèřáƭè Þřèƨèƭ Çôδè !!!]",
+    "loadPresetCodeButtonLabel": "[!!! £ôáδ Þřèƨèƭ Çôδè !!!]",
+    "presetCodeTextFieldLabel": "[!!! Þřèƨèƭ Çôδè !!!]",
+    "resetAllButtonLabel": "[!!! Rèƨèƭ Âℓℓ Tô Ðèƒáúℓƭ !!!]",
+    "saveAndLoadPresetsHeading": "[!!! §áƲè Âñδ £ôáδ Þřèƨèƭƨ !!!]"
+  },
+  "screenMenu": {
+    "flipHorizontallyToggleLabel": "[!!! Fℓïƥ Hôřïƺôñƭáℓℓ¥ !!!]",
+    "flipVericallyToggleLabel": "[!!! Fℓïƥ Vèřƭïçáℓℓ¥ !!!]",
+    "screenMenuHeading": "[!!! §çřèèñ !!!]"
+  },
+  "streamMonitor": {
+    "streamMonitorHeading": "[!!! Táƙè ƥïçƭúřèƨ & Ʋïδèôƨ! !!!]",
+    "streamMonitorInstructions": "[!!! Þℓáçè ¥ôúř ƨƭřèá₥ çá₥èřá ïñ ƭλè βôж βèℓôω ƭô çáƥƭúřè ƭλè Ʋïδèô ƒèèδ ƒřô₥ ƭλè ôƭλèř çá₥èřá. !!!]"
+  }
+}

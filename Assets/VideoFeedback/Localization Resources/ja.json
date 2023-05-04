@@ -1,0 +1,13 @@
+{
+    "directionsSection": {
+        "directionsSectionHeading": "方向",
+        "directionsText": "試してみてください！\n\nうまくいかない場合は、[すべてをデフォルトにリセット] ボタンをクリックしてください。"
+    },
+    "saveAndLoadPresetsMenu": {
+        "generatePresetCodeButtonLabel": "Generate Preset Code",
+        "loadPresetCodeButtonLabel": "Load Preset Code",
+        "presetCodeTextFieldLabel": "Preset Code",
+        "resetAllButtonLabel": "すべてをデフォルトにリセット",
+        "saveAndLoadPresetsHeading": "Save And Load Presets"
+    }
+}

@@ -1,13 +1,16 @@
 {
     "adjustColorMenu": {
-        "brightnessAdjustSliderLabel": "Brightness Adjust",
-        "hueAdjustSliderLabel": "Hue Adjust",
-        "invertColorToggleLabel": "Invert Color"
+        "brightnessAdjustSliderLabel": "Brightness",
+        "contrastSliderLabel": "Contrast",
+        "hueAdjustSliderLabel": "Hue",
+        "invertColorToggleLabel": "Invert Color",
+        "saturationSliderLabel": "Saturation"
     },
     "cameraMenu": {
         "cameraMenuHeading": "Camera",
         "clearCameraToggleLabel": "Clear Camera",
         "clearColorButtonLabel": "Clear Color",
+        "fieldOfViewTextFieldLabel": "Field Of View",
         "orthographicProjectionToggleLabel": "Orthographic Projection"
     },
     "contactSection": {
@@ -26,6 +29,7 @@
         "hueSliderLabel": "Hue",
         "mirrorTileCountSliderLabel": "Mirror Tiles",
         "saturationSliderLabel": "Saturation",
+        "sharpnessSliderLabel": "Sharpness",
         "valueSliderLabel": "Value"
     },
     "localSettingsMenu": {
@@ -62,6 +66,7 @@
         "screenMenuHeading": "Screen"
     },
     "streamMonitor": {
-        "streamMonitorInstructions": "Point your stream camera here."
+        "streamMonitorHeading": "Take pictures & videos!",
+        "streamMonitorInstructions": "Place your stream camera in the box below to capture the video feed from the other camera."
     }
 }
