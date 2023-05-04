@@ -1,5 +1,6 @@
 {
   "adjustColorMenu": {
+    "adjustColorMenuHeading": "[!!! ÂδJúƨƭ₥èñƭ !!!]",
     "brightnessAdjustSliderLabel": "[!!! ßřïϱλƭñèƨƨ !!!]",
     "contrastSliderLabel": "[!!! Çôñƭřáƨƭ !!!]",
     "hueAdjustSliderLabel": "[!!! Húè !!!]",
@@ -10,7 +11,7 @@
     "cameraMenuHeading": "[!!! Çá₥èřá !!!]",
     "clearCameraToggleLabel": "[!!! Çℓèář Çá₥èřá !!!]",
     "clearColorButtonLabel": "[!!! Çℓèář Çôℓôř !!!]",
-    "fieldOfViewTextFieldLabel": "[!!! Fïèℓδ Óƒ Vïèω !!!]",
+    "fieldOfViewSliderLabel": "[!!! Fïèℓδ Óƒ Vïèω !!!]",
     "orthographicProjectionToggleLabel": "[!!! Óřƭλôϱřáƥλïç ÞřôJèçƭïôñ !!!]"
   },
   "contactSection": {
@@ -25,6 +26,7 @@
     "chromaticDistortionSliderLabel": "[!!! Çλřô₥áƭïç Ðïƨƭôřƭïôñ !!!]",
     "edgeBrightnessSliderLabel": "[!!! Éδϱè ßřïϱλƭñèƨƨ !!!]",
     "effectsMenuHeading": "[!!! Éƒƒèçƭƨ !!!]",
+    "flowDistortionSliderLabel": "[!!! Fℓôω Ðïƨƭôřƭïôñ !!!]",
     "gradientMappingToggleLabel": "[!!! Gřáδïèñƭ Máƥƥïñϱ !!!]",
     "hueSliderLabel": "[!!! Húè !!!]",
     "mirrorTileCountSliderLabel": "[!!! Mïřřôř Tïℓèƨ !!!]",
@@ -62,7 +64,7 @@
   },
   "screenMenu": {
     "flipHorizontallyToggleLabel": "[!!! Fℓïƥ Hôřïƺôñƭáℓℓ¥ !!!]",
-    "flipVericallyToggleLabel": "[!!! Fℓïƥ Vèřƭïçáℓℓ¥ !!!]",
+    "flipVerticallyToggleLabel": "[!!! Fℓïƥ Vèřƭïçáℓℓ¥ !!!]",
     "screenMenuHeading": "[!!! §çřèèñ !!!]"
   },
   "streamMonitor": {

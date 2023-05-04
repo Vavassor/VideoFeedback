@@ -1,5 +1,6 @@
 {
     "adjustColorMenu": {
+        "adjustColorMenuHeading": "Adjustment",
         "brightnessAdjustSliderLabel": "Brightness",
         "contrastSliderLabel": "Contrast",
         "hueAdjustSliderLabel": "Hue",
@@ -10,7 +11,7 @@
         "cameraMenuHeading": "Camera",
         "clearCameraToggleLabel": "Clear Camera",
         "clearColorButtonLabel": "Clear Color",
-        "fieldOfViewTextFieldLabel": "Field Of View",
+        "fieldOfViewSliderLabel": "Field Of View",
         "orthographicProjectionToggleLabel": "Orthographic Projection"
     },
     "contactSection": {
@@ -25,6 +26,7 @@
         "chromaticDistortionSliderLabel": "Chromatic Distortion",
         "edgeBrightnessSliderLabel": "Edge Brightness",
         "effectsMenuHeading": "Effects",
+        "flowDistortionSliderLabel": "Flow Distortion",
         "gradientMappingToggleLabel": "Gradient Mapping",
         "hueSliderLabel": "Hue",
         "mirrorTileCountSliderLabel": "Mirror Tiles",
@@ -62,7 +64,7 @@
     },
     "screenMenu": {
         "flipHorizontallyToggleLabel": "Flip Horizontally",
-        "flipVericallyToggleLabel": "Flip Vertically",
+        "flipVerticallyToggleLabel": "Flip Vertically",
         "screenMenuHeading": "Screen"
     },
     "streamMonitor": {
