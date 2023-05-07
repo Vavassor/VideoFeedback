@@ -1,29 +1,35 @@
-﻿using System.Globalization;
-using UdonSharp;
+﻿using UdonSharp;
 using UnityEngine;
 using VRC.SDK3.Data;
 using VRC.SDKBase;
 using VRC.Udon;
 
+/// <summary>
+/// Localization settings and functionality for a world.
+/// </summary>
+/// <remarks>
+/// It's recommended to use one manager per world. But multiple managers can be used as long as
+/// they don't share target assets.
+/// </remarks>
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class LocalizationManager : UdonSharpBehaviour
 {
     /// <summary>
-    /// Default locale as an IETF language tag.
+    /// The default locale as an IETF language tag. This should be the language of your source translation.
     /// </summary>
     public string defaultLocale = "en";
     /// <summary>
-    /// Current locale as an IETF language tag.
+    /// The user's preferred languages in preference order, as IETF language tags.
     /// </summary>
-    public string locale = "en";
-    /// <summary>
-    /// Locales for each resource, as IETF language tags.
-    /// </summary>
-    public string[] locales;
+    public string[] preferredLocales = { "en" };
     /// <summary>
     /// The placeholder text to return when a key is not found.
     /// </summary>
     public string placeholderValue = "Unknown";
+    /// <summary>
+    /// The locales of each resource, as IETF language tags.
+    /// </summary>
+    public string[] resourceLocales;
     /// <summary>
     /// JSON resource files for each locale.
     /// 
@@ -44,24 +50,31 @@ public class LocalizationManager : UdonSharpBehaviour
 
     private DataDictionary resourcesByLocale = new DataDictionary();
 
-    public void SetLocale(string newLocale)
+    /// <summary>
+    /// Set the user's preferred locale.
+    /// </summary>
+    /// <param name="preferredLocale">The locale as an IETF language tag.</param>
+    public void SetPreferredLocale(string preferredLocale)
     {
-        locale = newLocale;
+        SetPreferredLocales(new string[] { preferredLocale });
+    }
+
+    /// <summary>
+    /// Set the user's preferred locales.
+    /// </summary>
+    /// <remarks>
+    /// Use <see cref="SetPreferredLocale"/> if you don't need to support multi-lingual user preferences.
+    /// </remarks>
+    /// <param name="newPreferredLocales">The locales in order of preference, as IETF language tags.</param>
+    public void SetPreferredLocales(string[] newPreferredLocales)
+    {
+        preferredLocales = newPreferredLocales;
+
+        var searchLocales = GetSearchLocales();
 
         foreach (var text in texts)
         {
-            var foundValue = FindValue(text, locale);
-
-            if (foundValue == null)
-            {
-                foundValue = FindValue(text, defaultLocale);
-            }
-
-            if (foundValue == null)
-            {
-                foundValue = placeholderValue;
-            }
-
+            var foundValue = FindValue(text, searchLocales);
             var interpolatedValue = Interpolate(text, foundValue);
             var transformedValue = Transform(text, interpolatedValue);
             text.SetText(transformedValue);
@@ -71,14 +84,14 @@ public class LocalizationManager : UdonSharpBehaviour
     private void Start()
     {
         LoadResources();
-        SetLocale(defaultLocale);
+        SetPreferredLocale(defaultLocale);
     }
 
     private void LoadResources()
     {
-        for (var i = 0; i < locales.Length; i++)
+        for (var i = 0; i < resourceLocales.Length; i++)
         {
-            var locale = locales[i];
+            var locale = resourceLocales[i];
             var isDeserialized = VRCJson.TryDeserializeFromJson(resources[i].text, out DataToken result);
             if (!isDeserialized)
             {
@@ -91,8 +104,53 @@ public class LocalizationManager : UdonSharpBehaviour
         }
     }
 
-    private string FindValue(LocalizedText localizedText, string searchLocale)
+    /// <summary>
+    /// Get a list of locales to search in order of preference.
+    /// </summary>
+    private string[] GetSearchLocales()
     {
+        // Put all the locales in a DataList.
+        DataList searchList = new DataList();
+        var isDefaultInPreferences = false;
+
+        for (var i = 0; i < preferredLocales.Length; i++)
+        {
+            var preferredLocale = preferredLocales[i];
+            if (preferredLocale.Equals(defaultLocale))
+            {
+                isDefaultInPreferences = true;
+            }
+
+            // TODO: Add language variant fallbacks if the preferred language is regional.
+            // For example, if a preferred locale was "es-MX" (Mexican Spanish), then we may
+            // also want to search "es" (generic Spanish) before other locales.
+
+            // TODO: Filter out locales which don't have resources. Ideally nobody would call
+            // SetPreferredLanguages with languages they don't support. But we could log an error
+            // message if they did.
+            searchList.Add(preferredLocale);
+        }
+
+        if (!isDefaultInPreferences)
+        {
+            searchList.Add(defaultLocale);
+        }
+
+        // Convert the list to an array.
+        var tokenArray = searchList.ToArray();
+        var searchLocales = new string[tokenArray.Length];
+        for(var i = 0; i < tokenArray.Length; i++)
+        {
+            searchLocales[i] = tokenArray[i].String;
+        }
+
+        return searchLocales;
+    }
+
+    private string FindValue(LocalizedText localizedText, string[] searchLocales)
+    {
+        // Parse the key.
+        // A key has the form "segmentName.keyName_context_pluralCategory". The context and plural category are optional.
         var key = localizedText.key;
         string[] parts = key.Split('.');
 
@@ -104,6 +162,28 @@ public class LocalizationManager : UdonSharpBehaviour
         var segmentName = parts[0];
         var keyName = parts[1];
 
+        // If the value is context-dependent, use the key for the specific context.
+        var contextDependentKeyName = keyName;
+        if (localizedText.context != null && localizedText.context.Length > 0)
+        {
+            contextDependentKeyName += "_" + localizedText.context;
+        }
+
+        // Search each locale for the value.
+        foreach (var locale in searchLocales)
+        {
+            var foundValue = FindValueInLocale(localizedText, segmentName, contextDependentKeyName, locale);
+            if (foundValue != null)
+            {
+                return foundValue;
+            }
+        }
+
+        return placeholderValue;
+    }
+
+    private string FindValueInLocale(LocalizedText localizedText, string segmentName, string contextDependentKeyName, string searchLocale)
+    {
         // Get the resource.
         var hasResource = resourcesByLocale.TryGetValue(searchLocale, out DataToken resourceToken);
         if (!hasResource || resourceToken.TokenType != TokenType.DataDictionary)
@@ -119,14 +199,8 @@ public class LocalizationManager : UdonSharpBehaviour
             return null;
         }
 
-        // If the key could be one of several variants, use the key name for the specific variant.
-        var variantKeyName = keyName;
-
-        if (localizedText.context != null && localizedText.context.Length > 0)
-        {
-            variantKeyName += "_" + localizedText.context;
-        }
-
+        // If the value could be pluralized, use the key for that plural category.
+        var variantKeyName = contextDependentKeyName;
         if (localizedText.shouldUseCount)
         {
             variantKeyName += "_" + GetCardinalPluralCategory(localizedText.count, searchLocale);
@@ -145,7 +219,7 @@ public class LocalizationManager : UdonSharpBehaviour
 
     /// <summary>
     /// Get the cardinal plural category.
-    /// <see href="http://translate.sourceforge.net/wiki/l10n/pluralforms">Plural Forms Localization Guide</see>
+    /// See <see href="http://translate.sourceforge.net/wiki/l10n/pluralforms">Plural Forms Localization Guide</see>
     /// </summary>
     /// <param name="n">Number of items for the plural word.</param>
     /// <param name="locale">IETF language tag</param>
@@ -321,6 +395,12 @@ public class LocalizationManager : UdonSharpBehaviour
         }
     }
 
+    /// <summary>
+    /// Text may have names or other text inserted into it. This is called interpolation.
+    /// <example>
+    /// For example "{{ playerName }} was added to team {{ teamName }}."
+    /// </example>
+    /// </summary>
     private string Interpolate(LocalizedText localizedText, string newText)
     {
         if (localizedText.interpolationKeys.Length == 0 && !localizedText.shouldUseCount)

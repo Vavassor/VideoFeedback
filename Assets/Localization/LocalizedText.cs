@@ -4,7 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using VRC.Udon;
 
-[UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+/// <summary>
+/// Localization information for a UI text component.
+/// 
+/// <see cref="LocalizationManager" /> is responsible for most functionality.
+/// </summary>
+/// <remarks>
+/// Prefer using synchronization method "None". This isn't enforced with UdonBehaviourSyncMode
+/// because behaviours with other sync methods may need to be placed on the same GameObject.
+/// </remarks>
+[RequireComponent(typeof(Text))]
 public class LocalizedText : UdonSharpBehaviour
 {
     /// <summary>
@@ -41,8 +50,9 @@ public class LocalizedText : UdonSharpBehaviour
     public string[] interpolationValues;
     public string key;
     /// <summary>
-    /// Convert all characters to uppercase.
-    /// Similar to the CSS property text-transform.
+    /// Convert all text to uppercase.
+    /// 
+    /// Similar to the CSS property text-transform: uppercase.
     /// </summary>
     public bool shouldTransformUppercase;
     public bool shouldUseCount;

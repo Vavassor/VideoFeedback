@@ -10078,12 +10078,13 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 506722385}
   defaultLocale: en
-  locale: en
-  locales:
+  preferredLocales:
+  - en
+  placeholderValue: Unknown
+  resourceLocales:
   - en
   - ja
   - xa
-  placeholderValue: Unknown
   resources:
   - {fileID: 4900000, guid: 8ef6e1df3276be0439c1cd6590b9ca51, type: 3}
   - {fileID: 4900000, guid: 4f55aab8aca251d49921d434e0d12397, type: 3}

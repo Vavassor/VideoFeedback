@@ -11,16 +11,16 @@ public class LanguageSettings : UdonSharpBehaviour
 
     public void OnClickEnglish()
     {
-        localizationManager.SetLocale("en");
+        localizationManager.SetPreferredLocale("en");
     }
 
     public void OnClickJapanese()
     {
-        localizationManager.SetLocale("ja");
+        localizationManager.SetPreferredLocale("ja");
     }
 
     public void OnClickPseudolocale()
     {
-        localizationManager.SetLocale("xa");
+        localizationManager.SetPreferredLocale("xa");
     }
 }
