@@ -3,6 +3,7 @@ using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
+using KPLocalization;
 
 [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
 public class LanguageSettings : UdonSharpBehaviour

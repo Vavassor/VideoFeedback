@@ -169,6 +169,12 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.vavassor.kplocalization": {
+      "version": "file:com.vavassor.kplocalization",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.vrchat.base": {
       "version": "file:com.vrchat.base",
       "depth": 0,
