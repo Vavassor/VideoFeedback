@@ -832,8 +832,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: directionsSection.directionsText
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!114 &45212144 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3551748727829260248, guid: 2c5d22a487a0bd3419806feb78df3108,
@@ -2666,8 +2668,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: adjustColorMenu.brightnessAdjustSliderLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &135559614
 GameObject:
   m_ObjectHideFlags: 0
@@ -2936,16 +2940,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144079451}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 495762317}
-  m_RootOrder: 1
+  m_Father: {fileID: 308229680}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -138.3, y: 0}
+  m_AnchoredPosition: {x: -215.00009, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &144079453
@@ -4184,8 +4188,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: localSettingsMenu.localSettingsHeading
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &193176762
 GameObject:
   m_ObjectHideFlags: 0
@@ -4788,6 +4794,164 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218979184}
   m_CullTransparentMesh: 0
+--- !u!1001 &227642811
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 736461516}
+    m_Modifications:
+    - target: {fileID: 1160522494661931745, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1160522494661931745, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+    - target: {fileID: 8736689254858317522, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_Text
+      value: "\uD55C\uAD6D\uC5B4"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689254858317522, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154026, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 245779638}
+    - target: {fileID: 8736689255524154026, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendCustomEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154026, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: OnClickKorean
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154028, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_Name
+      value: Korean Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -181
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1160522494661931745, guid: 32264f5a0477ffe4bb72c3dd131b9fce, type: 3}
+    - {fileID: 5573961038762112027, guid: 32264f5a0477ffe4bb72c3dd131b9fce, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 32264f5a0477ffe4bb72c3dd131b9fce, type: 3}
+--- !u!224 &227642812 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
+    type: 3}
+  m_PrefabInstance: {fileID: 227642811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &235256676 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8548828919884418083, guid: fe48398a14a01cd4ba74a5aca047a30d,
@@ -5610,14 +5774,15 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 144079452}
   m_Father: {fileID: 495762317}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 29.999987, y: 0}
-  m_SizeDelta: {x: -60.000027, y: 0}
+  m_AnchoredPosition: {x: 30, y: 0}
+  m_SizeDelta: {x: -60, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &308229681
 MonoBehaviour:
@@ -5713,8 +5878,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: saveAndLoadPresetsMenu.resetAllButtonLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 1
   shouldUseCount: 0
+  text: 
 --- !u!1 &310265443
 GameObject:
   m_ObjectHideFlags: 0
@@ -6075,8 +6242,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: adjustColorMenu.hueAdjustSliderLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &338951527 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8548828919567858418, guid: fe48398a14a01cd4ba74a5aca047a30d,
@@ -7199,8 +7368,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: effectsMenu.effectsMenuHeading
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &398267702
 GameObject:
   m_ObjectHideFlags: 0
@@ -9381,8 +9552,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: contactSection.contactSectionHeading
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &487102497 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fe8fcbc495d9918418ef84a58e114e66,
@@ -9751,14 +9924,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 308229680}
-  - {fileID: 144079452}
   m_Father: {fileID: 1674353446}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -55, y: -332.80008}
-  m_SizeDelta: {x: 340, y: 60}
+  m_AnchoredPosition: {x: -10, y: -332.80008}
+  m_SizeDelta: {x: 430, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &495762318
 MonoBehaviour:
@@ -10084,11 +10256,11 @@ MonoBehaviour:
   resourceLocales:
   - en
   - ja
-  - xa
+  - ko
   resources:
   - {fileID: 4900000, guid: 8ef6e1df3276be0439c1cd6590b9ca51, type: 3}
   - {fileID: 4900000, guid: 4f55aab8aca251d49921d434e0d12397, type: 3}
-  - {fileID: 4900000, guid: f70621907f36b8b428aaf6d3b950d551, type: 3}
+  - {fileID: 4900000, guid: 0e9e1788be8842f4aa2c43b0241f942f, type: 3}
   shouldUpdateAssetsOnStart: 1
   texts:
   - {fileID: 483292425}
@@ -10593,8 +10765,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Place your stream camera in the box below to capture the video feed from
-    the other camera.
+  m_Text: Place your handheld camera in the box below to capture the video feed from
+    the VF camera.
 --- !u!222 &580405323
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10656,8 +10828,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: streamMonitor.streamMonitorInstructions
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!114 &580651967 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3551748727829260248, guid: 2c5d22a487a0bd3419806feb78df3108,
@@ -11840,8 +12014,10 @@ MonoBehaviour:
   interpolationValues:
   - https://github.com/Vavassor/VideoFeedback
   key: contactSection.sourceCodeMessage
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &647261441
 GameObject:
   m_ObjectHideFlags: 0
@@ -11975,8 +12151,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: screenMenu.screenMenuHeading
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1001 &654816770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12209,164 +12387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa21ef9a1001cf4782b312edfd5acb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &661767505
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 736461516}
-    m_Modifications:
-    - target: {fileID: 1160522494661931745, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: serializationData.Prefab
-      value: 
-      objectReference: {fileID: 1160522494661931745, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-    - target: {fileID: 8736689254858317522, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_Text
-      value: PSEUDOLOCALE
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689254858317522, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154026, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 245779638}
-    - target: {fileID: 8736689255524154026, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SendCustomEvent
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154026, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: OnClickPseudolocale
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154028, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_Name
-      value: Pseudolocale Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -13
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -188
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1160522494661931745, guid: 32264f5a0477ffe4bb72c3dd131b9fce, type: 3}
-    - {fileID: 5573961038762112027, guid: 32264f5a0477ffe4bb72c3dd131b9fce, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 32264f5a0477ffe4bb72c3dd131b9fce, type: 3}
---- !u!224 &661767506 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
-    type: 3}
-  m_PrefabInstance: {fileID: 661767505}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &668837205
 GameObject:
   m_ObjectHideFlags: 0
@@ -13211,7 +13231,7 @@ RectTransform:
   m_Children:
   - {fileID: 846111441}
   - {fileID: 1808028839}
-  - {fileID: 661767506}
+  - {fileID: 227642812}
   - {fileID: 245779637}
   m_Father: {fileID: 0}
   m_RootOrder: 29
@@ -13612,8 +13632,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: cameraMenu.orthographicProjectionToggleLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!114 &757593141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13886,8 +13908,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: cameraMenu.clearCameraToggleLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &805412705
 GameObject:
   m_ObjectHideFlags: 0
@@ -14026,8 +14050,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: photosensitiveWarning.photosensitiveWarningText
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &806280360 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2132281347774034063, guid: fe48398a14a01cd4ba74a5aca047a30d,
@@ -14167,8 +14193,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: streamMonitor.streamMonitorHeading
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &810095431
 GameObject:
   m_ObjectHideFlags: 0
@@ -15239,8 +15267,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: adjustColorMenu.adjustColorMenuHeading
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &845343126
 GameObject:
   m_ObjectHideFlags: 0
@@ -15442,7 +15472,7 @@ PrefabInstance:
     - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 122
+      value: 111
       objectReference: {fileID: 0}
     - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
         type: 3}
@@ -15609,8 +15639,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: saveAndLoadPresetsMenu.presetCodeTextFieldLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &851885997
 GameObject:
   m_ObjectHideFlags: 0
@@ -17062,8 +17094,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: photosensitiveWarning.photosensitiveWarningHeading
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &914553284
 GameObject:
   m_ObjectHideFlags: 0
@@ -17911,8 +17945,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: screenMenu.flipHorizontallyToggleLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &979895546
 GameObject:
   m_ObjectHideFlags: 0
@@ -18046,8 +18082,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: cameraMenu.cameraMenuHeading
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &992650787 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2132281347774034063, guid: fe48398a14a01cd4ba74a5aca047a30d,
@@ -20446,8 +20484,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: respawnMenu.respawnToysButtonLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 1
   shouldUseCount: 0
+  text: 
 --- !u!1 &1165154014
 GameObject:
   m_ObjectHideFlags: 0
@@ -20676,8 +20716,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: effectsMenu.gradientMappingToggleLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &1170385366
 GameObject:
   m_ObjectHideFlags: 0
@@ -22870,8 +22912,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: respawnMenu.respawnMenusButtonLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 1
   shouldUseCount: 0
+  text: 
 --- !u!1 &1264014135
 GameObject:
   m_ObjectHideFlags: 0
@@ -23005,8 +23049,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: presetsMenu.presetsMenuHeading
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &1268363420
 GameObject:
   m_ObjectHideFlags: 0
@@ -24351,8 +24397,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: adjustColorMenu.invertColorToggleLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &1393091375 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8548828918606082975, guid: fe48398a14a01cd4ba74a5aca047a30d,
@@ -25776,8 +25824,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: saveAndLoadPresetsMenu.saveAndLoadPresetsHeading
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &1501746647 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4097664518423923708, guid: 2c5d22a487a0bd3419806feb78df3108,
@@ -27276,8 +27326,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: respawnMenu.respawnCameraButtonLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 1
   shouldUseCount: 0
+  text: 
 --- !u!1 &1620248546
 GameObject:
   m_ObjectHideFlags: 0
@@ -27655,8 +27707,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: cameraMenu.clearColorButtonLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &1654483844
 GameObject:
   m_ObjectHideFlags: 0
@@ -27790,8 +27844,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: saveAndLoadPresetsMenu.generatePresetCodeButtonLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 1
   shouldUseCount: 0
+  text: 
 --- !u!1 &1659023085 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4097664518423923708, guid: 2c5d22a487a0bd3419806feb78df3108,
@@ -29211,8 +29267,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: directionsSection.directionsSectionHeading
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1 &1738943169 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8548828919264443956, guid: fe48398a14a01cd4ba74a5aca047a30d,
@@ -29651,8 +29709,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: respawnMenu.respawnLightsButtonLabel
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 1
   shouldUseCount: 0
+  text: 
 --- !u!114 &1780149076
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -30016,7 +30076,7 @@ PrefabInstance:
     - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -138
+      value: -122
       objectReference: {fileID: 0}
     - target: {fileID: 8736689255524154029, guid: 32264f5a0477ffe4bb72c3dd131b9fce,
         type: 3}
@@ -33141,8 +33201,10 @@ MonoBehaviour:
   interpolationKeys: []
   interpolationValues: []
   key: respawnMenu.respawnMenuHeading
+  localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
+  text: 
 --- !u!1001 &2145107077
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -15,6 +15,11 @@ public class LanguageSettings : UdonSharpBehaviour
         localizationManager.SetPreferredLocale("en");
     }
 
+    public void OnClickKorean()
+    {
+        localizationManager.SetPreferredLocale("ko");
+    }
+
     public void OnClickJapanese()
     {
         localizationManager.SetPreferredLocale("ja");

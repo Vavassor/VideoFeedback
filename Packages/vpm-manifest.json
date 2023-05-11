@@ -57,7 +57,7 @@
       "dependencies": {}
     },
     "com.vavassor.kplocalization": {
-      "version": "0.0.3",
+      "version": "0.0.4",
       "dependencies": {
         "com.vrchat.worlds": "3.2.0",
         "com.vrchat.udonsharp": "1.1.8"

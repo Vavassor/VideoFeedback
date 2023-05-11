@@ -1,13 +1,74 @@
 {
+    "adjustColorMenu": {
+        "adjustColorMenuHeading": "調整",
+        "brightnessAdjustSliderLabel": "画面の明るさ",
+        "contrastSliderLabel": "コントラスト",
+        "hueAdjustSliderLabel": "色相",
+        "invertColorToggleLabel": "色を反転",
+        "saturationSliderLabel": "彩度"
+    },
+    "cameraMenu": {
+        "cameraMenuHeading": "カメラ",
+        "clearCameraToggleLabel": "カメラをクリア",
+        "clearColorButtonLabel": "色をクリア",
+        "fieldOfViewSliderLabel": "視野のフィールド",
+        "orthographicProjectionToggleLabel": "正射投影法"
+    },
+    "contactSection": {
+        "contactSectionHeading": "お問い合わせ",
+        "sourceCodeMessage": "世界中のクリエイターの皆さん、ここにあるものは何でも使用できます！ソースコードとアセットは{{ sourceCodeUrl }}で入手できます。"
+    },
     "directionsSection": {
-        "directionsSectionHeading": "方向",
-        "directionsText": "試してみてください！\n\nうまくいかない場合は、[すべてをデフォルトにリセット] ボタンをクリックしてください。"
+        "directionsSectionHeading": "使用方法",
+        "directionsText": "まずはお試しください！\n\n上手くいかない場合は、「すべてをデフォルトにリセット」ボタンを押してください。"
+    },
+    "effectsMenu": {
+        "chromaticDistortionSliderLabel": "色収差",
+        "edgeBrightnessSliderLabel": "エッジの明るさ",
+        "effectsMenuHeading": "効果",
+        "flowDistortionSliderLabel": "フローディストーション",
+        "gradientMappingToggleLabel": "グラデーションマッピング",
+        "hueSliderLabel": "色相",
+        "mirrorTileCountSliderLabel": "鏡のタイル",
+        "saturationSliderLabel": "彩度",
+        "sharpnessSliderLabel": "シャープネス",
+        "valueSliderLabel": "値"
+    },
+    "localSettingsMenu": {
+        "ambientOcclusionIntensitySliderLabel": "アンビエントオクルージョン",
+        "bloomIntensitySliderLabel": "ブルーム",
+        "enablePostProcessingToggleLabel": "ポスト処理",
+        "floorLevelSliderLabel": "フロアレベル",
+        "localSettingsHeading": "ローカル設定"
+    },
+    "photosensitiveWarning": {
+        "photosensitiveWarningHeading": "感光性の警告",
+        "photosensitiveWarningText": "ここでの効果は、視覚感度の高い人が発作を引き起こす可能性のある光の点滅が発生します。\n\nビジュアルは予測できず、リスクを回避することはできません。"
+    },
+    "presetsMenu": {
+        "presetsMenuHeading": "プリセット"
+    },
+    "respawnMenu": {
+        "respawnMenuHeading": "リスポーン",
+        "respawnCameraButtonLabel": "リスポーンカメラ",
+        "respawnLightsButtonLabel": "リスポーンライト",
+        "respawnToysButtonLabel": "リスポーンおもちゃ",
+        "respawnMenusButtonLabel": "リスポーンメニュー"
     },
     "saveAndLoadPresetsMenu": {
-        "generatePresetCodeButtonLabel": "Generate Preset Code",
-        "loadPresetCodeButtonLabel": "Load Preset Code",
-        "presetCodeTextFieldLabel": "Preset Code",
+        "generatePresetCodeButtonLabel": "プリセットコードを生成",
+        "loadPresetCodeButtonLabel": "プリセットコードの読み込み",
+        "presetCodeTextFieldLabel": "プリセットコード",
         "resetAllButtonLabel": "すべてをデフォルトにリセット",
-        "saveAndLoadPresetsHeading": "Save And Load Presets"
+        "saveAndLoadPresetsHeading": "プリセットの保存と読み込み"
+    },
+    "screenMenu": {
+        "flipHorizontallyToggleLabel": "水平方向に反転",
+        "flipVerticallyToggleLabel": "垂直方向に反転",
+        "screenMenuHeading": "画面"
+    },
+    "streamMonitor": {
+        "streamMonitorHeading": "写真＆ビデオを撮ろう！",
+        "streamMonitorInstructions": "VFカメラのビデオフィードをキャプチャするには、下のボックスに手持ちカメラを配置してください。"
     }
 }
