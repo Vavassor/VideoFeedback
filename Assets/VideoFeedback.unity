@@ -10375,7 +10375,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 8ef6e1df3276be0439c1cd6590b9ca51, type: 3}
   - {fileID: 4900000, guid: 4f55aab8aca251d49921d434e0d12397, type: 3}
   - {fileID: 4900000, guid: 0e9e1788be8842f4aa2c43b0241f942f, type: 3}
-  shouldUpdateAssetsOnStart: 1
+  shouldUseCurrentCultureOnStart: 1
   texts:
   - {fileID: 483292425}
   - {fileID: 613728368}
