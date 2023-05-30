@@ -10,12 +10,18 @@ public class CameraController : UdonSharpBehaviour
     public ColorButton clearColorButton;
     public Camera0Controller camera0Controller;
     public SyncedSlider fieldOfViewSlider;
+    public SyncedToggle isChromaKeyEnabledToggle;
+    public SyncedToggle isLumaKeyEnabledToggle;
+    public RenderTexture video0Texture;
+    public CustomRenderTexture videoColorKeyed;
     public CustomRenderTexture videoGradientMapped;
     public RenderTexture videoGradientMapped1;
     public CustomRenderTexture videoMixed;
     public SyncedToggle orthographicProjectionToggle;
     public Material backboardMaterial;
+    public Material chromaKeyMaterial;
     public Material gradientMappingMaterial;
+    public Material lumaKeyMaterial;
     public Material videoScreenOpaqueMaterial;
 
     private Camera cameraComponent;
@@ -42,6 +48,24 @@ public class CameraController : UdonSharpBehaviour
         camera0Controller.OnChangeFieldOfView();
     }
 
+    public void OnChangeKeyToggle()
+    {
+        if (isChromaKeyEnabledToggle.isOn)
+        {
+            videoColorKeyed.material = chromaKeyMaterial;
+            gradientMappingMaterial.SetTexture("_Video0Texture", videoColorKeyed);
+        }
+        else if(isLumaKeyEnabledToggle.isOn)
+        {
+            videoColorKeyed.material = lumaKeyMaterial;
+            gradientMappingMaterial.SetTexture("_Video0Texture", videoColorKeyed);
+        }
+        else
+        {
+            gradientMappingMaterial.SetTexture("_Video0Texture", video0Texture);
+        }
+    }
+
     public void OnChangeOrthographicProjection()
     {
         cameraComponent.orthographic = orthographicProjectionToggle.isOn;
@@ -52,12 +76,18 @@ public class CameraController : UdonSharpBehaviour
     {
         cameraComponent = GetComponent<Camera>();
 
+        videoColorKeyed.Initialize();
         videoGradientMapped.Initialize();
         videoMixed.Initialize();
     }
 
     void Update()
     {
+        if (isChromaKeyEnabledToggle.isOn || isLumaKeyEnabledToggle.isOn)
+        {
+            videoColorKeyed.Update();
+        }
+            
         videoGradientMapped.Update();
         VRCGraphics.Blit(videoGradientMapped, videoGradientMapped1);
 

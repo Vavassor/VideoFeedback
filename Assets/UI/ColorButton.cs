@@ -121,8 +121,11 @@ public class ColorButton : UdonSharpBehaviour
         saturationSliderMaterial.SetColor("_Stop1Color", Color.HSVToRGB(hue, 1.0f, value));
         valueSliderMaterial.SetColor("_Stop1Color", Color.HSVToRGB(hue, saturation, 1.0f));
 
-        palette.colors[paletteColorIndex] = pickedColor;
-        palette.OnUpdatePalette();
+        if (palette != null)
+        {
+            palette.colors[paletteColorIndex] = pickedColor;
+            palette.OnUpdatePalette();
+        }
 
         foreach (var targetBehaviour in targetBehaviours)
         {
