@@ -8,8 +8,8 @@ using VRC.Udon;
 public class ColorKeyingSettings : UdonSharpBehaviour
 {
     public ColorButton keyColorButton;
-    public SyncedToggle isChromaKeyEnabled;
-    public SyncedToggle isLumaKeyEnabled;
+    public Toggle isChromaKeyEnabled;
+    public Toggle isLumaKeyEnabled;
     public Slider similaritySlider;
     public Slider smoothnessSlider;
     public Slider spillSlider;
@@ -68,6 +68,22 @@ public class ColorKeyingSettings : UdonSharpBehaviour
     public void OnChangeSpill()
     {
         chromaKeyMaterial.SetFloat("_Spill", spillSlider.value);
+    }
+
+    public void OnClickResetAllButton()
+    {
+        isChromaKeyEnabled.isOn = false;
+        isLumaKeyEnabled.isOn = false;
+        similaritySlider.value = 0.1f;
+        smoothnessSlider.value = 0.08f;
+        spillSlider.value = 0.1f;
+        luminanceMinSlider.value = 0.0f;
+        luminanceMinSmoothnessSlider.value = 0.0f;
+        luminanceMaxSlider.value = 1.0f;
+        luminanceMaxSmoothnessSlider.value = 0.0f;
+
+        keyColorButton.color = new Color(0.05098039f, 0.6313726f, 0.1411765f);
+        keyColorButton.OnSetValueExternally();
     }
 
     private void SetCanvasGroupVisibility(CanvasGroup canvasGroup, bool isOn)
