@@ -14,6 +14,19 @@
         "fieldOfViewSliderLabel": "Field Of View",
         "orthographicProjectionToggleLabel": "Orthographic Projection"
     },
+    "colorKeySettings": {
+        "colorKeySettingsHeading": "Color Keying",
+        "chromaKeyToggleLabel": "Chroma Key",
+        "lumaKeyToggleLabel": "Luma Key",
+        "keyColorButtonLabel": "Key Color",
+        "maxLuminanceSliderLabel": "Max Luminance",
+        "maxLuminanceSmoothnessSliderLabel": "Max Luminance Smoothness",
+        "minLuminanceSliderLabel": "Min Luminance",
+        "minLuminanceSmoothnessSliderLabel": "Min Luminance Smoothness",
+        "similaritySliderLabel": "Similarity",
+        "smoothnessSliderLabel": "Smoothness",
+        "spillSliderLabel": "Spill"
+    },
     "contactSection": {
         "contactSectionHeading": "Contact",
         "sourceCodeMessage": "World creators, you can use anything here for your world, too! The source code and assets are available at {{ sourceCodeUrl }}"

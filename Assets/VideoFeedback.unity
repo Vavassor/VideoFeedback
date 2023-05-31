@@ -510,6 +510,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 678711843}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &13470557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3551748727829260248, guid: 2c5d22a487a0bd3419806feb78df3108,
+    type: 3}
+  m_PrefabInstance: {fileID: 678711843}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13470554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908f4367037ddfd4183d89518f29c5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &22826618
 GameObject:
   m_ObjectHideFlags: 0
@@ -3142,6 +3154,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4484499364699699236, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
+      propertyPath: key
+      value: colorKeySettings.smoothnessSliderLabel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484499364699699236, guid: ff9e78d2135083f4e90ab894cb05c668,
+        type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 4484499364699699236, guid: ff9e78d2135083f4e90ab894cb05c668,
@@ -3205,6 +3222,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620575481210106581, guid: ff9e78d2135083f4e90ab894cb05c668,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff9e78d2135083f4e90ab894cb05c668, type: 3}
@@ -3381,6 +3403,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 137909822}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &143731154 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4484499364699699236, guid: ff9e78d2135083f4e90ab894cb05c668,
+    type: 3}
+  m_PrefabInstance: {fileID: 137909822}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143731151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908f4367037ddfd4183d89518f29c5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &144079451
 GameObject:
   m_ObjectHideFlags: 0
@@ -3754,6 +3788,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Chroma Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018513323184879554, guid: 67263039395284a4a96c54b70887e2b4,
+        type: 3}
+      propertyPath: key
+      value: colorKeySettings.chromaKeyToggleLabel
       objectReference: {fileID: 0}
     - target: {fileID: 3018513323184879554, guid: 67263039395284a4a96c54b70887e2b4,
         type: 3}
@@ -5381,6 +5420,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1157750380}
     m_Modifications:
+    - target: {fileID: 2104154111028939465, guid: 2c5d22a487a0bd3419806feb78df3108,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551748727829260248, guid: 2c5d22a487a0bd3419806feb78df3108,
+        type: 3}
+      propertyPath: key
+      value: colorKeySettings.minLuminanceSliderLabel
+      objectReference: {fileID: 0}
     - target: {fileID: 3551748727829260248, guid: 2c5d22a487a0bd3419806feb78df3108,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -9766,6 +9815,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1157750380}
     m_Modifications:
+    - target: {fileID: 2104154111028939465, guid: 2c5d22a487a0bd3419806feb78df3108,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551748727829260248, guid: 2c5d22a487a0bd3419806feb78df3108,
+        type: 3}
+      propertyPath: key
+      value: colorKeySettings.minLuminanceSmoothnessSliderLabel
+      objectReference: {fileID: 0}
     - target: {fileID: 3551748727829260248, guid: 2c5d22a487a0bd3419806feb78df3108,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -10349,6 +10408,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 200868340}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &458900923 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3551748727829260248, guid: 2c5d22a487a0bd3419806feb78df3108,
+    type: 3}
+  m_PrefabInstance: {fileID: 200868340}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458900920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908f4367037ddfd4183d89518f29c5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &460688359
 GameObject:
   m_ObjectHideFlags: 0
@@ -10613,6 +10684,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4484499364699699236, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
+      propertyPath: key
+      value: colorKeySettings.spillSliderLabel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484499364699699236, guid: ff9e78d2135083f4e90ab894cb05c668,
+        type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 4484499364699699236, guid: ff9e78d2135083f4e90ab894cb05c668,
@@ -10676,6 +10752,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620575481210106581, guid: ff9e78d2135083f4e90ab894cb05c668,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff9e78d2135083f4e90ab894cb05c668, type: 3}
@@ -12413,6 +12494,17 @@ MonoBehaviour:
   - {fileID: 1541786726}
   - {fileID: 46012852}
   - {fileID: 900728706}
+  - {fileID: 920297630}
+  - {fileID: 1652231190}
+  - {fileID: 1445429128}
+  - {fileID: 1897340104}
+  - {fileID: 2055324212}
+  - {fileID: 143731154}
+  - {fileID: 1172615036}
+  - {fileID: 458900923}
+  - {fileID: 1918976827}
+  - {fileID: 13470557}
+  - {fileID: 1569222092}
 --- !u!4 &506722387
 Transform:
   m_ObjectHideFlags: 0
@@ -14717,6 +14809,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1157750380}
     m_Modifications:
+    - target: {fileID: 2104154111028939465, guid: 2c5d22a487a0bd3419806feb78df3108,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551748727829260248, guid: 2c5d22a487a0bd3419806feb78df3108,
+        type: 3}
+      propertyPath: key
+      value: colorKeySettings.maxLuminanceSliderLabel
+      objectReference: {fileID: 0}
     - target: {fileID: 3551748727829260248, guid: 2c5d22a487a0bd3419806feb78df3108,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -20788,7 +20890,7 @@ MonoBehaviour:
   count: 0
   interpolationKeys: []
   interpolationValues: []
-  key: screenMenu.screenMenuHeading
+  key: colorKeySettings.colorKeySettingsHeading
   localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
@@ -25606,6 +25708,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 463194210}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1172615036 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4484499364699699236, guid: ff9e78d2135083f4e90ab894cb05c668,
+    type: 3}
+  m_PrefabInstance: {fileID: 463194210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172615033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908f4367037ddfd4183d89518f29c5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1198000761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31412,6 +31526,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2070910685}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1445429128 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3018513323184879554, guid: 67263039395284a4a96c54b70887e2b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2070910685}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445429125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908f4367037ddfd4183d89518f29c5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1452535995 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8685171665918840634, guid: fe48398a14a01cd4ba74a5aca047a30d,
@@ -32270,6 +32396,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1157750380}
     m_Modifications:
+    - target: {fileID: 2104154111028939465, guid: 2c5d22a487a0bd3419806feb78df3108,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551748727829260248, guid: 2c5d22a487a0bd3419806feb78df3108,
+        type: 3}
+      propertyPath: key
+      value: colorKeySettings.maxLuminanceSmoothnessSliderLabel
+      objectReference: {fileID: 0}
     - target: {fileID: 3551748727829260248, guid: 2c5d22a487a0bd3419806feb78df3108,
         type: 3}
       propertyPath: serializationData.Prefab
@@ -33640,6 +33776,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1506443037}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1569222092 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3551748727829260248, guid: 2c5d22a487a0bd3419806feb78df3108,
+    type: 3}
+  m_PrefabInstance: {fileID: 1506443037}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569222089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908f4367037ddfd4183d89518f29c5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1573327441
 GameObject:
   m_ObjectHideFlags: 0
@@ -34605,6 +34753,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 155336014}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1652231190 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3018513323184879554, guid: 67263039395284a4a96c54b70887e2b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 155336014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652231187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908f4367037ddfd4183d89518f29c5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654483844
 GameObject:
   m_ObjectHideFlags: 0
@@ -38836,7 +38996,7 @@ MonoBehaviour:
   count: 0
   interpolationKeys: []
   interpolationValues: []
-  key: cameraMenu.clearColorButtonLabel
+  key: colorKeySettings.keyColorButtonLabel
   localizationManager: {fileID: 0}
   shouldTransformUppercase: 0
   shouldUseCount: 0
@@ -39191,6 +39351,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 417246171}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1918976827 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3551748727829260248, guid: 2c5d22a487a0bd3419806feb78df3108,
+    type: 3}
+  m_PrefabInstance: {fileID: 417246171}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918976824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908f4367037ddfd4183d89518f29c5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1927004322
 GameObject:
   m_ObjectHideFlags: 0
@@ -39562,6 +39734,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4484499364699699236, guid: ff9e78d2135083f4e90ab894cb05c668,
         type: 3}
+      propertyPath: key
+      value: colorKeySettings.similaritySliderLabel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484499364699699236, guid: ff9e78d2135083f4e90ab894cb05c668,
+        type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 4484499364699699236, guid: ff9e78d2135083f4e90ab894cb05c668,
@@ -39625,6 +39802,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620575481210106581, guid: ff9e78d2135083f4e90ab894cb05c668,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff9e78d2135083f4e90ab894cb05c668, type: 3}
@@ -40220,6 +40402,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1956766377}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2055324212 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4484499364699699236, guid: ff9e78d2135083f4e90ab894cb05c668,
+    type: 3}
+  m_PrefabInstance: {fileID: 1956766377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055324209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908f4367037ddfd4183d89518f29c5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2059166892
 GameObject:
   m_ObjectHideFlags: 0
@@ -40817,6 +41011,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Luma Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018513323184879554, guid: 67263039395284a4a96c54b70887e2b4,
+        type: 3}
+      propertyPath: key
+      value: colorKeySettings.lumaKeyToggleLabel
       objectReference: {fileID: 0}
     - target: {fileID: 3018513323184879554, guid: 67263039395284a4a96c54b70887e2b4,
         type: 3}
