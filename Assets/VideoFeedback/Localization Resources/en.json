@@ -15,10 +15,11 @@
         "orthographicProjectionToggleLabel": "Orthographic Projection"
     },
     "colorKeySettings": {
-        "colorKeySettingsHeading": "Color Keying",
         "chromaKeyToggleLabel": "Chroma Key",
-        "lumaKeyToggleLabel": "Luma Key",
+        "colorKeyDirections": "Play a video in the player to use color keying.\n\nChroma keying works well for greenscreen videos.\n\nLuma keying is useful for black and white videos.\n\nTo find videos, try searching for motion graphics, VJ loops, and green screen videos.",
+        "colorKeySettingsHeading": "Color Keying",
         "keyColorButtonLabel": "Key Color",
+        "lumaKeyToggleLabel": "Luma Key",
         "maxLuminanceSliderLabel": "Max Luminance",
         "maxLuminanceSmoothnessSliderLabel": "Max Luminance Smoothness",
         "minLuminanceSliderLabel": "Min Luminance",

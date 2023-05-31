@@ -21,12 +21,14 @@ public class ColorKeyingSettings : UdonSharpBehaviour
     public Material lumaKeyMaterial;
     public CameraController cameraController;
     public CanvasGroup chromaKeyCanvasGroup;
+    public CanvasGroup directionsCanvasGroup;
     public CanvasGroup lumaKeyCanvasGroup;
 
     public void OnChangeKeyToggle()
     {
         SetCanvasGroupVisibility(chromaKeyCanvasGroup, isChromaKeyEnabled.isOn);
         SetCanvasGroupVisibility(lumaKeyCanvasGroup, isLumaKeyEnabled.isOn);
+        SetCanvasGroupVisibility(directionsCanvasGroup, !isChromaKeyEnabled.isOn && !isLumaKeyEnabled.isOn);
         cameraController.OnChangeKeyToggle();
     }
 
