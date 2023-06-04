@@ -16,7 +16,7 @@
     },
     "colorKeySettings": {
         "chromaKeyToggleLabel": "Chroma Key",
-        "colorKeyDirections": "Play a video in the player to use color keying.\n\nChroma keying works well for greenscreen videos.\n\nLuma keying is useful for black and white videos.\n\nTo find videos, try searching for motion graphics, VJ loops, and green screen videos.",
+        "colorKeyDirections": "Play a video in the player to use color keying.\n\nLuma keying is useful for videos with black or white backgrounds.\n\nChroma keying works well for greenscreen videos.\n\nUse the videos in the Videos menu. Or, try searching for motion graphics, VJ loops, and green screen videos.",
         "colorKeySettingsHeading": "Color Keying",
         "keyColorButtonLabel": "Key Color",
         "lumaKeyToggleLabel": "Luma Key",
