@@ -72,10 +72,10 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _LuminanceMax: 1
-    - _LuminanceMin: 0
+    - _LuminanceMin: 0.03
     - _MaxSmoothness: 0
     - _Metallic: 0
-    - _MinSmoothness: 0
+    - _MinSmoothness: 0.12
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
