@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.llealloo.audiolink": {
+      "version": "file:com.llealloo.audiolink",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.phi-lira.smarttexture": {
       "version": "https://github.com/s-ilent/SmartTexture.git",
       "depth": 0,

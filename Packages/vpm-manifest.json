@@ -17,6 +17,9 @@
     },
     "com.vavassor.kplocalization": {
       "version": "0.0.3"
+    },
+    "com.llealloo.audiolink": {
+      "version": "0.3.2"
     }
   },
   "locked": {
@@ -62,6 +65,10 @@
         "com.vrchat.worlds": "3.2.0",
         "com.vrchat.udonsharp": "1.1.8"
       }
+    },
+    "com.llealloo.audiolink": {
+      "version": "0.3.2",
+      "dependencies": {}
     }
   }
 }
