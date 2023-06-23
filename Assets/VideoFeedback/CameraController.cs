@@ -1,6 +1,7 @@
 ﻿
 using UdonSharp;
 using UnityEngine;
+using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
 
@@ -12,6 +13,7 @@ public class CameraController : UdonSharpBehaviour
     public SyncedSlider fieldOfViewSlider;
     public SyncedToggle isChromaKeyEnabledToggle;
     public SyncedToggle isLumaKeyEnabledToggle;
+    public Toggle isStabilizerEnabledToggle;
     public RenderTexture video0Texture;
     public CustomRenderTexture videoColorKeyed;
     public CustomRenderTexture videoGradientMapped;
@@ -23,6 +25,7 @@ public class CameraController : UdonSharpBehaviour
     public Material gradientMappingMaterial;
     public Material lumaKeyMaterial;
     public Material videoScreenOpaqueMaterial;
+    public Stabilizer stabilizer;
 
     private Camera cameraComponent;
 
@@ -70,6 +73,11 @@ public class CameraController : UdonSharpBehaviour
     {
         cameraComponent.orthographic = orthographicProjectionToggle.isOn;
         camera0Controller.OnChangeOrthographicProjection();
+    }
+
+    public void OnChangeIsStablizerEnabled()
+    {
+        stabilizer.IsStabilizing = isStabilizerEnabledToggle.isOn;
     }
 
     void Start()
