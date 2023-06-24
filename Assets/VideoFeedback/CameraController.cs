@@ -14,6 +14,7 @@ public class CameraController : UdonSharpBehaviour
     public SyncedToggle isChromaKeyEnabledToggle;
     public SyncedToggle isLumaKeyEnabledToggle;
     public Toggle isStabilizerEnabledToggle;
+    public Slider smoothingFramesSlider;
     public RenderTexture video0Texture;
     public CustomRenderTexture videoColorKeyed;
     public CustomRenderTexture videoGradientMapped;
@@ -51,6 +52,11 @@ public class CameraController : UdonSharpBehaviour
         camera0Controller.OnChangeFieldOfView();
     }
 
+    public void OnChangeIsStablizerEnabled()
+    {
+        stabilizer.IsStabilizing = isStabilizerEnabledToggle.isOn;
+    }
+
     public void OnChangeKeyToggle()
     {
         if (isChromaKeyEnabledToggle.isOn)
@@ -75,9 +81,9 @@ public class CameraController : UdonSharpBehaviour
         camera0Controller.OnChangeOrthographicProjection();
     }
 
-    public void OnChangeIsStablizerEnabled()
+    public void OnChangeSmoothingFrames()
     {
-        stabilizer.IsStabilizing = isStabilizerEnabledToggle.isOn;
+        stabilizer.smoothingFrames = (int) smoothingFramesSlider.value;
     }
 
     void Start()

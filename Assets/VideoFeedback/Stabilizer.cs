@@ -18,22 +18,17 @@ public class Stabilizer : UdonSharpBehaviour
     }
 
     private bool isStabilizing = true;
+    private bool hasPriorPlayerPosition = false;
+    private Vector3 priorPlayerPosition;
     private Vector3[] samplePositions = new Vector3[64];
     private Quaternion[] sampleRotations = new Quaternion[64];
+    private bool wasStabilizing = false;
     private bool wasHeld = false;
-
-    private void Start()
-    {
-        // Initialize all samples to be the current transform.
-        for (var i = 0; i < samplePositions.Length; i++)
-        {
-            samplePositions[i] = trackingTransform.position;
-            sampleRotations[i] = trackingTransform.rotation;
-        }
-    }
 
     private void Update()
     {
+        UpdateStabilizingState();
+
         if (IsStabilizing)
         {
             SampleParentTransform();
@@ -43,33 +38,37 @@ public class Stabilizer : UdonSharpBehaviour
 
     private void SampleParentTransform()
     {
-        if (trackingPickup != null && trackingPickup.IsHeld != wasHeld)
+        if (trackingPickup != null && trackingPickup.IsHeld && !wasHeld && trackingPickup.currentPlayer != null)
         {
-            // When picked up or dropped, reinitialize the history of samples.
-            for (var i = 0; i < samplePositions.Length; i++)
-            {
-                samplePositions[i] = trackingTransform.position - trackingPickup.currentPlayer.GetPosition();
-                sampleRotations[i] = trackingTransform.rotation;
-            }
+            // When picked up, reinitialize the history of samples.
+            SetAllSamplesToCurrentTransform();
+        }
+        else if (trackingPickup != null && !trackingPickup.IsHeld && wasHeld && hasPriorPlayerPosition)
+        {
+            // When dropped, retain the samples so that the camera comes to a smooth stop.
+            // However, convert them so that they're no longer relative to the player position.
+            ShiftSamplesWithOffset(priorPlayerPosition);
+            hasPriorPlayerPosition = false;
         }
         else
         {
-            // Move each of the prior samples back one frame.
-            for (var i = samplePositions.Length - 1; i >= 1; i--)
-            {
-                samplePositions[i] = samplePositions[i - 1];
-                sampleRotations[i] = sampleRotations[i - 1];
-            }
+            ShiftSamplesWithOffset(Vector3.zero);
         }
 
+        // Sample the current transform.
         samplePositions[0] = trackingTransform.position;
         sampleRotations[0] = trackingTransform.rotation;
 
+        // Store the sample position relative to the camera when the camera is held.
+        // Also, update the hold state.
         if (trackingPickup != null)
         {
-            if (trackingPickup.IsHeld)
+            if (trackingPickup.IsHeld && trackingPickup.currentPlayer != null)
             {
-                samplePositions[0] -= trackingPickup.currentPlayer.GetPosition();
+                var playerPosition = trackingPickup.currentPlayer.GetPosition();
+                samplePositions[0] -= playerPosition;
+                priorPlayerPosition = playerPosition;
+                hasPriorPlayerPosition = true;
             }
 
             wasHeld = trackingPickup.IsHeld;
@@ -98,13 +97,55 @@ public class Stabilizer : UdonSharpBehaviour
         var smoothRotation = GetQuaternionFromVector4(rotationSum / weightSum).normalized;
 
         // The position is relative to the pickup when held. So, transform it to a world position.
-        if (trackingPickup != null && trackingPickup.IsHeld)
+        if (trackingPickup != null && trackingPickup.IsHeld && trackingPickup.currentPlayer != null)
         {
             smoothPosition += trackingPickup.currentPlayer.GetPosition();
         }
 
         // Update the transform.
         transform.SetPositionAndRotation(smoothPosition, smoothRotation);
+    }
+
+    private void UpdateStabilizingState()
+    {
+        if (!wasStabilizing && IsStabilizing)
+        {
+            // When stabilizing starts, reinitialize the history of samples.
+            SetAllSamplesToCurrentTransform();
+        }
+
+        wasStabilizing = IsStabilizing;
+    }
+
+    /// <summary>
+    /// Move each of the prior samples back one frame.
+    /// </summary>
+    /// <param name="positionOffset">A positional offset, if the samples are relative to another object.</param>
+    private void ShiftSamplesWithOffset(Vector3 positionOffset)
+    {
+        for (var i = samplePositions.Length - 1; i >= 1; i--)
+        {
+            samplePositions[i] = samplePositions[i - 1] + positionOffset;
+            sampleRotations[i] = sampleRotations[i - 1];
+        }
+    }
+
+    /// <summary>
+    /// Set all samples to the current tracking position.
+    /// </summary>
+    private void SetAllSamplesToCurrentTransform()
+    {
+        var playerPosition = Vector3.zero;
+        if (trackingPickup != null && trackingPickup.IsHeld && trackingPickup.currentPlayer != null)
+        {
+            playerPosition = trackingPickup.currentPlayer.GetPosition();
+        }
+
+        for (var i = 0; i < samplePositions.Length; i++)
+        {
+            samplePositions[i] = trackingTransform.position - playerPosition;
+            sampleRotations[i] = trackingTransform.rotation;
+        }
     }
 
     private float WindowTriangular(int x, int n)
