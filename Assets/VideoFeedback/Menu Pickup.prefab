@@ -643,7 +643,6 @@ GameObject:
   - component: {fileID: 6803704618823879356}
   - component: {fileID: 6803704618823879357}
   - component: {fileID: 6803704618823879346}
-  - component: {fileID: 960887905067162220}
   - component: {fileID: 6803704618823879344}
   - component: {fileID: 6803704618823879345}
   - component: {fileID: 6803704618823879354}
@@ -779,29 +778,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 6803704618823879345}
---- !u!114 &960887905067162220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6803704618823879350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b23c5c374b15c48a20152569b10640, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _udonSharpBackingUdonBehaviour: {fileID: 6803704618823879344}
-  menuLocalScale: 1
 --- !u!114 &6803704618823879344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,7 +1046,6 @@ GameObject:
   - component: {fileID: 6803704619883916552}
   - component: {fileID: 6803704619883916553}
   - component: {fileID: 6803704619883916598}
-  - component: {fileID: 6075349169572791098}
   - component: {fileID: 6803704619883916596}
   m_Layer: 0
   m_Name: Menu Canvas
@@ -1184,44 +1159,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6075349169572791098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6803704619883916558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90a8dd2b4b23b7342a6adfc013951f81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _udonSharpBackingUdonBehaviour: {fileID: 6803704619883916596}
-  keyColorButton: {fileID: 0}
-  isChromaKeyEnabled: {fileID: 0}
-  isLumaKeyEnabled: {fileID: 0}
-  similaritySlider: {fileID: 0}
-  smoothnessSlider: {fileID: 0}
-  spillSlider: {fileID: 0}
-  luminanceMaxSlider: {fileID: 0}
-  luminanceMaxSmoothnessSlider: {fileID: 0}
-  luminanceMinSlider: {fileID: 0}
-  luminanceMinSmoothnessSlider: {fileID: 0}
-  chromaKeyMaterial: {fileID: 0}
-  lumaKeyMaterial: {fileID: 0}
-  cameraController: {fileID: 0}
-  chromaKeyCanvasGroup: {fileID: 0}
-  directionsCanvasGroup: {fileID: 0}
-  lumaKeyCanvasGroup: {fileID: 0}
 --- !u!114 &6803704619883916596
 MonoBehaviour:
   m_ObjectHideFlags: 0
