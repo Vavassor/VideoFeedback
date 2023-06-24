@@ -6,6 +6,10 @@ using VRC.Udon;
 
 public class Screen : UdonSharpBehaviour
 {
+    public GameObject backScreenHorizontal;
+    public GameObject backScreenVertical;
+    public GameObject[] horizontalObjects;
+    public GameObject[] verticalObjects;
     public Material gradientMappingMaterial;
     public Material videoMixerMaterial;
     public ColorButton gradientStop0ColorButton;
@@ -18,21 +22,28 @@ public class Screen : UdonSharpBehaviour
     public SyncedToggle gradientMappingToggle;
     public SyncedSlider hueShiftSlider;
     public SyncedToggle invertColorToggle;
+    public SyncedToggle isVerticalScreenToggle;
     public SyncedSlider mirrorTileCountSlider;
     public SyncedToggle mirrorXToggle;
     public SyncedToggle mirrorYToggle;
     public SyncedSlider saturationSlider;
     public SyncedSlider sharpnessSlider;
-    public float screenScaleX = 4.0f;
-    public float screenScaleY = 2.25f;
+    public float horizontalScreenScaleX = 4.0f;
+    public float horizontalScreenScaleY = 2.25f;
+    public float verticalScreenScaleX = 3.0f;
+    public float verticalScreenScaleY = 1.6875f;
 
-    private float scaleX;
-    private float scaleY;
+    private float scaleXHorizontal;
+    private float scaleYHorizontal;
+    private float scaleXVertical;
+    private float scaleYVertical;
 
     void Start()
     {
-        scaleX = screenScaleX;
-        scaleY = screenScaleY;
+        scaleXHorizontal = horizontalScreenScaleX;
+        scaleYHorizontal = horizontalScreenScaleY;
+        scaleXVertical = verticalScreenScaleX;
+        scaleYVertical = verticalScreenScaleY;
     }
 
     public void OnChangeBrightness()
@@ -92,13 +103,20 @@ public class Screen : UdonSharpBehaviour
 
     public void OnChangeMirrorX()
     {
-        scaleX = mirrorXToggle.isOn ? -screenScaleX : screenScaleX;
+        scaleXHorizontal = mirrorXToggle.isOn ? -horizontalScreenScaleX : horizontalScreenScaleX;
+        scaleYVertical = mirrorXToggle.isOn ? -verticalScreenScaleY : verticalScreenScaleY;
         UpdateScale();
     }
 
     public void OnChangeMirrorY()
     {
-        scaleY = mirrorYToggle.isOn ? -screenScaleY : screenScaleY;
+        scaleYHorizontal = mirrorYToggle.isOn ? -horizontalScreenScaleY : horizontalScreenScaleY;
+        scaleXVertical = mirrorYToggle.isOn ? -verticalScreenScaleX : verticalScreenScaleX;
+        UpdateScale();
+    }
+
+    public void OnChangeIsVerticalScreen()
+    {
         UpdateScale();
     }
 
@@ -124,6 +142,7 @@ public class Screen : UdonSharpBehaviour
         gradientMappingToggle.Randomize();
         hueShiftSlider.Randomize();
         invertColorToggle.Randomize();
+        isVerticalScreenToggle.Randomize();
         mirrorTileCountSlider.Randomize();
         mirrorXToggle.Randomize();
         mirrorYToggle.Randomize();
@@ -133,6 +152,25 @@ public class Screen : UdonSharpBehaviour
 
     private void UpdateScale()
     {
-        transform.localScale = new Vector3(scaleX, scaleY, 1.0f);
+        if (isVerticalScreenToggle.isOn)
+        {
+            backScreenVertical.transform.localScale = new Vector3(scaleXVertical, scaleYVertical, 1.0f);
+            SetActive(horizontalObjects, false);
+            SetActive(verticalObjects, true);
+        }
+        else
+        {
+            backScreenHorizontal.transform.localScale = new Vector3(scaleXHorizontal, scaleYHorizontal, 1.0f);
+            SetActive(horizontalObjects, true);
+            SetActive(verticalObjects, false);
+        }
+    }
+
+    private void SetActive(GameObject[] gameObjects, bool isActive)
+    {
+        foreach (var obj in gameObjects)
+        {
+            obj.SetActive(isActive);
+        }
     }
 }

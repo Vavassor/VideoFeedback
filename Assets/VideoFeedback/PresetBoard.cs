@@ -37,6 +37,7 @@ public class PresetBoard : UdonSharpBehaviour
     public SyncedToggle gradientMappingToggle;
     public SyncedSlider hueShiftSlider;
     public SyncedToggle invertColorToggle;
+    public SyncedToggle isVerticalScreenToggle;
     public SyncedSlider mirrorTileCountSlider;
     public SyncedToggle mirrorXToggle;
     public SyncedToggle mirrorYToggle;
@@ -62,6 +63,7 @@ public class PresetBoard : UdonSharpBehaviour
     private float hueShift;
     private bool invertColor;
     private bool isProjectionOrthographic;
+    private bool isVerticalScreen;
     private int mirrorTileCount;
     private bool mirrorX;
     private bool mirrorY;
@@ -72,7 +74,7 @@ public class PresetBoard : UdonSharpBehaviour
     private const string codeId = "VF";
     private const int codeSizeBytes = 46;
     private const int headerSizeBytes = 4;
-    private const ushort currentVersion = 4;
+    private const ushort currentVersion = 5;
     private const string defaultPresetCode = "VkYABL8g4A4/v5PVPsWoCUhZWVddiTwAOtDJ4wAA0c1zRAUuAAAAAD0BAAAAAA==";
     private float defaultFieldOfView = 60.0f;
     private Color defaultClearColor = new Color(0.0f, 0.0f, 0.0f, 1.0f);
@@ -106,6 +108,7 @@ public class PresetBoard : UdonSharpBehaviour
         hueShift = hueShiftSlider.value;
         invertColor = invertColorToggle.isOn;
         isProjectionOrthographic = orthographicProjectionToggle.isOn;
+        isVerticalScreen = isVerticalScreenToggle.isOn;
         mirrorTileCount = (int) mirrorTileCountSlider.value;
         mirrorX = mirrorXToggle.isOn;
         mirrorY = mirrorYToggle.isOn;
@@ -160,7 +163,7 @@ public class PresetBoard : UdonSharpBehaviour
         WriteOpaqueColor(clearColor, bytes, 36);
         WriteUnorm(edgeBrightness, bytes, 39);
         bytes[40] = (byte) (((((int) Mathf.Floor(fieldOfView) - 45) & 0x3f) << 2) | mirrorTileCount);
-        bytes[41] = (byte) ((ToInt(useGradientMapping) << 5) | (ToInt(invertColor) << 4) | (ToInt(mirrorX) << 3) | (ToInt(mirrorY) << 2) | (ToInt(isProjectionOrthographic) << 1) | ToInt(clearCamera));
+        bytes[41] = (byte) ((ToInt(isVerticalScreen) << 6) | (ToInt(useGradientMapping) << 5) | (ToInt(invertColor) << 4) | (ToInt(mirrorX) << 3) | (ToInt(mirrorY) << 2) | (ToInt(isProjectionOrthographic) << 1) | ToInt(clearCamera));
         WriteUnorm(4.0f * sharpness, bytes, 42);
         bytes[43] = (byte) flowDistortion;
         WriteHalf(saturation, bytes, 44);
@@ -269,6 +272,7 @@ public class PresetBoard : UdonSharpBehaviour
         mirrorX = (flags & 0x08) > 0;
         invertColor = (flags & 0x10) > 0;
         useGradientMapping = (flags & 0x20) > 0;
+        isVerticalScreen = (flags & 0x40) > 0;
 
         sharpness = 0.25f * ReadUnorm(bytes, 42);
         flowDistortion = bytes[43];
@@ -317,6 +321,9 @@ public class PresetBoard : UdonSharpBehaviour
 
         invertColorToggle.isOn = invertColor;
         invertColorToggle.OnSetValueExternally();
+
+        isVerticalScreenToggle.isOn = isVerticalScreen;
+        isVerticalScreenToggle.OnSetValueExternally();
 
         orthographicProjectionToggle.isOn = isProjectionOrthographic;
         orthographicProjectionToggle.OnSetValueExternally();
@@ -601,6 +608,12 @@ public class PresetBoard : UdonSharpBehaviour
             version = 4;
         }
 
+        if (version == 4)
+        {
+            bytes = MigrateVersion4To5(bytes);
+            version = 5;
+        }
+
         return bytes;
     }
 
@@ -649,6 +662,16 @@ public class PresetBoard : UdonSharpBehaviour
         WriteHalfVector3(ReadHalfQuaternion(bytes, 16).eulerAngles, newBytes, 16);
         WriteHalf(1.0f, newBytes, 22);
         CopyBytes(bytes, 24, newBytes, 24, 18);
+
+        return newBytes;
+    }
+
+    private byte[] MigrateVersion4To5(byte[] bytes)
+    {
+        byte[] newBytes = new byte[codeSizeBytes];
+
+        CopyBytes(bytes, 0, newBytes, 0, 46);
+        WriteUInt16(5, bytes, 2);
 
         return newBytes;
     }
