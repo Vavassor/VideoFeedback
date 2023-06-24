@@ -12,7 +12,9 @@
         "clearCameraToggleLabel": "Clear Camera",
         "clearColorButtonLabel": "Clear Color",
         "fieldOfViewSliderLabel": "Field Of View",
-        "orthographicProjectionToggleLabel": "Orthographic Projection"
+        "orthographicProjectionToggleLabel": "Orthographic Projection",
+        "stabilizerToggleLabel": "Stabilizer",
+        "stabilizerSmoothnessSliderLabel": "Smoothness"
     },
     "colorKeySettings": {
         "chromaKeyToggleLabel": "Chroma Key",
@@ -72,6 +74,7 @@
     "saveAndLoadPresetsMenu": {
         "generatePresetCodeButtonLabel": "Generate Preset Code",
         "loadPresetCodeButtonLabel": "Load Preset Code",
+        "loadPresetCodeGenericError": "Could not load the preset code.",
         "presetCodeTextFieldLabel": "Preset Code",
         "resetAllButtonLabel": "Reset All To Default",
         "saveAndLoadPresetsHeading": "Save And Load Presets"
@@ -84,5 +87,12 @@
     "streamMonitor": {
         "streamMonitorHeading": "Take pictures & videos!",
         "streamMonitorInstructions": "Place your handheld camera in the box below to capture the video feed from the VF camera."
+    },
+    "videoPlayer": {
+        "colorKeyingMenuButtonLabel": "Color Keying",
+        "resyncButtonLabel": "Resync"
+    },
+    "videoPlaylist": {
+        "videoPlaylistHeading": "Videos"
     }
 }
