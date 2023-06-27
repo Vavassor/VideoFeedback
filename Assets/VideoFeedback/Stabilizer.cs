@@ -20,6 +20,7 @@ public class Stabilizer : UdonSharpBehaviour
     private bool isStabilizing = true;
     private bool hasPriorPlayerPosition = false;
     private Vector3 priorPlayerPosition;
+    private VRCPlayerApi priorPlayer;
     private Vector3[] samplePositions = new Vector3[64];
     private Quaternion[] sampleRotations = new Quaternion[64];
     private bool shouldResetNextUpdate = false;
@@ -59,6 +60,13 @@ public class Stabilizer : UdonSharpBehaviour
             // However, convert them so that they're no longer relative to the player position.
             ShiftSamplesWithOffset(priorPlayerPosition);
             hasPriorPlayerPosition = false;
+            priorPlayer = null;
+        }
+        else if (trackingPickup != null && priorPlayer != null && trackingPickup.currentPlayer != null && trackingPickup.currentPlayer != priorPlayer && hasPriorPlayerPosition)
+        {
+            // When the pickup is stolen, convert the samples so they're relative to the thief.
+            var playerPosition = trackingPickup.currentPlayer.GetPosition();
+            ShiftSamplesWithOffset(priorPlayerPosition - playerPosition);
         }
         else
         {
@@ -79,6 +87,7 @@ public class Stabilizer : UdonSharpBehaviour
                 samplePositions[0] -= playerPosition;
                 priorPlayerPosition = playerPosition;
                 hasPriorPlayerPosition = true;
+                priorPlayer = trackingPickup.currentPlayer;
             }
 
             wasHeld = trackingPickup.IsHeld;
