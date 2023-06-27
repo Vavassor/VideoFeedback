@@ -22,8 +22,17 @@ public class Stabilizer : UdonSharpBehaviour
     private Vector3 priorPlayerPosition;
     private Vector3[] samplePositions = new Vector3[64];
     private Quaternion[] sampleRotations = new Quaternion[64];
+    private bool shouldResetNextUpdate = false;
     private bool wasStabilizing = false;
     private bool wasHeld = false;
+
+    public void OnTeleport()
+    {
+        if (IsStabilizing)
+        {
+            shouldResetNextUpdate = true;
+        }
+    }
 
     private void Update()
     {
@@ -38,10 +47,11 @@ public class Stabilizer : UdonSharpBehaviour
 
     private void SampleParentTransform()
     {
-        if (trackingPickup != null && trackingPickup.IsHeld && !wasHeld && trackingPickup.currentPlayer != null)
+        if (shouldResetNextUpdate || trackingPickup != null && trackingPickup.IsHeld && !wasHeld && trackingPickup.currentPlayer != null)
         {
-            // When picked up, reinitialize the history of samples.
+            // When picked up or teleported, reinitialize the history of samples.
             SetAllSamplesToCurrentTransform();
+            shouldResetNextUpdate = false;
         }
         else if (trackingPickup != null && !trackingPickup.IsHeld && wasHeld && hasPriorPlayerPosition)
         {

@@ -1,7 +1,6 @@
 ﻿
 using UdonSharp;
 using UnityEngine;
-using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
 
@@ -13,8 +12,8 @@ public class CameraController : UdonSharpBehaviour
     public SyncedSlider fieldOfViewSlider;
     public SyncedToggle isChromaKeyEnabledToggle;
     public SyncedToggle isLumaKeyEnabledToggle;
-    public Toggle isStabilizerEnabledToggle;
-    public Slider smoothingFramesSlider;
+    public SyncedToggle isStabilizerEnabledToggle;
+    public SyncedSlider smoothingFramesSlider;
     public RenderTexture video0Texture;
     public CustomRenderTexture videoColorKeyed;
     public CustomRenderTexture videoGradientMapped;

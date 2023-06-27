@@ -37,6 +37,7 @@ public class PresetBoard : UdonSharpBehaviour
     public SyncedToggle gradientMappingToggle;
     public SyncedSlider hueShiftSlider;
     public SyncedToggle invertColorToggle;
+    public SyncedToggle isStabilizerEnabledToggle;
     public SyncedToggle isVerticalScreenToggle;
     public SyncedSlider mirrorTileCountSlider;
     public SyncedToggle mirrorXToggle;
@@ -44,8 +45,10 @@ public class PresetBoard : UdonSharpBehaviour
     public SyncedToggle orthographicProjectionToggle;
     public SyncedSlider saturationSlider;
     public SyncedSlider sharpnessSlider;
+    public SyncedSlider smoothingFramesSlider;
     public InputField presetCodeInputField;
     public GameObject loadPresetCodeError;
+    public Stabilizer stabilizer;
 
     // Data to be saved in a preset code.
     private float brightness;
@@ -144,6 +147,13 @@ public class PresetBoard : UdonSharpBehaviour
     {
         DeserializePreset(defaultPresetCode);
         ApplyPreset();
+
+        // Reset fields that aren't saved in presets, to help players who get confused.
+        isStabilizerEnabledToggle.isOn = true;
+        isStabilizerEnabledToggle.OnSetValueExternally();
+
+        smoothingFramesSlider.value = 6;
+        smoothingFramesSlider.OnSetValueExternally();
     }
 
     public string SerializePreset()
@@ -288,6 +298,7 @@ public class PresetBoard : UdonSharpBehaviour
 
         Networking.SetOwner(Networking.LocalPlayer, cameraPickup.gameObject);
         cameraPickup.transform.SetPositionAndRotation(cameraPosition, cameraRotation);
+        stabilizer.OnTeleport();
 
         chromaticDistortionSlider.value = chromaticDistortion;
         chromaticDistortionSlider.OnSetValueExternally();
