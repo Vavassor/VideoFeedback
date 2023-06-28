@@ -13,6 +13,16 @@ TextAsset:
     \"[!!! \xC7\xF4\xF1\u01AD\u0159\xE1\u01A8\u01AD !!!]\",\n\t\t\"hueAdjustSliderLabel\":
     \"[!!! H\xFA\xE8 !!!]\",\n\t\t\"invertColorToggleLabel\": \"[!!! \xCC\xF1\u01B2\xE8\u0159\u01AD
     \xC7\xF4\u2113\xF4\u0159 !!!]\",\n\t\t\"saturationSliderLabel\": \"[!!! \xA7\xE1\u01AD\xFA\u0159\xE1\u01AD\xEF\xF4\xF1
+    !!!]\"\n\t},\n\t\"audioLinkMenu\": {\n\t\t\"equalizationBassSliderLabel\": \"[!!!
+    \xDF\xE1\u01A8\u01A8 !!!]\",\n\t\t\"equalizationSectionHeading\": \"[!!! \xDF\xE1\u01A8\xEF\xE7
+    \xC9Q !!!]\",\n\t\t\"equalizationTrebleSliderLabel\": \"[!!! T\u0159\xE8\u03B2\u2113\xE8
+    !!!]\",\n\t\t\"gainSliderLabel\": \"[!!! G\xE1\xEF\xF1 !!!]\",\n\t\t\"hitFadeExponentialFalloffSliderLabel\":
+    \"[!!! \xC9\u0436\u01A5 F\xE1\u2113\u2113\xF4\u0192\u0192 !!!]\",\n\t\t\"hitFadeLengthSliderLabel\":
+    \"[!!! \xA3\xE8\xF1\u03F1\u01AD\u03BB !!!]\",\n\t\t\"hitFadeSectionHeading\":
+    \"[!!! H\xEF\u01AD F\xE1\u03B4\xE8 !!!]\",\n\t\t\"resetSettingsButton\": \"[!!!
+    R\xE8\u01A8\xE8\u01AD !!!]\",\n\t\t\"themeSelectColorChordOption\": \"[!!! \xC7\xF4\u2113\xF4\u0159\xC7\u03BB\xF4\u0159\u03B4
+    !!!]\",\n\t\t\"themeSelectCustomOption\": \"[!!! \xC7\xFA\u01A8\u01AD\xF4\u20A5
+    !!!]\",\n\t\t\"themeSelectFieldLabel\": \"[!!! T\u03BB\xE8\u20A5\xE8 \xC7\xF4\u2113\xF4\u0159\u01A8
     !!!]\"\n\t},\n\t\"cameraMenu\": {\n\t\t\"cameraMenuHeading\": \"[!!! \xC7\xE1\u20A5\xE8\u0159\xE1
     !!!]\",\n\t\t\"clearCameraToggleLabel\": \"[!!! \xC7\u2113\xE8\xE1\u0159 \xC7\xE1\u20A5\xE8\u0159\xE1
     !!!]\",\n\t\t\"clearColorButtonLabel\": \"[!!! \xC7\u2113\xE8\xE1\u0159 \xC7\xF4\u2113\xF4\u0159

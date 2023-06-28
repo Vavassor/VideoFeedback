@@ -7,6 +7,19 @@
         "invertColorToggleLabel": "Invert Color",
         "saturationSliderLabel": "Saturation"
     },
+    "audioLinkMenu": {
+        "equalizationBassSliderLabel": "Bass",
+        "equalizationSectionHeading": "Basic EQ",
+        "equalizationTrebleSliderLabel": "Treble",
+        "gainSliderLabel": "Gain",
+        "hitFadeExponentialFalloffSliderLabel": "Exp Falloff",
+        "hitFadeLengthSliderLabel": "Length",
+        "hitFadeSectionHeading": "Hit Fade",
+        "resetSettingsButton": "Reset",
+        "themeSelectColorChordOption": "ColorChord",
+        "themeSelectCustomOption": "Custom",
+        "themeSelectFieldLabel": "Theme Colors"
+    },
     "cameraMenu": {
         "cameraMenuHeading": "Camera",
         "clearCameraToggleLabel": "Clear Camera",
@@ -82,7 +95,8 @@
     "screenMenu": {
         "flipHorizontallyToggleLabel": "Flip Horizontally",
         "flipVerticallyToggleLabel": "Flip Vertically",
-        "screenMenuHeading": "Screen"
+        "screenMenuHeading": "Screen",
+        "verticalScreenToggleLabel": "Vertical Screen"
     },
     "streamMonitor": {
         "streamMonitorHeading": "Take pictures & videos!",

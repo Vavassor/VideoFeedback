@@ -7,12 +7,40 @@
         "invertColorToggleLabel": "色を反転",
         "saturationSliderLabel": "彩度"
     },
+    "audioLinkMenu": {
+        "equalizationBassSliderLabel": "ベース",
+        "equalizationSectionHeading": "基本EQ",
+        "equalizationTrebleSliderLabel": "高音",
+        "gainSliderLabel": "ゲイン",
+        "hitFadeExponentialFalloffSliderLabel": "経験値の低下",
+        "hitFadeLengthSliderLabel": "長さ",
+        "hitFadeSectionHeading": "フェードを押す",
+        "resetSettingsButton": "リセット",
+        "themeSelectCustomOption": "カスタム",
+        "themeSelectFieldLabel": "テーマカラー"
+    },
     "cameraMenu": {
         "cameraMenuHeading": "カメラ",
         "clearCameraToggleLabel": "カメラをクリア",
         "clearColorButtonLabel": "色をクリア",
         "fieldOfViewSliderLabel": "視野のフィールド",
-        "orthographicProjectionToggleLabel": "正射投影法"
+        "orthographicProjectionToggleLabel": "正射投影法",
+        "stabilizerToggleLabel": "スタビライザー",
+        "stabilizerSmoothnessSliderLabel": "滑らかさ"
+    },
+    "colorKeySettings": {
+        "chromaKeyToggleLabel": "クロマキー",
+        "colorKeyDirections": "カラーキーを使用するには、プレーヤーでビデオを再生します。\n\nルマキーは、背景が黒または白のビデオに役立ちます。\n\nクロマキーは、グリーンスクリーンビデオに適しています。\n\nビデオメニューのビデオを使用しましょう。または、モーショングラフィック、VJループ、グリーンスクリーンビデオを検索してみましょう。",
+        "colorKeySettingsHeading": "カラーキー",
+        "keyColorButtonLabel": "キーカラー",
+        "lumaKeyToggleLabel": "ルマキー",
+        "maxLuminanceSliderLabel": "最大輝度",
+        "maxLuminanceSmoothnessSliderLabel": "最大輝度の滑らかさ",
+        "minLuminanceSliderLabel": "最小輝度",
+        "minLuminanceSmoothnessSliderLabel": "最小輝度の滑らかさ",
+        "similaritySliderLabel": "類似度",
+        "smoothnessSliderLabel": "滑らかさ",
+        "spillSliderLabel": "流出"
     },
     "contactSection": {
         "contactSectionHeading": "お問い合わせ",
@@ -58,6 +86,7 @@
     "saveAndLoadPresetsMenu": {
         "generatePresetCodeButtonLabel": "プリセットコードを生成",
         "loadPresetCodeButtonLabel": "プリセットコードの読み込み",
+        "loadPresetCodeGenericError": "プリセットコードを読み込めませんでした。",
         "presetCodeTextFieldLabel": "プリセットコード",
         "resetAllButtonLabel": "すべてをデフォルトにリセット",
         "saveAndLoadPresetsHeading": "プリセットの保存と読み込み"
@@ -65,10 +94,18 @@
     "screenMenu": {
         "flipHorizontallyToggleLabel": "水平方向に反転",
         "flipVerticallyToggleLabel": "垂直方向に反転",
-        "screenMenuHeading": "画面"
+        "screenMenuHeading": "画面",
+        "verticalScreenToggleLabel": "縦画面"
     },
     "streamMonitor": {
         "streamMonitorHeading": "写真＆ビデオを撮ろう！",
         "streamMonitorInstructions": "VFカメラのビデオフィードをキャプチャするには、下のボックスに手持ちカメラを配置してください。"
+    },
+    "videoPlayer": {
+        "colorKeyingMenuButtonLabel": "カラーキー",
+        "resyncButtonLabel": "再同期"
+    },
+    "videoPlaylist": {
+        "videoPlaylistHeading": "ビデオ"
     }
 }
