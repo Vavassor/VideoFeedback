@@ -10,15 +10,16 @@ using static UnityEngine.Shader;
     using UdonSharp;
     using VRC.Udon;
     using VRCAudioLink;
+using KPLocalization;
 
-    public class LocalizedAudioLinkController : UdonSharpBehaviour
+public class LocalizedAudioLinkController : UdonSharpBehaviour
     {
         [Space(10)]
 
         public AudioLink audioLink;
         [Space(10)]
         [Header("Internal (Do not modify)")]
-        public ThemeColorController themeColorController;
+        public LocalizedThemeColorController themeColorController;
         public Material audioSpectrumDisplay;
         public Text gainLabel;
         public Slider gainSlider;
@@ -38,6 +39,9 @@ using static UnityEngine.Shader;
         public Slider threshold1Slider;
         public Slider threshold2Slider;
         public Slider threshold3Slider;
+        public LocalizedString gainSliderLabelString;
+        public LocalizedString bassSliderLabelString;
+        public LocalizedString trebleSliderLabelString;
 
         private float _initGain;
         private float _initTreble;
@@ -92,11 +96,16 @@ using static UnityEngine.Shader;
         }
 #endif
 
-        ThemeColorController FindThemeColorController()
+        public void OnChangePreferredLocales()
+        {
+            UpdateLabels();
+        }
+
+        LocalizedThemeColorController FindThemeColorController()
         {
             Transform controllerTransform = transform.Find("ThemeColorController");
             if (controllerTransform == null) return null;
-            return controllerTransform.GetComponent<ThemeColorController>();
+            return controllerTransform.GetComponent<LocalizedThemeColorController>();
         }
 
         void Start()
@@ -174,10 +183,7 @@ using static UnityEngine.Shader;
 
         public void UpdateSettings()
         {
-            // Update labels
-            gainLabel.text = "Gain: " + ((int)Remap(gainSlider.value, 0f, 2f, 0f, 200f)).ToString() + "%";
-            trebleLabel.text = "Treble: " + ((int)Remap(trebleSlider.value, 0f, 2f, 0f, 200f)).ToString() + "%";
-            bassLabel.text = "Bass: " + ((int)Remap(bassSlider.value, 0f, 2f, 0f, 200f)).ToString() + "%";
+            UpdateLabels();
 
             // Update Sliders
             var anchor0 = new Vector2(x0Slider.value, 1f);
@@ -226,6 +232,13 @@ using static UnityEngine.Shader;
             audioLink.threshold3 = threshold3Slider.value;
 
             audioLink.UpdateSettings();
+        }
+
+        private void UpdateLabels()
+        {
+            gainLabel.text = gainSliderLabelString.Text + ": " + ((int)Remap(gainSlider.value, 0f, 2f, 0f, 200f)).ToString() + "%";
+            trebleLabel.text = trebleSliderLabelString.Text + ": " + ((int)Remap(trebleSlider.value, 0f, 2f, 0f, 200f)).ToString() + "%";
+            bassLabel.text = bassSliderLabelString.Text + ": " + ((int)Remap(bassSlider.value, 0f, 2f, 0f, 200f)).ToString() + "%";
         }
 
         public void ResetSettings()
