@@ -10,8 +10,10 @@ public class PostProcessingSettings : UdonSharpBehaviour
 {
     public Slider ambientOcclusionIntensitySlider;
     public PostProcessVolume ambientOcclusionVolume;
+    public PostProcessVolume vfCamAmbientOcclusionVolume;
     public Slider bloomIntensitySlider;
     public PostProcessVolume bloomVolume;
+    public PostProcessVolume vfCamBloomVolume;
     public CanvasGroup postProcessCanvasGroup;
     public Toggle postProcessingToggle;
 
@@ -28,11 +30,13 @@ public class PostProcessingSettings : UdonSharpBehaviour
     public void OnChangeAmbientOcclusionIntensity()
     {
         ambientOcclusionVolume.weight = ambientOcclusionIntensitySlider.value;
+        vfCamAmbientOcclusionVolume.weight = ambientOcclusionIntensitySlider.value;
     }
 
     public void OnChangeBloomIntensity()
     {
         bloomVolume.weight = bloomIntensitySlider.value;
+        vfCamBloomVolume.weight = bloomIntensitySlider.value;
     }
 
     public void OnChangePostProcessing()
@@ -41,7 +45,9 @@ public class PostProcessingSettings : UdonSharpBehaviour
 
         postProcessVolume.enabled = isEnabled;
         bloomVolume.enabled = isEnabled;
+        vfCamBloomVolume.enabled = isEnabled;
         ambientOcclusionVolume.enabled = isEnabled;
+        vfCamAmbientOcclusionVolume.enabled = isEnabled;
 
         if (isEnabled)
         {
