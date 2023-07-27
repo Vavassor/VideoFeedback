@@ -2,7 +2,6 @@
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
-using VRC.Udon;
 
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class DesktopOnly : UdonSharpBehaviour
@@ -11,7 +10,9 @@ public class DesktopOnly : UdonSharpBehaviour
 
     void Start()
     {
-        if(Networking.LocalPlayer.IsUserInVR() == true)
+        canvasGroup = GetComponent<CanvasGroup>();
+
+        if (Networking.LocalPlayer.IsUserInVR() == true)
         {
             canvasGroup.alpha = 0.2f;
             canvasGroup.interactable = false;

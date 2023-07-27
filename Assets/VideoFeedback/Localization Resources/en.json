@@ -63,6 +63,13 @@
         "sharpnessSliderLabel": "Sharpness",
         "valueSliderLabel": "Value"
     },
+    "lightingSettingsMenu": {
+        "enableShadowsToggleLabel": "Shadows",
+        "graphicsSettingsButtonLabel": "Graphics Settings",
+        "lightIntensitySliderLabel": "Light Intensity",
+        "lightRangeSliderLabel": "Light Range",
+        "lightingSettingsMenuHeading": "Lighting"
+    },
     "localSettingsMenu": {
         "ambientOcclusionIntensitySliderLabel": "Ambient Occlusion",
         "bloomIntensitySliderLabel": "Bloom",
@@ -73,6 +80,20 @@
     "photosensitiveWarning": {
         "photosensitiveWarningHeading": "Photosensitive Warning",
         "photosensitiveWarningText": "Effects here cause flashes of light that could trigger seizures in people with visual sensitivities.\n\nThe visuals are unpredictable and it's not possible to avoid the risk."
+    },
+    "postProcessingSettingsMenu": {
+        "ambientOcclusionModeToggleGroupLabel": "Ambient Occlusion Mode",
+        "chromaticAberrationSliderLabel": "Chromatic Aberration",
+        "colorGradingModeToggleGroupLabel": "Mode",
+        "colorGradingSectionHeading": "Color Grading",
+        "colorTemperatureSliderLabel": "Temperature",
+        "colorTintSliderLabel": "Tint",
+        "desktopOnlyHeading": "Desktop Only",
+        "exposureSliderLabel": "Exposure",
+        "motionBlurToggleLabel": "Motion Blur",
+        "neutralColorGradingModeToggleLabel": "Neutral",
+        "postProcessingMenuHeading": "Post Processing",
+        "vignetteIntensitySliderLabel": "Vignette"
     },
     "presetsMenu": {
         "presetsMenuHeading": "Presets"

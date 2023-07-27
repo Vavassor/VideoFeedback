@@ -77,10 +77,16 @@ TextAsset:
     !!!]\",\n\t\t\"mirrorTileCountSliderLabel\": \"[!!! M\xEF\u0159\u0159\xF4\u0159
     T\xEF\u2113\xE8\u01A8 !!!]\",\n\t\t\"saturationSliderLabel\": \"[!!! \xA7\xE1\u01AD\xFA\u0159\xE1\u01AD\xEF\xF4\xF1
     !!!]\",\n\t\t\"sharpnessSliderLabel\": \"[!!! \xA7\u03BB\xE1\u0159\u01A5\xF1\xE8\u01A8\u01A8
-    !!!]\",\n\t\t\"valueSliderLabel\": \"[!!! V\xE1\u2113\xFA\xE8 !!!]\"\n\t},\n\t\"localSettingsMenu\":
-    {\n\t\t\"ambientOcclusionIntensitySliderLabel\": \"[!!! \xC2\u20A5\u03B2\xEF\xE8\xF1\u01AD
-    \xD3\xE7\xE7\u2113\xFA\u01A8\xEF\xF4\xF1 !!!]\",\n\t\t\"bloomIntensitySliderLabel\":
-    \"[!!! \xDF\u2113\xF4\xF4\u20A5 !!!]\",\n\t\t\"enablePostProcessingToggleLabel\":
+    !!!]\",\n\t\t\"valueSliderLabel\": \"[!!! V\xE1\u2113\xFA\xE8 !!!]\"\n\t},\n\t\"lightingSettingsMenu\":
+    {\n\t\t\"enableShadowsToggleLabel\": \"[!!! \xA7\u03BB\xE1\u03B4\xF4\u03C9\u01A8
+    !!!]\",\n\t\t\"graphicsSettingsButtonLabel\": \"[!!! G\u0159\xE1\u01A5\u03BB\xEF\xE7\u01A8
+    \xA7\xE8\u01AD\u01AD\xEF\xF1\u03F1\u01A8 !!!]\",\n\t\t\"lightIntensitySliderLabel\":
+    \"[!!! \xA3\xEF\u03F1\u03BB\u01AD \xCC\xF1\u01AD\xE8\xF1\u01A8\xEF\u01AD\xA5
+    !!!]\",\n\t\t\"lightRangeSliderLabel\": \"[!!! \xA3\xEF\u03F1\u03BB\u01AD R\xE1\xF1\u03F1\xE8
+    !!!]\",\n\t\t\"lightingSettingsMenuHeading\": \"[!!! \xA3\xEF\u03F1\u03BB\u01AD\xEF\xF1\u03F1
+    !!!]\"\n\t},\n\t\"localSettingsMenu\": {\n\t\t\"ambientOcclusionIntensitySliderLabel\":
+    \"[!!! \xC2\u20A5\u03B2\xEF\xE8\xF1\u01AD \xD3\xE7\xE7\u2113\xFA\u01A8\xEF\xF4\xF1
+    !!!]\",\n\t\t\"bloomIntensitySliderLabel\": \"[!!! \xDF\u2113\xF4\xF4\u20A5 !!!]\",\n\t\t\"enablePostProcessingToggleLabel\":
     \"[!!! \xDE\xF4\u01A8\u01AD \xDE\u0159\xF4\xE7\xE8\u01A8\u01A8\xEF\xF1\u03F1
     !!!]\",\n\t\t\"floorLevelSliderLabel\": \"[!!! F\u2113\xF4\xF4\u0159 \xA3\xE8\u01B2\xE8\u2113
     !!!]\",\n\t\t\"localSettingsHeading\": \"[!!! \xA3\xF4\xE7\xE1\u2113 \xA7\xE8\u01AD\u01AD\xEF\xF1\u03F1\u01A8
@@ -95,6 +101,19 @@ TextAsset:
     \u01B2\xEF\u01A8\xFA\xE1\u2113\u01A8 \xE1\u0159\xE8 \xFA\xF1\u01A5\u0159\xE8\u03B4\xEF\xE7\u01AD\xE1\u03B2\u2113\xE8
     \xE1\xF1\u03B4 \xEF\u01AD'\u01A8 \xF1\xF4\u01AD \u01A5\xF4\u01A8\u01A8\xEF\u03B2\u2113\xE8
     \u01AD\xF4 \xE1\u01B2\xF4\xEF\u03B4 \u01AD\u03BB\xE8 \u0159\xEF\u01A8\u0199.
+    !!!]\"\n\t},\n\t\"postProcessingSettingsMenu\": {\n\t\t\"ambientOcclusionModeToggleGroupLabel\":
+    \"[!!! \xC2\u20A5\u03B2\xEF\xE8\xF1\u01AD \xD3\xE7\xE7\u2113\xFA\u01A8\xEF\xF4\xF1
+    M\xF4\u03B4\xE8 !!!]\",\n\t\t\"chromaticAberrationSliderLabel\": \"[!!! \xC7\u03BB\u0159\xF4\u20A5\xE1\u01AD\xEF\xE7
+    \xC2\u03B2\xE8\u0159\u0159\xE1\u01AD\xEF\xF4\xF1 !!!]\",\n\t\t\"colorGradingModeToggleGroupLabel\":
+    \"[!!! M\xF4\u03B4\xE8 !!!]\",\n\t\t\"colorGradingSectionHeading\": \"[!!! \xC7\xF4\u2113\xF4\u0159
+    G\u0159\xE1\u03B4\xEF\xF1\u03F1 !!!]\",\n\t\t\"colorTemperatureSliderLabel\":
+    \"[!!! T\xE8\u20A5\u01A5\xE8\u0159\xE1\u01AD\xFA\u0159\xE8 !!!]\",\n\t\t\"colorTintSliderLabel\":
+    \"[!!! T\xEF\xF1\u01AD !!!]\",\n\t\t\"desktopOnlyHeading\": \"[!!! \xD0\xE8\u01A8\u0199\u01AD\xF4\u01A5
+    \xD3\xF1\u2113\xA5 !!!]\",\n\t\t\"exposureSliderLabel\": \"[!!! \xC9\u0436\u01A5\xF4\u01A8\xFA\u0159\xE8
+    !!!]\",\n\t\t\"motionBlurToggleLabel\": \"[!!! M\xF4\u01AD\xEF\xF4\xF1 \xDF\u2113\xFA\u0159
+    !!!]\",\n\t\t\"neutralColorGradingModeToggleLabel\": \"[!!! N\xE8\xFA\u01AD\u0159\xE1\u2113
+    !!!]\",\n\t\t\"postProcessingMenuHeading\": \"[!!! \xDE\xF4\u01A8\u01AD \xDE\u0159\xF4\xE7\xE8\u01A8\u01A8\xEF\xF1\u03F1
+    !!!]\",\n\t\t\"vignetteIntensitySliderLabel\": \"[!!! V\xEF\u03F1\xF1\xE8\u01AD\u01AD\xE8
     !!!]\"\n\t},\n\t\"presetsMenu\": {\n\t\t\"presetsMenuHeading\": \"[!!! \xDE\u0159\xE8\u01A8\xE8\u01AD\u01A8
     !!!]\"\n\t},\n\t\"respawnMenu\": {\n\t\t\"respawnMenuHeading\": \"[!!! R\xE8\u01A8\u01A5\xE1\u03C9\xF1
     !!!]\",\n\t\t\"respawnCameraButtonLabel\": \"[!!! R\xE8\u01A8\u01A5\xE1\u03C9\xF1
@@ -113,7 +132,8 @@ TextAsset:
     \xA3\xF4\xE1\u03B4 \xDE\u0159\xE8\u01A8\xE8\u01AD\u01A8 !!!]\"\n\t},\n\t\"screenMenu\":
     {\n\t\t\"flipHorizontallyToggleLabel\": \"[!!! F\u2113\xEF\u01A5 H\xF4\u0159\xEF\u01BA\xF4\xF1\u01AD\xE1\u2113\u2113\xA5
     !!!]\",\n\t\t\"flipVerticallyToggleLabel\": \"[!!! F\u2113\xEF\u01A5 V\xE8\u0159\u01AD\xEF\xE7\xE1\u2113\u2113\xA5
-    !!!]\",\n\t\t\"screenMenuHeading\": \"[!!! \xA7\xE7\u0159\xE8\xE8\xF1 !!!]\"\n\t},\n\t\"streamMonitor\":
+    !!!]\",\n\t\t\"screenMenuHeading\": \"[!!! \xA7\xE7\u0159\xE8\xE8\xF1 !!!]\",\n\t\t\"verticalScreenToggleLabel\":
+    \"[!!! V\xE8\u0159\u01AD\xEF\xE7\xE1\u2113 \xA7\xE7\u0159\xE8\xE8\xF1 !!!]\"\n\t},\n\t\"streamMonitor\":
     {\n\t\t\"streamMonitorHeading\": \"[!!! T\xE1\u0199\xE8 \u01A5\xEF\xE7\u01AD\xFA\u0159\xE8\u01A8
     & \u01B2\xEF\u03B4\xE8\xF4\u01A8! !!!]\",\n\t\t\"streamMonitorInstructions\":
     \"[!!! \xDE\u2113\xE1\xE7\xE8 \xA5\xF4\xFA\u0159 \u03BB\xE1\xF1\u03B4\u03BB\xE8\u2113\u03B4
