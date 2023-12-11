@@ -28,7 +28,7 @@ namespace VRCAudioLink
                 Color.green
             };
 
-        public AudioLink audioLink;  // Initialized by AudioLinkController.
+        public AudioLink.AudioLink audioLink;  // Initialized by AudioLinkController.
 
 
         // Initialized from prefab.

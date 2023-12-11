@@ -14,7 +14,7 @@ public class Audiolink_USVideo_Adapter : UdonSharpBehaviour
 	
 	//Connects to the Audiolink component
 	[Tooltip("Select the Audiolink component in the scene")]
-	public VRCAudioLink.AudioLink audioLink;
+	public AudioLink.AudioLink audioLink;
 	
 	//Connects to the Video audio source
 	[Tooltip("Select the audio source that will be used when in stream mode, 'VideoAudioSource' is recommended")]

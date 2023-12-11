@@ -16,7 +16,7 @@ public class LocalizedAudioLinkController : UdonSharpBehaviour
     {
         [Space(10)]
 
-        public AudioLink audioLink;
+        public AudioLink.AudioLink audioLink;
         [Space(10)]
         [Header("Internal (Do not modify)")]
         public LocalizedThemeColorController themeColorController;
