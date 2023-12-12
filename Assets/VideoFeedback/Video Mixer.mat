@@ -2,20 +2,24 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Video Mixer
   m_Shader: {fileID: 4800000, guid: ff2b868c0d1a43b4dbfe0d2169b488c9, type: 3}
-  m_ShaderKeywords: 
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -67,6 +71,7 @@ Material:
         m_Texture: {fileID: 8400000, guid: 09cb7dc75f6032242b4b518d5703736f, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _Brightness: 0.8515625
     - _BumpScale: 1
@@ -110,3 +115,4 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GradientStop0Color: {r: 0.46226418, g: 0, b: 0, a: 1}
     - _GradientStop1Color: {r: 0, g: 1, b: 0.84803915, a: 1}
+  m_BuildTextureStacks: []
